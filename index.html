@@ -15,19 +15,25 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">AxiomeTech</a>
+            <a href="#" class="nav-logo" data-i18n="nav.logo">AxiomeTech</a>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#process" class="nav-link">Process</a>
+                    <a href="#process" class="nav-link" data-i18n="nav.process">Process</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#faq" class="nav-link">FAQ</a>
+                    <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <select id="language-selector" class="language-selector" aria-label="Select language">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                    </select>
                 </li>
             </ul>
             <div class="hamburger">
@@ -41,11 +47,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-title">Solutions d'IA Stratégiques pour les Entreprises Françaises</h1>
-            <p class="hero-subtitle">Nous concevons et déployons des outils d'IA pratiques qui automatisent vos opérations commerciales, en combinant expertise technique et vision stratégique.</p>
+            <h1 class="hero-title" data-i18n="hero.title">Strategic AI Solutions for French Tech & SMBs</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">We design and deploy practical AI tools that automate your business operations, combining technical expertise with strategic vision.</p>
             <div class="cta-container">
-                <a href="#contact" class="btn btn-primary">Réserver une Consultation Gratuite</a>
-                <a href="#services" class="btn btn-secondary">Découvrir nos Services</a>
+                <a href="#contact" class="btn btn-primary" data-i18n="hero.ctaPrimary">Book a Free Consultation</a>
+                <a href="#services" class="btn btn-secondary" data-i18n="hero.ctaSecondary">Discover Our Services</a>
             </div>
         </div>
     </section>
@@ -53,85 +59,85 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Services d'IA Productisés</h2>
-            <p class="section-subtitle">Des solutions à périmètre fixe avec un ROI clair et une tarification transparente</p>
+            <h2 class="section-title" data-i18n="services.title">Productized AI Services</h2>
+            <p class="section-subtitle" data-i18n="services.subtitle">Fixed-scope solutions with clear ROI and transparent pricing</p>
             
             <div class="services-grid">
                 <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-icon">⚡</div>
-                    <h3>Traitement Automatisé des Données</h3>
-                    <p class="service-price">€5k - €25k</p>
-                    <p class="service-pitch">J'automatise la tâche manuelle et répétitive d'extraction de données de vos emails, PDFs, feuilles de calcul ou formulaires.</p>
+                    <h3 data-i18n="services.service1.title">Automated Data Processing</h3>
+                    <p class="service-price" data-i18n="services.service1.price">€5k - €25k</p>
+                    <p class="service-pitch" data-i18n="services.service1.pitch">I automate the manual and repetitive task of data extraction from your emails, PDFs, spreadsheets or forms.</p>
                     
-                    <h4>Fonctionnalités :</h4>
+                    <h4 data-i18n="services.service1.featuresTitle">Features:</h4>
                     <ul class="service-features">
-                        <li>Traitement multi-format (PDFs, emails, feuilles de calcul)</li>
-                        <li>Intégration personnalisée avec votre CRM ou base de données</li>
-                        <li>Système de validation avec contrôle humain</li>
+                        <li data-i18n="services.service1.features.0">Multi-format processing (PDFs, emails, spreadsheets)</li>
+                        <li data-i18n="services.service1.features.1">Custom integration with your CRM or database</li>
+                        <li data-i18n="services.service1.features.2">Validation system with human control</li>
                     </ul>
                     
-                    <h4>Avantages :</h4>
+                    <h4 data-i18n="services.service1.benefitsTitle">Benefits:</h4>
                     <ul class="service-benefits">
-                        <li>Réduction du temps de saisie de 80%</li>
-                        <li>Élimination des erreurs humaines dans les données critiques</li>
+                        <li data-i18n="services.service1.benefits.0">80% reduction in data entry time</li>
+                        <li data-i18n="services.service1.benefits.1">Elimination of human errors in critical data</li>
                     </ul>
                     
                     <div class="service-use-case">
-                        <strong>Cas d'usage :</strong>
-                        <p>Automatisation du traitement des factures PDF quotidiennes dans QuickBooks.</p>
+                        <strong data-i18n="services.service1.useCase">Use case:</strong>
+                        <p data-i18n="services.service1.useCaseText">Automation of daily PDF invoice processing in QuickBooks.</p>
                     </div>
                 </div>
 
                 <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-icon">🧠</div>
-                    <h3>Base de Connaissance Interne Intelligente</h3>
-                    <p class="service-price">€10k - €30k</p>
-                    <p class="service-pitch">Je construis un chatbot qui donne à votre équipe des réponses instantanées à partir de vos documents d'entreprise.</p>
+                    <h3 data-i18n="services.service2.title">Intelligent Internal Knowledge Base</h3>
+                    <p class="service-price" data-i18n="services.service2.price">€10k - €30k</p>
+                    <p class="service-pitch" data-i18n="services.service2.pitch">I build a chatbot that gives your team instant answers from your company documents.</p>
                     
-                    <h4>Fonctionnalités :</h4>
+                    <h4 data-i18n="services.service2.featuresTitle">Features:</h4>
                     <ul class="service-features">
-                        <li>Implémentation RAG avec Pinecone pour des réponses précises</li>
-                        <li>Intégration de documents multi-sources</li>
-                        <li>Déploiement interne sécurisé</li>
+                        <li data-i18n="services.service2.features.0">RAG implementation with Pinecone for accurate answers</li>
+                        <li data-i18n="services.service2.features.1">Multi-source document integration</li>
+                        <li data-i18n="services.service2.features.2">Secure internal deployment</li>
                     </ul>
                     
-                    <h4>Avantages :</h4>
+                    <h4 data-i18n="services.service2.benefitsTitle">Benefits:</h4>
                     <ul class="service-benefits">
-                        <li>Réduction du temps de recherche d'information de 90%</li>
-                        <li>Réduction de moitié du temps d'intégration des nouveaux employés</li>
+                        <li data-i18n="services.service2.benefits.0">90% reduction in information search time</li>
+                        <li data-i18n="services.service2.benefits.1">Half the onboarding time for new employees</li>
                     </ul>
                     
                     <div class="service-use-case">
-                        <strong>Cas d'usage :</strong>
-                        <p>Un centre de recherche pour les procédures et politiques d'entreprise.</p>
+                        <strong data-i18n="services.service2.useCase">Use case:</strong>
+                        <p data-i18n="services.service2.useCaseText">A research center for company procedures and policies.</p>
                     </div>
                 </div>
 
                 <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon">🤖</div>
-                    <h3>Co-pilote Personnalisé pour Support Client</h3>
-                    <p class="service-price">€15k - €40k</p>
-                    <p class="service-pitch">Je construis un assistant IA pour votre équipe de support qui rédige des réponses de haute qualité, conformes à votre image de marque.</p>
+                    <h3 data-i18n="services.service3.title">Custom Co-pilot for Customer Support</h3>
+                    <p class="service-price" data-i18n="services.service3.price">€15k - €40k</p>
+                    <p class="service-pitch" data-i18n="services.service3.pitch">I build an AI assistant for your support team that drafts high-quality responses aligned with your brand voice.</p>
                     
-                    <h4>Fonctionnalités :</h4>
+                    <h4 data-i18n="services.service3.featuresTitle">Features:</h4>
                     <ul class="service-features">
-                        <li>Intégration avec Zendesk, Intercom ou Freshdesk</li>
-                        <li>Cohérence de la voix et du ton de marque</li>
-                        <li>Apprentissage continu à partir des tickets passés</li>
+                        <li data-i18n="services.service3.features.0">Integration with Zendesk, Intercom or Freshdesk</li>
+                        <li data-i18n="services.service3.features.1">Consistent brand voice and tone</li>
+                        <li data-i18n="services.service3.features.2">Continuous learning from past tickets</li>
                     </ul>
                     
-                    <h4>Avantages :</h4>
+                    <h4 data-i18n="services.service3.benefitsTitle">Benefits:</h4>
                     <ul class="service-benefits">
-                        <li>Réduction du temps de traitement moyen des tickets de 50%</li>
-                        <li>Amélioration de la cohérence et la qualité du support</li>
+                        <li data-i18n="services.service3.benefits.0">50% reduction in average ticket processing time</li>
+                        <li data-i18n="services.service3.benefits.1">Improved support consistency and quality</li>
                     </ul>
                     
                     <div class="service-use-case">
-                        <strong>Cas d'usage :</strong>
-                        <p>Un co-pilote IA qui suggère des réponses dans Zendesk.</p>
+                        <strong data-i18n="services.service3.useCase">Use case:</strong>
+                        <p data-i18n="services.service3.useCaseText">An AI co-pilot that suggests responses in Zendesk.</p>
                     </div>
                 </div>
             </div>
@@ -141,26 +147,26 @@
     <!-- Process Section -->
     <section id="process" class="process">
         <div class="container">
-            <h2 class="section-title">Notre Processus Stratégique</h2>
-            <p class="section-subtitle">Une approche concentrée qui dérisque votre investissement IA</p>
+            <h2 class="section-title" data-i18n="process.title">Our Strategic Process</h2>
+            <p class="section-subtitle" data-i18n="process.subtitle">A focused approach that de-risks your AI investment</p>
             
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Découverte & Stratégie</h3>
-                    <p>Nous identifions vos plus gros problèmes et définissons des métriques de succès claires avec ROI tangible.</p>
+                    <h3 data-i18n="process.step1.title">Discovery & Strategy</h3>
+                    <p data-i18n="process.step1.text">We identify your biggest problems and define clear success metrics with tangible ROI.</p>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Construction & Prototype</h3>
-                    <p>Je construis un prototype fonctionnel en 1-2 semaines pour valider la solution avant l'implémentation complète.</p>
+                    <h3 data-i18n="process.step2.title">Building & Prototype</h3>
+                    <p data-i18n="process.step2.text">I build a functional prototype in 1-2 weeks to validate the solution before full implementation.</p>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Lancement & Support</h3>
-                    <p>Déploiement de la solution de production avec documentation et options de support continu.</p>
+                    <h3 data-i18n="process.step3.title">Launch & Support</h3>
+                    <p data-i18n="process.step3.text">Deployment of the production solution with documentation and ongoing support options.</p>
                 </div>
             </div>
         </div>
@@ -169,27 +175,27 @@
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title">Questions Fréquentes</h2>
+            <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
             
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3>Comment assurez-vous la sécurité des données et la conformité RGPD ?</h3>
-                    <p>Toutes les solutions sont conçues avec les principes RGPD dès la conception. Nous pouvons traiter les données localement, utiliser le déploiement on-premise ou sélectionner des providers cloud conformes.</p>
+                    <h3 data-i18n="faq.questions.0.question">How do you ensure data security and GDPR compliance?</h3>
+                    <p data-i18n="faq.questions.0.answer">All solutions are designed with GDPR principles from the start. We can process data locally, use on-premise deployment or select compliant cloud providers.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>Avec quels systèmes pouvez-vous vous intégrer ?</h3>
-                    <p>La plupart des CRM populaires (Salesforce, HubSpot), bases de données, plateformes de support (Zendesk, Intercom) et systèmes documentaires (Google Workspace, Confluence, SharePoint).</p>
+                    <h3 data-i18n="faq.questions.1.question">Which systems can you integrate with?</h3>
+                    <p data-i18n="faq.questions.1.answer">Most popular CRMs (Salesforce, HubSpot), databases, support platforms (Zendesk, Intercom) and document systems (Google Workspace, Confluence, SharePoint).</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>Quel support fournissez-vous après le lancement ?</h3>
-                    <p>30 jours de support inclus, avec des packages de maintenance continus optionnels. Documentation complète et formation pour votre équipe.</p>
+                    <h3 data-i18n="faq.questions.2.question">What support do you provide after launch?</h3>
+                    <p data-i18n="faq.questions.2.answer">30 days of support included, with optional ongoing maintenance packages. Complete documentation and training for your team.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>Quel est le délai typique ?</h3>
-                    <p>Prototype en 1-2 semaines, implémentation complète en 4-8 semaines selon la complexité. Nous commençons par un prototype concret pour dérisquer le projet.</p>
+                    <h3 data-i18n="faq.questions.3.question">What is the typical timeline?</h3>
+                    <p data-i18n="faq.questions.3.answer">Prototype in 1-2 weeks, complete implementation in 4-8 weeks depending on complexity. We start with a concrete prototype to de-risk the project.</p>
                 </div>
             </div>
         </div>
@@ -198,44 +204,44 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Démarrez Votre Projet d'Automatisation IA</h2>
-            <p class="section-subtitle">Réservez une consultation gratuite ou envoyez-nous les détails de votre projet</p>
+            <h2 class="section-title" data-i18n="contact.title">Start Your AI Automation Project</h2>
+            <p class="section-subtitle" data-i18n="contact.subtitle">Book a free consultation or send us your project details</p>
             
             <div class="contact-grid">
                 <div class="contact-form">
                     <form id="lead-form">
                         <div class="form-group">
-                            <label for="name">Nom</label>
+                            <label for="name" data-i18n="contact.form.name">Name</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email" data-i18n="contact.form.email">Email</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="company">Entreprise</label>
+                            <label for="company" data-i18n="contact.form.company">Company</label>
                             <input type="text" id="company" name="company">
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Détails du projet ou questions</label>
+                            <label for="message" data-i18n="contact.form.message">Project details or questions</label>
                             <textarea id="message" name="message" rows="4"></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Envoyer le Message</button>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
                     </form>
                 </div>
                 
                 <div class="contact-info">
-                    <h3>Préférez-vous planifier un appel ?</h3>
-                    <p>Réservez une consultation de 30 minutes pour discuter de vos besoins spécifiques et obtenir une évaluation préliminaire.</p>
-                    <a href="#" class="btn btn-secondary">Planifier un Appel</a>
+                    <h3 data-i18n="contact.schedule.title">Prefer to schedule a call?</h3>
+                    <p data-i18n="contact.schedule.text">Book a 30-minute consultation to discuss your specific needs and get a preliminary assessment.</p>
+                    <a href="#" class="btn btn-secondary" data-i18n="contact.schedule.button">Schedule a Call</a>
                     
                     <div class="contact-details">
-                        <p>Email: contact@axiometech.fr</p>
-                        <p>Disponible pour les clients internationaux et les PME françaises</p>
+                        <p data-i18n="contact.schedule.details.email">Email: contact@axiometech.fr</p>
+                        <p data-i18n="contact.schedule.details.availability">Available for international clients and French SMBs</p>
                     </div>
                 </div>
             </div>
@@ -245,8 +251,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 AxiomeTech. Tous droits réservés.</p>
-            <p>Traitement des données conforme RGPD. Vos informations sont sécurisées avec nous.</p>
+            <p data-i18n="footer.copyright">© 2025 AxiomeTech. All rights reserved.</p>
+            <p data-i18n="footer.privacy">Data processing GDPR compliant. Your information is secure with us.</p>
         </div>
     </footer>
 

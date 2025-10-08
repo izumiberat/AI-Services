@@ -176,6 +176,43 @@
         "useCase": "Cas d'usage :",
         "useCaseText": "Automatisation du traitement des factures PDF quotidiennes dans QuickBooks."
       },
+      "service2": {
+        "title": "Base de Connaissance Interne Intelligente",
+        "price": "€10k - €30k",
+        "pitch": "Je construis un chatbot qui donne à votre équipe des réponses instantanées à partir de vos documents d'entreprise.",
+        "featuresTitle": "Fonctionnalités :",
+        "features": [
+          "Implémentation RAG avec Pinecone pour des réponses précises",
+          "Intégration de documents multi-sources",
+          "Déploiement interne sécurisé"
+        ],
+        "benefitsTitle": "Avantages :",
+        "benefits": [
+          "Réduction de 90% du temps de recherche d'information",
+          "Moitié du temps d'onboarding pour les nouveaux employés"
+        ],
+        "useCase": "Cas d'usage :",
+        "useCaseText": "Un centre de recherche pour les procédures et politiques de l'entreprise."
+      },
+      "service3": {
+        "title": "Co-pilot Personnalisé pour le Support Client",
+        "price": "€15k - €40k",
+        "pitch": "Je construis un assistant IA pour votre équipe de support qui rédige des réponses de haute qualité alignées sur la voix de votre marque.",
+        "featuresTitle": "Fonctionnalités :",
+        "features": [
+          "Intégration avec Zendesk, Intercom ou Freshdesk",
+          "Voix de marque et ton cohérents",
+          "Apprentissage continu à partir des tickets passés"
+        ],
+        "benefitsTitle": "Avantages :",
+        "benefits": [
+          "Réduction de 50% du temps moyen de traitement des tickets",
+          "Amélioration de la cohérence et de la qualité du support"
+        ],
+        "useCase": "Cas d'usage :",
+        "useCaseText": "Un co-pilot IA qui suggère des réponses dans Zendesk."
+      }
+    },
     "process": {
       "title": "Notre Processus Stratégique",
       "subtitle": "Une approche concentrée qui dérisque votre investissement IA",

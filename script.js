@@ -1,66 +1,117 @@
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Navbar background on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
+// Language management and mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
     }
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Language management
+    const languageSelector = document.getElementById('language-selector');
+    let currentLanguage = 'en';
+
+    // Load translations
+    function loadTranslations(lang) {
+        return fetch('i18n.json')
+            .then(response => response.json())
+            .then(translations => {
+                return translations[lang];
+            })
+            .catch(error => {
+                console.error('Error loading translations:', error);
+                return {};
+            });
+    }
+
+    // Update page content with translations
+    function updateContent(translations) {
+        // Update meta tags
+        document.title = translations.meta.title;
+        document.querySelector('meta[name="description"]').setAttribute('content', translations.meta.description);
+        
+        // Update all elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            const keys = key.split('.');
+            let value = translations;
+            
+            for (const k of keys) {
+                if (value && value[k]) {
+                    value = value[k];
+                } else {
+                    value = null;
+                    break;
+                }
+            }
+            
+            if (value !== null) {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.setAttribute('placeholder', value);
+                } else if (element.tagName === 'LABEL') {
+                    element.textContent = value;
+                } else {
+                    element.textContent = value;
+                }
+            }
+        });
+
+        // Update HTML lang attribute
+        document.documentElement.setAttribute('lang', currentLanguage);
+        
+        // Update language selector
+        if (languageSelector) {
+            languageSelector.value = currentLanguage;
+        }
+    }
+
+    // Initialize language
+    function initLanguage() {
+        // Get browser language or default to English
+        const browserLang = navigator.language || navigator.userLanguage;
+        const userLang = browserLang.startsWith('fr') ? 'fr' : 'en';
+        
+        currentLanguage = localStorage.getItem('preferredLanguage') || userLang;
+        
+        loadTranslations(currentLanguage).then(translations => {
+            updateContent(translations);
+        });
+    }
+
+    // Language selector change event
+    if (languageSelector) {
+        languageSelector.addEventListener('change', function(e) {
+            currentLanguage = e.target.value;
+            localStorage.setItem('preferredLanguage', currentLanguage);
+            
+            loadTranslations(currentLanguage).then(translations => {
+                updateContent(translations);
+            });
+        });
+    }
+
+    // Form submission
+    const contactForm = document.getElementById('lead-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Form submitted! In a real implementation, this would send the data to your server.');
+        });
+    }
+
+    // Initialize the page
+    initLanguage();
 });
-
-// Form submission
-document.getElementById('lead-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Add your form submission logic here
-    alert('Merci pour votre message! Nous vous contacterons rapidement.');
-    this.reset();
-});
-
-// Theme toggle functionality (optional)
-const themeToggle = document.createElement('button');
-themeToggle.innerHTML = '🌙';
-themeToggle.style.position = 'fixed';
-themeToggle.style.bottom = '20px';
-themeToggle.style.right = '20px';
-themeToggle.style.zIndex = '1000';
-themeToggle.className = 'btn btn-secondary';
-themeToggle.addEventListener('click', toggleTheme);
-document.body.appendChild(themeToggle);
-
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    themeToggle.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
-}

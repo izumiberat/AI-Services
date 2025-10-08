@@ -1,174 +1,241 @@
 {
-  "hero": {
-    "title": "I Build & Ship Practical AI Tools That Automate Your Business Operations",
-    "title_fr": "Je Conçois et Déploie des Outils d'IA Pratiques Qui Automatisent Vos Opérations Commerciales",
-    "subtitle": "You get one strategic doer who bridges strategy and execution—from discovery call to deployed solution.",
-    "subtitle_fr": "Vous travaillez avec un expert stratégique qui relie la stratégie à l'exécution—du premier appel à la solution déployée."
-  },
-  "cta": {
-    "primary": "Book a Free Consultation",
-    "primary_fr": "Réserver une Consultation Gratuite",
-    "secondary": "View Services", 
-    "secondary_fr": "Voir les Services"
-  },
-  "services": {
-    "title": "Productized AI Services",
-    "title_fr": "Services d'IA Productisés",
-    "subtitle": "Fixed-scope solutions with clear ROI and pricing",
-    "subtitle_fr": "Solutions à périmètre fixe avec ROI et tarification clairs"
-  },
-  "service1": {
-    "title": "Automated Data Processor",
-    "title_fr": "Traitement Automatisé des Données",
-    "pitch": "I'll automate the manual, repetitive task of extracting data from your emails, PDFs, spreadsheets, or forms and get it into your database, CRM, or spreadsheet.",
-    "pitch_fr": "J'automatise la tâche manuelle et répétitive d'extraction de données de vos emails, PDFs, feuilles de calcul ou formulaires pour les intégrer dans votre base de données, CRM ou tableur.",
-    "feature1": "Multi-format processing (PDFs, emails, spreadsheets, forms)",
-    "feature1_fr": "Traitement multi-format (PDFs, emails, feuilles de calcul, formulaires)",
-    "feature2": "Custom integration with your CRM or database", 
-    "feature2_fr": "Intégration personnalisée avec votre CRM ou base de données",
-    "feature3": "Human-in-the-loop validation system",
-    "feature3_fr": "Système de validation avec contrôle humain",
-    "benefit1": "Cut data entry time by 80%",
-    "benefit1_fr": "Réduisez le temps de saisie de 80%",
-    "benefit2": "Eliminate human error in critical data",
-    "benefit2_fr": "Éliminez les erreurs humaines dans les données critiques", 
-    "usecase": "Automating the processing of daily invoice PDFs into QuickBooks.",
-    "usecase_fr": "Automatisation du traitement des factures PDF quotidiennes dans QuickBooks."
-  },
-  "service2": {
-    "title": "Intelligent Internal Knowledge Base",
-    "title_fr": "Base de Connaissance Interne Intelligente",
-    "pitch": "I'll build a chatbot that gives your team instant answers from your company documents (Google Docs, Confluence, PDFs, Slack history), so they stop wasting time searching.",
-    "pitch_fr": "Je construis un chatbot qui donne à votre équipe des réponses instantanées à partir de vos documents d'entreprise (Google Docs, Confluence, PDFs, historique Slack), pour qu'ils arrêtent de perdre du temps à chercher.",
-    "feature1": "RAG implementation with Pinecone for accurate answers",
-    "feature1_fr": "Implémentation RAG avec Pinecone pour des réponses précises",
-    "feature2": "Multi-source document integration",
-    "feature2_fr": "Intégration de documents multi-sources", 
-    "feature3": "Secure, internal deployment",
-    "feature3_fr": "Déploiement interne sécurisé",
-    "benefit1": "Reduce information search time by 90%",
-    "benefit1_fr": "Réduisez le temps de recherche d'information de 90%",
-    "benefit2": "Cut new hire onboarding time in half",
-    "benefit2_fr": "Réduisez de moitié le temps d'intégration des nouveaux employés",
-    "usecase": "A searchable hub for company SOPs and policies that cuts onboarding time in half.",
-    "usecase_fr": "Un centre de recherche pour les procédures et politiques d'entreprise qui réduit de moitié le temps d'intégration."
-  },
-  "service3": {
-    "title": "Custom Customer Support Co-pilot", 
-    "title_fr": "Co-pilote Personnalisé pour Support Client",
-    "pitch": "I'll build an AI assistant for your support team that drafts high-quality, on-brand responses based on your knowledge base and past tickets, cutting average handling time in half.",
-    "pitch_fr": "Je construis un assistant IA pour votre équipe de support qui rédige des réponses de haute qualité, conformes à votre image de marque, basées sur votre base de connaissances et les tickets passés, réduisant de moitié le temps de traitement moyen.",
-    "feature1": "Integration with Zendesk, Intercom, or Freshdesk",
-    "feature1_fr": "Intégration avec Zendesk, Intercom ou Freshdesk",
-    "feature2": "Brand voice and tone consistency", 
-    "feature2_fr": "Cohérence de la voix et du ton de marque",
-    "feature3": "Continuous learning from past tickets",
-    "feature3_fr": "Apprentissage continu à partir des tickets passés",
-    "benefit1": "Reduce average ticket handling time by 50%",
-    "benefit1_fr": "Réduisez le temps de traitement moyen des tickets de 50%",
-    "benefit2": "Improve support consistency and quality",
-    "benefit2_fr": "Améliorez la cohérence et la qualité du support",
-    "usecase": "An AI co-pilot that suggests responses in Zendesk, reducing ticket resolution time by 50%.",
-    "usecase_fr": "Un co-pilote IA qui suggère des réponses dans Zendesk, réduisant le temps de résolution des tickets de 50%."
-  },
-  "process": {
-    "title": "The Strategic Doer Process",
-    "title_fr": "Le Processus de l'Expert Stratégique", 
-    "subtitle": "A focused approach that de-risks your AI investment",
-    "subtitle_fr": "Une approche concentrée qui dérisque votre investissement IA"
-  },
-  "steps": {
-    "step1": {
-      "title": "Discovery & Strategy",
-      "title_fr": "Découverte & Stratégie",
-      "desc": "We identify your biggest pain points and define clear success metrics with tangible ROI.",
-      "desc_fr": "Nous identifions vos plus gros problèmes et définissons des métriques de succès claires avec ROI tangible."
+  "en": {
+    "meta": {
+      "title": "Strategic AI Solutions | For French Tech & SMBs",
+      "description": "Practical AI automation solutions for French businesses. From strategy to code, we build and ship AI tools that automate your operations."
     },
-    "step2": {
-      "title": "Build & Prototype", 
-      "title_fr": "Construction & Prototype",
-      "desc": "I build a working prototype in 1-2 weeks to validate the solution before full implementation.",
-      "desc_fr": "Je construis un prototype fonctionnel en 1-2 semaines pour valider la solution avant l'implémentation complète."
+    "nav": {
+      "logo": "AxiomeTech",
+      "services": "Services",
+      "process": "Process",
+      "faq": "FAQ",
+      "contact": "Contact"
     },
-    "step3": {
-      "title": "Launch & Support",
-      "title_fr": "Lancement & Support",
-      "desc": "Deployment of the production solution with documentation and ongoing support options.",
-      "desc_fr": "Déploiement de la solution de production avec documentation et options de support continu."
+    "hero": {
+      "title": "Strategic AI Solutions for French Tech & SMBs",
+      "subtitle": "We design and deploy practical AI tools that automate your business operations, combining technical expertise with strategic vision.",
+      "ctaPrimary": "Book a Free Consultation",
+      "ctaSecondary": "Discover Our Services"
+    },
+    "services": {
+      "title": "Productized AI Services",
+      "subtitle": "Fixed-scope solutions with clear ROI and transparent pricing",
+      "service1": {
+        "title": "Automated Data Processing",
+        "price": "€5k - €25k",
+        "pitch": "I automate the manual and repetitive task of data extraction from your emails, PDFs, spreadsheets or forms.",
+        "featuresTitle": "Features:",
+        "features": [
+          "Multi-format processing (PDFs, emails, spreadsheets)",
+          "Custom integration with your CRM or database",
+          "Validation system with human control"
+        ],
+        "benefitsTitle": "Benefits:",
+        "benefits": [
+          "80% reduction in data entry time",
+          "Elimination of human errors in critical data"
+        ],
+        "useCase": "Use case:",
+        "useCaseText": "Automation of daily PDF invoice processing in QuickBooks."
+      },
+      "service2": {
+        "title": "Intelligent Internal Knowledge Base",
+        "price": "€10k - €30k",
+        "pitch": "I build a chatbot that gives your team instant answers from your company documents.",
+        "featuresTitle": "Features:",
+        "features": [
+          "RAG implementation with Pinecone for accurate answers",
+          "Multi-source document integration",
+          "Secure internal deployment"
+        ],
+        "benefitsTitle": "Benefits:",
+        "benefits": [
+          "90% reduction in information search time",
+          "Half the onboarding time for new employees"
+        ],
+        "useCase": "Use case:",
+        "useCaseText": "A research center for company procedures and policies."
+      },
+      "service3": {
+        "title": "Custom Co-pilot for Customer Support",
+        "price": "€15k - €40k",
+        "pitch": "I build an AI assistant for your support team that drafts high-quality responses aligned with your brand voice.",
+        "featuresTitle": "Features:",
+        "features": [
+          "Integration with Zendesk, Intercom or Freshdesk",
+          "Consistent brand voice and tone",
+          "Continuous learning from past tickets"
+        ],
+        "benefitsTitle": "Benefits:",
+        "benefits": [
+          "50% reduction in average ticket processing time",
+          "Improved support consistency and quality"
+        ],
+        "useCase": "Use case:",
+        "useCaseText": "An AI co-pilot that suggests responses in Zendesk."
+      }
+    },
+    "process": {
+      "title": "Our Strategic Process",
+      "subtitle": "A focused approach that de-risks your AI investment",
+      "step1": {
+        "title": "Discovery & Strategy",
+        "text": "We identify your biggest problems and define clear success metrics with tangible ROI."
+      },
+      "step2": {
+        "title": "Building & Prototype",
+        "text": "I build a functional prototype in 1-2 weeks to validate the solution before full implementation."
+      },
+      "step3": {
+        "title": "Launch & Support",
+        "text": "Deployment of the production solution with documentation and ongoing support options."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "question": "How do you ensure data security and GDPR compliance?",
+          "answer": "All solutions are designed with GDPR principles from the start. We can process data locally, use on-premise deployment or select compliant cloud providers."
+        },
+        {
+          "question": "Which systems can you integrate with?",
+          "answer": "Most popular CRMs (Salesforce, HubSpot), databases, support platforms (Zendesk, Intercom) and document systems (Google Workspace, Confluence, SharePoint)."
+        },
+        {
+          "question": "What support do you provide after launch?",
+          "answer": "30 days of support included, with optional ongoing maintenance packages. Complete documentation and training for your team."
+        },
+        {
+          "question": "What is the typical timeline?",
+          "answer": "Prototype in 1-2 weeks, complete implementation in 4-8 weeks depending on complexity. We start with a concrete prototype to de-risk the project."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Start Your AI Automation Project",
+      "subtitle": "Book a free consultation or send us your project details",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "company": "Company",
+        "message": "Project details or questions",
+        "submit": "Send Message"
+      },
+      "schedule": {
+        "title": "Prefer to schedule a call?",
+        "text": "Book a 30-minute consultation to discuss your specific needs and get a preliminary assessment.",
+        "button": "Schedule a Call",
+        "details": {
+          "email": "Email: contact@axiometech.fr",
+          "availability": "Available for international clients and French SMBs"
+        }
+      }
+    },
+    "footer": {
+      "copyright": "© 2025 AxiomeTech. All rights reserved.",
+      "privacy": "Data processing GDPR compliant. Your information is secure with us."
     }
   },
-  "whyChoose": {
-    "title": "Why Choose a Strategic Doer?",
-    "title_fr": "Pourquoi Choisir un Expert Stratégique?",
-    "reason1": {
-      "title": "End-to-End Ownership", 
-      "title_fr": "Responsabilité de Bout en Bout",
-      "desc": "You get one person who can do the discovery call, architect the system, build the prototype, and deploy the production tool.",
-      "desc_fr": "Vous travaillez avec une personne qui peut faire l'appel de découverte, architecturer le système, construire le prototype et déployer l'outil de production."
+  "fr": {
+    "meta": {
+      "title": "Solutions d'IA Stratégiques | Pour les Tech Françaises & PME",
+      "description": "Solutions pratiques d'automatisation IA pour les entreprises françaises. De la stratégie au code, nous construisons et déployons des outils IA qui automatisent vos opérations."
     },
-    "reason2": {
-      "title": "Scalable Craftsman Tech Stack",
-      "title_fr": "Stack Technologique d'Artisan Évolutif", 
-      "desc": "OpenAI GPT-4o, Anthropic Claude 3.5, LangChain/LlamaIndex, Python (FastAPI), Pinecone, Supabase. No black boxes.",
-      "desc_fr": "OpenAI GPT-4o, Anthropic Claude 3.5, LangChain/LlamaIndex, Python (FastAPI), Pinecone, Supabase. Pas de boîtes noires."
+    "nav": {
+      "logo": "AxiomeTech",
+      "services": "Services",
+      "process": "Processus",
+      "faq": "FAQ",
+      "contact": "Contact"
     },
-    "reason3": {
-      "title": "GDPR Compliance & Security",
-      "title_fr": "Conformité RGPD & Sécurité",
-      "desc": "Built with European data protection standards from day one. On-premise options available.",
-      "desc_fr": "Construit selon les standards européens de protection des données dès le premier jour. Options on-premise disponibles."
+    "hero": {
+      "title": "Solutions d'IA Stratégiques pour les Entreprises Françaises",
+      "subtitle": "Nous concevons et déployons des outils d'IA pratiques qui automatisent vos opérations commerciales, en combinant expertise technique et vision stratégique.",
+      "ctaPrimary": "Réserver une Consultation Gratuite",
+      "ctaSecondary": "Découvrir nos Services"
     },
-    "reason4": {
-      "title": "Focus on Tangible ROI", 
-      "title_fr": "Focus sur le ROI Tangible",
-      "desc": "Projects priced based on clear business value and ROI calculations, not just hours worked.",
-      "desc_fr": "Projets tarifés sur la base de la valeur commerciale claire et des calculs de ROI, pas seulement des heures travaillées."
+    "services": {
+      "title": "Services d'IA Productisés",
+      "subtitle": "Des solutions à périmètre fixe avec un ROI clair et une tarification transparente",
+      "service1": {
+        "title": "Traitement Automatisé des Données",
+        "price": "€5k - €25k",
+        "pitch": "J'automatise la tâche manuelle et répétitive d'extraction de données de vos emails, PDFs, feuilles de calcul ou formulaires.",
+        "featuresTitle": "Fonctionnalités :",
+        "features": [
+          "Traitement multi-format (PDFs, emails, feuilles de calcul)",
+          "Intégration personnalisée avec votre CRM ou base de données",
+          "Système de validation avec contrôle humain"
+        ],
+        "benefitsTitle": "Avantages :",
+        "benefits": [
+          "Réduction du temps de saisie de 80%",
+          "Élimination des erreurs humaines dans les données critiques"
+        ],
+        "useCase": "Cas d'usage :",
+        "useCaseText": "Automatisation du traitement des factures PDF quotidiennes dans QuickBooks."
+      },
+    "process": {
+      "title": "Notre Processus Stratégique",
+      "subtitle": "Une approche concentrée qui dérisque votre investissement IA",
+      "step1": {
+        "title": "Découverte & Stratégie",
+        "text": "Nous identifions vos plus gros problèmes et définissons des métriques de succès claires avec ROI tangible."
+      },
+      "step2": {
+        "title": "Construction & Prototype",
+        "text": "Je construis un prototype fonctionnel en 1-2 semaines pour valider la solution avant l'implémentation complète."
+      },
+      "step3": {
+        "title": "Lancement & Support",
+        "text": "Déploiement de la solution de production avec documentation et options de support continu."
+      }
+    },
+    "faq": {
+      "title": "Questions Fréquentes",
+      "questions": [
+        {
+          "question": "Comment assurez-vous la sécurité des données et la conformité RGPD ?",
+          "answer": "Toutes les solutions sont conçues avec les principes RGPD dès la conception. Nous pouvons traiter les données localement, utiliser le déploiement on-premise ou sélectionner des providers cloud conformes."
+        },
+        {
+          "question": "Avec quels systèmes pouvez-vous vous intégrer ?",
+          "answer": "La plupart des CRM populaires (Salesforce, HubSpot), bases de données, plateformes de support (Zendesk, Intercom) et systèmes documentaires (Google Workspace, Confluence, SharePoint)."
+        },
+        {
+          "question": "Quel support fournissez-vous après le lancement ?",
+          "answer": "30 jours de support inclus, avec des packages de maintenance continus optionnels. Documentation complète et formation pour votre équipe."
+        },
+        {
+          "question": "Quel est le délai typique ?",
+          "answer": "Prototype en 1-2 semaines, implémentation complète en 4-8 semaines selon la complexité. Nous commençons par un prototype concret pour dérisquer le projet."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Démarrez Votre Projet d'Automatisation IA",
+      "subtitle": "Réservez une consultation gratuite ou envoyez-nous les détails de votre projet",
+      "form": {
+        "name": "Nom",
+        "email": "Email",
+        "company": "Entreprise",
+        "message": "Détails du projet ou questions",
+        "submit": "Envoyer le Message"
+      },
+      "schedule": {
+        "title": "Préférez-vous planifier un appel ?",
+        "text": "Réservez une consultation de 30 minutes pour discuter de vos besoins spécifiques et obtenir une évaluation préliminaire.",
+        "button": "Planifier un Appel",
+        "details": {
+          "email": "Email: contact@axiometech.fr",
+          "availability": "Disponible pour les clients internationaux et les PME françaises"
+        }
+      }
+    },
+    "footer": {
+      "copyright": "© 2025 AxiomeTech. Tous droits réservés.",
+      "privacy": "Traitement des données conforme RGPD. Vos informations sont sécurisées avec nous."
     }
-  },
-  "faq": {
-    "title": "Frequently Asked Questions",
-    "title_fr": "Questions Fréquemment Posées",
-    "faq1": {
-      "question": "How do you ensure data security and GDPR compliance?",
-      "question_fr": "Comment assurez-vous la sécurité des données et la conformité RGPD?",
-      "answer": "All solutions are built with GDPR principles by design. We can process data locally, use on-premise deployment, or select compliant cloud providers. Data encryption, access controls, and audit logs are standard.",
-      "answer_fr": "Toutes les solutions sont conçues avec les principes RGPD dès la conception. Nous pouvons traiter les données localement, utiliser le déploiement on-premise ou sélectionner des providers cloud conformes. Le chiffrement des données, les contrôles d'accès et les journaux d'audit sont standards."
-    },
-    "faq2": {
-      "question": "What systems can you integrate with?",
-      "question_fr": "Avec quels systèmes pouvez-vous vous intégrer?",
-      "answer": "Most popular CRMs (Salesforce, HubSpot), databases, support platforms (Zendesk, Intercom), and document systems (Google Workspace, Confluence, SharePoint). We use APIs for seamless integration.",
-      "answer_fr": "La plupart des CRM populaires (Salesforce, HubSpot), bases de données, plateformes de support (Zendesk, Intercom) et systèmes documentaires (Google Workspace, Confluence, SharePoint). Nous utilisons des APIs pour une intégration transparente."
-    },
-    "faq3": {
-      "question": "What support do you provide after launch?",
-      "question_fr": "Quel support fournissez-vous après le lancement?",
-      "answer": "30 days of included support, with optional ongoing maintenance packages. Comprehensive documentation and training for your team.",
-      "answer_fr": "30 jours de support inclus, avec des packages de maintenance continus optionnels. Documentation complète et formation pour votre équipe."
-    },
-    "faq4": {
-      "question": "How customizable are these solutions?",
-      "question_fr": "Dans quelle mesure ces solutions sont-elles personnalisables?",
-      "answer": "While productized for efficiency, each solution is tailored to your specific workflows, branding, and integration needs within the scope.",
-      "answer_fr": "Bien que productisées pour l'efficacité, chaque solution est adaptée à vos workflows spécifiques, image de marque et besoins d'intégration dans le cadre du périmètre."
-    },
-    "faq5": {
-      "question": "What's the typical timeline?",
-      "question_fr": "Quel est le délai typique?",
-      "answer": "Prototype in 1-2 weeks, full implementation in 4-8 weeks depending on complexity. We start with a concrete prototype to de-risk the project.",
-      "answer_fr": "Prototype en 1-2 semaines, implémentation complète en 4-8 semaines selon la complexité. Nous commençons par un prototype concret pour dérisquer le projet."
-    },
-    "faq6": {
-      "question": "What do you need to get started?",
-      "question_fr": "De quoi avez-vous besoin pour commencer?",
-      "answer": "Access to sample data/documents, key team members for discovery, and clarity on your biggest pain points. We'll handle the rest.",
-      "answer_fr": "Accès à des données/documents d'exemple, membres clés de l'équipe pour la découverte, et clarté sur vos plus gros problèmes. Nous nous occupons du reste."
-    }
-  },
-  "contact": {
-    "title": "Start Your AI Automation Project",
-    "title_fr": "Démarrez Votre Projet d'Automatisation IA",
-    "subtitle": "Book a free consultation or send me your project details",
-    "subtitle_fr": "Réservez une consultation gratuite ou envoyez-moi les détails de votre projet"
   }
 }

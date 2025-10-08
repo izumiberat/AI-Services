@@ -22,7 +22,7 @@
       "subtitle": "Fixed-scope solutions with clear ROI and transparent pricing",
       "service1": {
         "title": "Automated Data Processing",
-        "price": "€5k - €25k",
+        "price": "€2k - €8k",
         "pitch": "I automate the manual and repetitive task of data extraction from your emails, PDFs, spreadsheets or forms.",
         "featuresTitle": "Features:",
         "features": [
@@ -40,7 +40,7 @@
       },
       "service2": {
         "title": "Intelligent Internal Knowledge Base",
-        "price": "€10k - €30k",
+        "price": "€2k - €15k",
         "pitch": "I build a chatbot that gives your team instant answers from your company documents.",
         "featuresTitle": "Features:",
         "features": [
@@ -58,7 +58,7 @@
       },
       "service3": {
         "title": "Custom Co-pilot for Customer Support",
-        "price": "€15k - €40k",
+        "price": "€2k - €22k",
         "pitch": "I build an AI assistant for your support team that drafts high-quality responses aligned with your brand voice.",
         "featuresTitle": "Features:",
         "features": [
@@ -160,7 +160,7 @@
       "subtitle": "Des solutions à périmètre fixe avec un ROI clair et une tarification transparente",
       "service1": {
         "title": "Traitement Automatisé des Données",
-        "price": "€5k - €25k",
+        "price": "€2k - €8k",
         "pitch": "J'automatise la tâche manuelle et répétitive d'extraction de données de vos emails, PDFs, feuilles de calcul ou formulaires.",
         "featuresTitle": "Fonctionnalités :",
         "features": [
@@ -178,7 +178,7 @@
       },
       "service2": {
         "title": "Base de Connaissance Interne Intelligente",
-        "price": "€10k - €30k",
+        "price": "€2k - €15k",
         "pitch": "Je construis un chatbot qui donne à votre équipe des réponses instantanées à partir de vos documents d'entreprise.",
         "featuresTitle": "Fonctionnalités :",
         "features": [
@@ -196,7 +196,7 @@
       },
       "service3": {
         "title": "Co-pilot Personnalisé pour le Support Client",
-        "price": "€15k - €40k",
+        "price": "€2k - €22k",
         "pitch": "Je construis un assistant IA pour votre équipe de support qui rédige des réponses de haute qualité alignées sur la voix de votre marque.",
         "featuresTitle": "Fonctionnalités :",
         "features": [

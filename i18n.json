@@ -5,7 +5,7 @@
       "description": "Practical AI automation solutions for French businesses. From strategy to code, we build and ship AI tools that automate your operations."
     },
     "nav": {
-      "logo": "IzumiTechFR",
+      "logo": "IzuTech",
       "services": "Services",
       "process": "Process",
       "faq": "FAQ",
@@ -133,7 +133,7 @@
       }
     },
     "footer": {
-      "copyright": "© 2025 IzumiTechFR. All rights reserved.",
+      "copyright": "© 2025 IzuTech. All rights reserved.",
       "privacy": "Data processing GDPR compliant. Your information is secure with us."
     }
   },
@@ -143,7 +143,7 @@
       "description": "Solutions pratiques d'automatisation IA pour les entreprises françaises. De la stratégie au code, nous construisons et déployons des outils IA qui automatisent vos opérations."
     },
     "nav": {
-      "logo": "IzumiTechFR",
+      "logo": "IzuTech",
       "services": "Services",
       "process": "Processus",
       "faq": "FAQ",
@@ -271,7 +271,7 @@
       }
     },
     "footer": {
-      "copyright": "© 2025 IzumiTechFR. Tous droits réservés.",
+      "copyright": "© 2025 IzuTech. Tous droits réservés.",
       "privacy": "Traitement des données conforme RGPD. Vos informations sont sécurisées avec nous."
     }
   }

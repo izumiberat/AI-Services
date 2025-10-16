@@ -287,37 +287,49 @@
             
             <div class="contact-grid">
                 <div class="contact-form">
-                    <form id="lead-form">
-                        <div class="form-group">
-                            <label for="name" data-i18n="contact.form.name">Name</label>
-                            <input type="text" id="name" name="name" required aria-required="true">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" data-i18n="contact.form.email">Email</label>
-                            <input type="email" id="email" name="email" required aria-required="true">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company" data-i18n="contact.form.company">Company</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" data-i18n="contact.form.message">Project details or questions</label>
-                            <textarea id="message" name="message" rows="4"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
-                    </form>
-                </div>
-                
-                <div class="contact-info">
-                    <h3 data-i18n="contact.schedule.title">Prefer to schedule a call?</h3>
-                    <p data-i18n="contact.schedule.text">Book a 30-minute consultation to discuss your specific needs and get a preliminary assessment.</p>
-                    <a href="#" class="btn btn-secondary" data-i18n="contact.schedule.button">Schedule a Call</a>
+                    <!-- Success Message (Initially Hidden) -->
+                    <div id="form-success" class="form-success-message" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3 data-i18n="contact.success.title">Message Sent Successfully!</h3>
+                        <p data-i18n="contact.success.message">Thank you for your inquiry. We'll be in touch within 24 hours to discuss your project.</p>
+                        <button onclick="resetForm()" class="btn btn-secondary" data-i18n="contact.success.button">Send Another Message</button>
+                    </div>
+
+                <!-- Contact Form -->
+                <form id="lead-form" action="https://formspree.io/f/mjkajzlq" method="POST">
+                    <div class="form-group">
+                        <label for="name" data-i18n="contact.form.name">Name</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                    </div>
                     
-                    <div class="contact-details">
+                    <div class="form-group">
+                        <label for="email" data-i18n="contact.form.email">Email</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company" data-i18n="contact.form.company">Company</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" data-i18n="contact.form.message">Project details or questions</label>
+                        <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h3 data-i18n="contact.schedule.title">Prefer to schedule a call?</h3>
+                <p data-i18n="contact.schedule.text">Book a 30-minute consultation to discuss your specific needs and get a preliminary assessment.</p>
+                <a href="#" class="btn btn-secondary" data-i18n="contact.schedule.button">Schedule a Call</a>
+                
+                <div class="contact-details">
                         <p><strong data-i18n="contact.schedule.details.email">Email:</strong> contact@izutech.fr</p>
                         <p data-i18n="contact.schedule.details.availability">Available for international clients and French SMBs</p>
                     </div>

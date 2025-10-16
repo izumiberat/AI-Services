@@ -864,46 +864,46 @@ h3 {
     border-top: 1px solid var(--light-border);
 }
 
-/* Enhanced Email Link with Icon */
+.contact-details p {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-details strong {
+    white-space: nowrap;
+    min-width: 60px; /* Ensures consistent alignment */
+}
+
+/* Email Link Styles */
 .email-link {
-    color: var(--primary-blue);
+    color: var(--light-text);
     text-decoration: none;
     transition: var(--transition);
     border-bottom: 1px solid transparent;
     padding: 2px 0;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     font-weight: 500;
+    vertical-align: baseline;
 }
 
 .email-link:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'%3E%3C/path%3E%3Cpolyline points='22,6 12,13 2,6'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center;
+    content: "✉️";
+    font-size: 0.9em;
     opacity: 0.7;
 }
 
 .email-link:hover {
-    color: var(--secondary-accent);
-    border-bottom-color: var(--secondary-accent);
-    transform: translateY(-1px);
-}
-
-.email-link:hover:before {
-    opacity: 1;
-}
-
-.contact-details .email-link {
-    color: var(--light-text);
-}
-
-.contact-details .email-link:hover {
     color: var(--primary-blue);
     border-bottom-color: var(--primary-blue);
+    transform: translateY(-1px);
 }
 /* ===== Footer ===== */
 .footer {
@@ -1036,6 +1036,16 @@ h3 {
     
     .process-steps {
         grid-template-columns: 1fr;
+    }
+
+    .contact-details p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .contact-details strong {
+        min-width: auto;
     }
 
     .email-link {

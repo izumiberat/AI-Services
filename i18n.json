@@ -15,11 +15,17 @@
       "title": "Strategic AI Solutions for French Tech & SMBs",
       "subtitle": "We design and deploy practical AI tools that automate your business operations, combining technical expertise with strategic vision.",
       "ctaPrimary": "Book a Free Consultation",
-      "ctaSecondary": "Discover Our Services"
+      "ctaSecondary": "Discover Our Services",
+      "stats": {
+        "timeSaved": "Reduction in manual tasks",
+        "weeks": "Weeks to implementation",
+        "startingPrice": "Starting price"
+      }
     },
     "services": {
       "title": "Productized AI Services",
       "subtitle": "Fixed-scope solutions with clear ROI and transparent pricing",
+      "inquire": "Inquire about this service",
       "service1": {
         "title": "Automated Data Processing",
         "price": "€2k - €8k",
@@ -153,11 +159,17 @@
       "title": "Solutions d'IA Stratégiques pour les Entreprises Françaises",
       "subtitle": "Nous concevons et déployons des outils d'IA pratiques qui automatisent vos opérations commerciales, en combinant expertise technique et vision stratégique.",
       "ctaPrimary": "Réserver une Consultation Gratuite",
-      "ctaSecondary": "Découvrir nos Services"
+      "ctaSecondary": "Découvrir nos Services",
+      "stats": {
+        "timeSaved": "Réduction des tâches manuelles",
+        "weeks": "Semaines jusqu'à l'implémentation",
+        "startingPrice": "Prix de départ"
+      }
     },
     "services": {
       "title": "Services d'IA Productisés",
       "subtitle": "Des solutions à périmètre fixe avec un ROI clair et une tarification transparente",
+      "inquire": "Renseignez-vous sur ce service",
       "service1": {
         "title": "Traitement Automatisé des Données",
         "price": "€2k - €8k",

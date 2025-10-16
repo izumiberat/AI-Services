@@ -138,7 +138,7 @@
             "text": "Book a 30-minute consultation to discuss your specific needs and get a preliminary assessment.",
             "button": "Schedule a Call",
             "details": {
-                "email": "Email: aidetechsenior@gmail.com",
+                "emailLabel": "Email:",
                 "availability": "Available for international clients and French SMBs"
             }
         }
@@ -287,7 +287,7 @@
             "text": "Réservez une consultation de 30 minutes pour discuter de vos besoins spécifiques et obtenir une évaluation préliminaire.",
             "button": "Planifier un Appel",
             "details": {
-                "email": "Email: aidetechsenior@gmail.com",
+                "emailLabel": "Email:",
                 "availability": "Disponible pour les clients internationaux et les PME françaises"
             }
         }

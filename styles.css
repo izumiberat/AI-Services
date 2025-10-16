@@ -942,11 +942,10 @@ h3 {
 }
 
 .footer-logo img {
-    height: 60px;
+    height: 80px;
     width: auto;
     opacity: 0.9;
     transition: var(--transition);
-    filter: brightness(0) invert(1);
 }
 
 .footer-logo:hover img {
@@ -1048,7 +1047,7 @@ h3 {
     }
     
     .footer-logo img {
-        height: 45px;
+        height: 65px;
     }
     
     .footer-content {

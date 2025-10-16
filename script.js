@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Form submission with basic validation
+    // Form submission with Formspree
     const contactForm = document.getElementById('lead-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
@@ -173,19 +173,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Basic validation
             const name = document.getElementById('name');
             const email = document.getElementById('email');
+            const message = document.getElementById('message');
             let isValid = true;
 
             // Reset previous errors
             contactForm.querySelectorAll('.error-message').forEach(msg => msg.remove());
             contactForm.querySelectorAll('.error').forEach(field => field.classList.remove('error'));
 
-            // Validate name
+            // Validate required fields
             if (!name.value.trim()) {
                 showError(name, 'Name is required');
                 isValid = false;
             }
 
-            // Validate email
             if (!email.value.trim()) {
                 showError(email, 'Email is required');
                 isValid = false;
@@ -194,38 +194,76 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
             }
 
+            if (!message.value.trim()) {
+                showError(message, 'Message is required');
+                isValid = false;
+            }
+
             if (isValid) {
                 // Show loading state
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'Sending...';
+                const form = contactForm;
+                form.classList.add('form-loading');
                 submitBtn.disabled = true;
 
                 try {
-                    // Simulate form submission
-                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    const formData = new FormData(form);
                     
-                    // In a real implementation, you would send data to your server here
-                    console.log('Form data:', {
-                        name: name.value,
-                        email: email.value,
-                        company: document.getElementById('company').value,
-                        message: document.getElementById('message').value
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
                     });
-                    
-                    alert('Thank you for your message! We will get back to you soon.');
-                    contactForm.reset();
+
+                    if (response.ok) {
+                        // Show success message
+                        showSuccessMessage();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
                     
                 } catch (error) {
                     console.error('Form submission error:', error);
-                    alert('Sorry, there was an error sending your message. Please try again.');
+                    alert('Sorry, there was an error sending your message. Please try again or email us directly.');
                 } finally {
-                    submitBtn.textContent = originalText;
+                    form.classList.remove('form-loading');
                     submitBtn.disabled = false;
                 }
             }
         });
     }
+
+    function showSuccessMessage() {
+        const form = document.getElementById('lead-form');
+        const successMessage = document.getElementById('form-success');
+        
+        // Hide form, show success message
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+        
+        // Smooth scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function resetForm() {
+        const form = document.getElementById('lead-form');
+        const successMessage = document.getElementById('form-success');
+        
+        // Show form, hide success message
+        form.style.display = 'block';
+        successMessage.style.display = 'none';
+        
+        // Reset form fields
+        form.reset();
+        
+        // Scroll to form
+        form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Make resetForm globally available for the success message button
+    window.resetForm = resetForm;
 
     function showError(field, message) {
         field.classList.add('error');

@@ -119,24 +119,29 @@
       ]
     },
     "contact": {
-      "title": "Start Your AI Automation Project",
-      "subtitle": "Book a free consultation or send us your project details",
-      "form": {
-        "name": "Name",
-        "email": "Email",
-        "company": "Company",
-        "message": "Project details or questions",
-        "submit": "Send Message"
-      },
-      "schedule": {
-        "title": "Prefer to schedule a call?",
-        "text": "Book a 30-minute consultation to discuss your specific needs and get a preliminary assessment.",
-        "button": "Schedule a Call",
-        "details": {
-          "email": "Email: contact@izutech.fr",
-          "availability": "Available for international clients and French SMBs"
+        "title": "Start Your AI Automation Project",
+        "subtitle": "Book a free consultation or send us your project details",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "company": "Company",
+            "message": "Project details or questions",
+            "submit": "Send Message"
+        },
+        "success": {
+            "title": "Message Sent Successfully!",
+            "message": "Thank you for your inquiry. We'll be in touch within 24 hours to discuss your project.",
+            "button": "Send Another Message"
+        },
+        "schedule": {
+            "title": "Prefer to schedule a call?",
+            "text": "Book a 30-minute consultation to discuss your specific needs and get a preliminary assessment.",
+            "button": "Schedule a Call",
+            "details": {
+                "email": "Email: aidetechsenior@gmail.com",
+                "availability": "Available for international clients and French SMBs"
+            }
         }
-      }
     },
     "footer": {
       "copyright": "© 2025 IzuTech. All rights reserved.",
@@ -263,24 +268,29 @@
       ]
     },
     "contact": {
-      "title": "Démarrez Votre Projet d'Automatisation IA",
-      "subtitle": "Réservez une consultation gratuite ou envoyez-nous les détails de votre projet",
-      "form": {
-        "name": "Nom",
-        "email": "Email",
-        "company": "Entreprise",
-        "message": "Détails du projet ou questions",
-        "submit": "Envoyer le Message"
-      },
-      "schedule": {
-        "title": "Préférez-vous planifier un appel ?",
-        "text": "Réservez une consultation de 30 minutes pour discuter de vos besoins spécifiques et obtenir une évaluation préliminaire.",
-        "button": "Planifier un Appel",
-        "details": {
-          "email": "Email: contact@izutech.fr",
-          "availability": "Disponible pour les clients internationaux et les PME françaises"
+        "title": "Démarrez Votre Projet d'Automatisation IA",
+        "subtitle": "Réservez une consultation gratuite ou envoyez-nous les détails de votre projet",
+        "form": {
+            "name": "Nom",
+            "email": "Email",
+            "company": "Entreprise",
+            "message": "Détails du projet ou questions",
+            "submit": "Envoyer le Message"
+        },
+        "success": {
+            "title": "Message Envoyé avec Succès !",
+            "message": "Merci pour votre demande. Nous vous recontacterons dans les 24 heures pour discuter de votre projet.",
+            "button": "Envoyer un Autre Message"
+        },
+        "schedule": {
+            "title": "Préférez-vous planifier un appel ?",
+            "text": "Réservez une consultation de 30 minutes pour discuter de vos besoins spécifiques et obtenir une évaluation préliminaire.",
+            "button": "Planifier un Appel",
+            "details": {
+                "email": "Email: aidetechsenior@gmail.com",
+                "availability": "Disponible pour les clients internationaux et les PME françaises"
+            }
         }
-      }
     },
     "footer": {
       "copyright": "© 2025 IzuTech. Tous droits réservés.",

@@ -3,60 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IzuTech - Practical AI automation solutions for French businesses. From strategy to code, we build and ship AI tools that automate your operations with clear ROI.">
+    <meta name="keywords" content="AI automation, French tech, SMB AI solutions, business automation, AI implementation">
+    <meta name="author" content="IzuTech">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Strategic AI Solutions | For French Tech & SMBs">
+    <meta property="og:description" content="Practical AI automation solutions for French businesses. From strategy to code, we build and ship AI tools that automate your operations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://izutech.com">
+    <meta property="og:image" content="https://izutech.com/photo/IzuTech-logo.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Strategic AI Solutions | For French Tech & SMBs">
+    <meta name="twitter:description" content="Practical AI automation solutions for French businesses.">
+    <meta name="twitter:image" content="https://izutech.com/photo/IzuTech-logo.png">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="photo/IzuTech-logo.png">
     <link rel="apple-touch-icon" href="photo/IzuTech-logo.png">
     <link rel="icon" type="image/x-icon" href="photo/IzuTech-logo.ico">
-    <title>Strategic AI Solutions | For French Tech & SMBs</title>
-    <meta name="description" content="Practical AI automation solutions for French businesses. From strategy to code, we build and ship AI tools that automate your operations.">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <title>Strategic AI Solutions | For French Tech & SMBs | IzuTech</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"></noscript>
+    
+    <link rel="stylesheet" href="stylebackup.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "IzuTech",
+      "url": "https://izutech.fr",
+      "logo": "https://izutech.fr/photo/IzuTech-logo.png",
+      "description": "Practical AI automation solutions for French businesses",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@izutech.fr",
+        "contactType": "customer service"
+      }
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <img src="photo/IzuTech-logo.png" alt="IzuTech" style="height: 40px;">
+                <img src="photo/IzuTech-logo.png" alt="IzuTech - AI Solutions for French Businesses" width="160" height="40">
             </a>            
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+            <ul class="nav-menu" role="menubar">
+                <li class="nav-item" role="none">
+                    <a href="#services" class="nav-link" role="menuitem" data-i18n="nav.services">Services</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#process" class="nav-link" data-i18n="nav.process">Process</a>
+                <li class="nav-item" role="none">
+                    <a href="#process" class="nav-link" role="menuitem" data-i18n="nav.process">Process</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
+                <li class="nav-item" role="none">
+                    <a href="#faq" class="nav-link" role="menuitem" data-i18n="nav.faq">FAQ</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <li class="nav-item" role="none">
+                    <a href="#contact" class="nav-link" role="menuitem" data-i18n="nav.contact">Contact</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" role="none">
                     <select id="language-selector" class="language-selector" aria-label="Select language">
                         <option value="en">English</option>
                         <option value="fr">Français</option>
                     </select>
                 </li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="main-content">
         <div class="container">
-            <h1 class="hero-title" data-i18n="hero.title">Strategic AI Solutions for French Tech & SMBs</h1>
-            <p class="hero-subtitle" data-i18n="hero.subtitle">We design and deploy practical AI tools that automate your business operations, combining technical expertise with strategic vision.</p>
-            <div class="cta-container">
-                <a href="#contact" class="btn btn-primary" data-i18n="hero.ctaPrimary">Book a Free Consultation</a>
-                <a href="#services" class="btn btn-secondary" data-i18n="hero.ctaSecondary">Discover Our Services</a>
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="hero.title">Strategic AI Solutions for French Tech & SMBs</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">We design and deploy practical AI tools that automate your business operations, combining technical expertise with strategic vision.</p>
+                <div class="cta-container">
+                    <a href="#contact" class="btn btn-primary" data-i18n="hero.ctaPrimary">Book a Free Consultation</a>
+                    <a href="#services" class="btn btn-secondary" data-i18n="hero.ctaSecondary">Discover Our Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">80%</span>
+                        <span class="stat-label" data-i18n="hero.stats.timeSaved">Reduction in manual tasks</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4-8</span>
+                        <span class="stat-label" data-i18n="hero.stats.weeks">Weeks to implementation</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">€2k+</span>
+                        <span class="stat-label" data-i18n="hero.stats.startingPrice">Starting price</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -64,12 +123,14 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title" data-i18n="services.title">Productized AI Services</h2>
-            <p class="section-subtitle" data-i18n="services.subtitle">Fixed-scope solutions with clear ROI and transparent pricing</p>
+            <header class="section-header">
+                <h2 class="section-title" data-i18n="services.title">Productized AI Services</h2>
+                <p class="section-subtitle" data-i18n="services.subtitle">Fixed-scope solutions with clear ROI and transparent pricing</p>
+            </header>
             
             <div class="services-grid">
                 <!-- Service 1 -->
-                <div class="service-card">
+                <article class="service-card">
                     <div class="service-icon">⚡</div>
                     <h3 data-i18n="services.service1.title">Automated Data Processing</h3>
                     <p class="service-price" data-i18n="services.service1.price">€2k - €8k</p>
@@ -92,10 +153,12 @@
                         <strong data-i18n="services.service1.useCase">Use case:</strong>
                         <p data-i18n="services.service1.useCaseText">Automation of daily PDF invoice processing in QuickBooks.</p>
                     </div>
-                </div>
+                    
+                    <a href="#contact" class="btn btn-card" data-i18n="services.inquire">Inquire about this service</a>
+                </article>
 
                 <!-- Service 2 -->
-                <div class="service-card">
+                <article class="service-card">
                     <div class="service-icon">🧠</div>
                     <h3 data-i18n="services.service2.title">Intelligent Internal Knowledge Base</h3>
                     <p class="service-price" data-i18n="services.service2.price">€2k - €15k</p>
@@ -118,10 +181,12 @@
                         <strong data-i18n="services.service2.useCase">Use case:</strong>
                         <p data-i18n="services.service2.useCaseText">A research center for company procedures and policies.</p>
                     </div>
-                </div>
+                    
+                    <a href="#contact" class="btn btn-card" data-i18n="services.inquire">Inquire about this service</a>
+                </article>
 
                 <!-- Service 3 -->
-                <div class="service-card">
+                <article class="service-card">
                     <div class="service-icon">🤖</div>
                     <h3 data-i18n="services.service3.title">Custom Co-pilot for Customer Support</h3>
                     <p class="service-price" data-i18n="services.service3.price">€2k - €22k</p>
@@ -144,7 +209,9 @@
                         <strong data-i18n="services.service3.useCase">Use case:</strong>
                         <p data-i18n="services.service3.useCaseText">An AI co-pilot that suggests responses in Zendesk.</p>
                     </div>
-                </div>
+                    
+                    <a href="#contact" class="btn btn-card" data-i18n="services.inquire">Inquire about this service</a>
+                </article>
             </div>
         </div>
     </section>
@@ -152,8 +219,10 @@
     <!-- Process Section -->
     <section id="process" class="process">
         <div class="container">
-            <h2 class="section-title" data-i18n="process.title">Our Strategic Process</h2>
-            <p class="section-subtitle" data-i18n="process.subtitle">A focused approach that de-risks your AI investment</p>
+            <header class="section-header">
+                <h2 class="section-title" data-i18n="process.title">Our Strategic Process</h2>
+                <p class="section-subtitle" data-i18n="process.subtitle">A focused approach that de-risks your AI investment</p>
+            </header>
             
             <div class="process-steps">
                 <div class="step">
@@ -180,28 +249,30 @@
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+            <header class="section-header">
+                <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+            </header>
             
             <div class="faq-grid">
-                <div class="faq-item">
+                <article class="faq-item">
                     <h3 data-i18n="faq.questions.0.question">How do you ensure data security and GDPR compliance?</h3>
                     <p data-i18n="faq.questions.0.answer">All solutions are designed with GDPR principles from the start. We can process data locally, use on-premise deployment or select compliant cloud providers.</p>
-                </div>
+                </article>
                 
-                <div class="faq-item">
+                <article class="faq-item">
                     <h3 data-i18n="faq.questions.1.question">Which systems can you integrate with?</h3>
                     <p data-i18n="faq.questions.1.answer">Most popular CRMs (Salesforce, HubSpot), databases, support platforms (Zendesk, Intercom) and document systems (Google Workspace, Confluence, SharePoint).</p>
-                </div>
+                </article>
                 
-                <div class="faq-item">
+                <article class="faq-item">
                     <h3 data-i18n="faq.questions.2.question">What support do you provide after launch?</h3>
                     <p data-i18n="faq.questions.2.answer">30 days of support included, with optional ongoing maintenance packages. Complete documentation and training for your team.</p>
-                </div>
+                </article>
                 
-                <div class="faq-item">
+                <article class="faq-item">
                     <h3 data-i18n="faq.questions.3.question">What is the typical timeline?</h3>
                     <p data-i18n="faq.questions.3.answer">Prototype in 1-2 weeks, complete implementation in 4-8 weeks depending on complexity. We start with a concrete prototype to de-risk the project.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -209,20 +280,22 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title" data-i18n="contact.title">Start Your AI Automation Project</h2>
-            <p class="section-subtitle" data-i18n="contact.subtitle">Book a free consultation or send us your project details</p>
+            <header class="section-header">
+                <h2 class="section-title" data-i18n="contact.title">Start Your AI Automation Project</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Book a free consultation or send us your project details</p>
+            </header>
             
             <div class="contact-grid">
                 <div class="contact-form">
                     <form id="lead-form">
                         <div class="form-group">
                             <label for="name" data-i18n="contact.form.name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" required aria-required="true">
                         </div>
                         
                         <div class="form-group">
                             <label for="email" data-i18n="contact.form.email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required aria-required="true">
                         </div>
                         
                         <div class="form-group">
@@ -245,7 +318,7 @@
                     <a href="#" class="btn btn-secondary" data-i18n="contact.schedule.button">Schedule a Call</a>
                     
                     <div class="contact-details">
-                        <p data-i18n="contact.schedule.details.email">Email: aidetechsenior@gmail.com</p>
+                        <p><strong data-i18n="contact.schedule.details.email">Email:</strong> contact@izutech.fr</p>
                         <p data-i18n="contact.schedule.details.availability">Available for international clients and French SMBs</p>
                     </div>
                 </div>
@@ -254,10 +327,15 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p data-i18n="footer.copyright">© 2025 IzuTech. All rights reserved.</p>
-            <p data-i18n="footer.privacy">Data processing GDPR compliant. Your information is secure with us.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="photo/IzuTech-logo.png" alt="IzuTech" width="120" height="30">
+                </div>
+                <p data-i18n="footer.copyright">© 2025 IzuTech. All rights reserved.</p>
+                <p data-i18n="footer.privacy">Data processing GDPR compliant. Your information is secure with us.</p>
+            </div>
         </div>
     </footer>
 

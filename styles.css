@@ -149,12 +149,18 @@ h3 {
     height: 80px;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 10px 0; 
+}
+
 .nav-logo img {
-    height: 40px;
+    height: 60px; 
     width: auto;
     transition: var(--transition);
 }
-
 .nav-menu {
     display: flex;
     list-style: none;
@@ -933,6 +939,14 @@ h3 {
     
     .hamburger {
         display: flex;
+    }
+    
+    .nav-logo img {
+        height: 45px;
+    }
+    
+    .nav-container {
+        height: 80px; 
     }
     
     .nav-menu {

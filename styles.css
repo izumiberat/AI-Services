@@ -592,6 +592,65 @@ h3 {
     box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
 }
 
+/* Form Success Message */
+.form-success-message {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--light-surface);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--light-border);
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+    animation: successPop 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes successPop {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.form-success-message h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.form-success-message p {
+    color: var(--light-text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Form Loading State */
+.btn-loading {
+    display: none;
+}
+
+.form-loading .btn-text {
+    display: none;
+}
+
+.form-loading .btn-loading {
+    display: inline-block;
+}
+
+.form-loading .btn-primary {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
 .contact-info {
     padding: 1rem 0;
     display: flex;

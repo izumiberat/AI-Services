@@ -40,13 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.activeElement?.blur();
     }
     
-    // Close mobile menu when clicking on a link OR language selector
-    document.querySelectorAll('.nav-link, .language-selector').forEach(element => {
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(element => {
         element.addEventListener('click', () => {
-            // For language selector, we don't close immediately - wait for change event
-            if (!element.classList.contains('language-selector')) {
-                closeMobileMenu();
-            }
+            closeMobileMenu();
         });
     });
 
@@ -170,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updateContent(loadedTranslations);
             
             // Close mobile menu after language change on mobile
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 768 && navMenu?.classList.contains('active')) {
                 closeMobileMenu();
             }
         });
@@ -193,12 +190,12 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.querySelectorAll('.error').forEach(field => field.classList.remove('error'));
 
             // Validate required fields
-            if (!name.value.trim()) {
+            if (!name?.value.trim()) {
                 showError(name, 'Name is required');
                 isValid = false;
             }
 
-            if (!email.value.trim()) {
+            if (!email?.value.trim()) {
                 showError(email, 'Email is required');
                 isValid = false;
             } else if (!isValidEmail(email.value)) {
@@ -206,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
             }
 
-            if (!message.value.trim()) {
+            if (!message?.value.trim()) {
                 showError(message, 'Message is required');
                 isValid = false;
             }
@@ -251,33 +248,39 @@ document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('lead-form');
         const successMessage = document.getElementById('form-success');
         
-        // Hide form, show success message
-        form.style.display = 'none';
-        successMessage.style.display = 'block';
-        
-        // Smooth scroll to success message
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (form && successMessage) {
+            // Hide form, show success message
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+            
+            // Smooth scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
     }
 
     function resetForm() {
         const form = document.getElementById('lead-form');
         const successMessage = document.getElementById('form-success');
         
-        // Show form, hide success message
-        form.style.display = 'block';
-        successMessage.style.display = 'none';
-        
-        // Reset form fields
-        form.reset();
-        
-        // Scroll to form
-        form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (form && successMessage) {
+            // Show form, hide success message
+            form.style.display = 'block';
+            successMessage.style.display = 'none';
+            
+            // Reset form fields
+            form.reset();
+            
+            // Scroll to form
+            form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
     }
 
     // Make resetForm globally available for the success message button
     window.resetForm = resetForm;
 
     function showError(field, message) {
+        if (!field) return;
+        
         field.classList.add('error');
         const errorElement = document.createElement('div');
         errorElement.className = 'error-message';

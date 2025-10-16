@@ -17,11 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', (e) => {
         if (navMenu?.classList.contains('active') && 
             !e.target.closest('.nav-menu') && 
-            !e.target.closest('.hamburger')) {
+            !e.target.closest('.hamburger') &&
+            !e.target.closest('.language-selector')) {
             closeMobileMenu();
         }
     });
-
+    
     // Close mobile menu on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
@@ -29,17 +30,23 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger?.focus();
         }
     });
-
+    
     function closeMobileMenu() {
         hamburger?.classList.remove('active');
         navMenu?.classList.remove('active');
         hamburger?.setAttribute('aria-expanded', 'false');
+        
+        // Remove any focus from navigation elements
+        document.activeElement?.blur();
     }
-
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            closeMobileMenu();
+    
+    // Close mobile menu when clicking on a link OR language selector
+    document.querySelectorAll('.nav-link, .language-selector').forEach(element => {
+        element.addEventListener('click', () => {
+            // For language selector, we don't close immediately - wait for change event
+            if (!element.classList.contains('language-selector')) {
+                closeMobileMenu();
+            }
         });
     });
 
@@ -161,6 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const loadedTranslations = await loadTranslations(currentLanguage);
             updateContent(loadedTranslations);
+            
+            // Close mobile menu after language change on mobile
+            if (window.innerWidth <= 768) {
+                closeMobileMenu();
+            }
         });
     }
 

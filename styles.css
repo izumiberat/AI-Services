@@ -450,6 +450,200 @@ h3 {
     margin-top: auto;
     border-left: 4px solid var(--primary-blue);
 }
+/* ===== Service Icons ===== */
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.05) rotate(5deg);
+}
+
+/* Data Processing Icon */
+.icon-data {
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(99, 91, 255, 0.1) 100%);
+    border: 1.5px solid rgba(0, 102, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.08);
+}
+
+.icon-data:before {
+    content: "";
+    width: 32px;
+    height: 40px;
+    background: 
+        linear-gradient(45deg, transparent 45%, var(--primary-blue) 45%, var(--primary-blue) 55%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, var(--primary-blue) 45%, var(--primary-blue) 55%, transparent 55%);
+    background-size: 10px 10px;
+    background-position: 0 0, 0 10px;
+    background-repeat: no-repeat;
+    border: 2px solid var(--primary-blue);
+    border-radius: 4px;
+    position: relative;
+}
+
+.icon-data:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--secondary-accent);
+    border-radius: 2px;
+    top: 12px;
+    right: 12px;
+    animation: pulse 2s infinite;
+}
+
+/* Brain/Knowledge Icon */
+.icon-brain {
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.1) 0%, rgba(99, 91, 255, 0.1) 100%);
+    border: 1.5px solid rgba(0, 212, 170, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 212, 170, 0.08);
+}
+
+.icon-brain:before {
+    content: "";
+    width: 36px;
+    height: 32px;
+    background: 
+        radial-gradient(circle at 8px 12px, var(--primary-accent) 4px, transparent 4px),
+        radial-gradient(circle at 18px 8px, var(--primary-accent) 4px, transparent 4px),
+        radial-gradient(circle at 28px 12px, var(--primary-accent) 4px, transparent 4px);
+    border: 2px solid var(--primary-accent);
+    border-top: none;
+    border-radius: 0 0 18px 18px;
+    position: relative;
+}
+
+.icon-brain:after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--primary-accent);
+    border-radius: 50%;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Support/Co-pilot Icon */
+.icon-support {
+    background: linear-gradient(135deg, rgba(99, 91, 255, 0.1) 0%, rgba(0, 102, 255, 0.1) 100%);
+    border: 1.5px solid rgba(99, 91, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(99, 91, 255, 0.08);
+}
+
+.icon-support:before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--secondary-accent);
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 8s linear infinite;
+}
+
+.icon-support:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--secondary-accent);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        0 0 0 4px rgba(99, 91, 255, 0.2),
+        0 0 0 8px rgba(99, 91, 255, 0.1);
+}
+
+/* Icon Animations */
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(0.9); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0px); }
+    50% { transform: translateX(-50%) translateY(-4px); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments for icons */
+@media (max-width: 768px) {
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 1.5rem;
+    }
+    
+    .icon-data:before {
+        width: 28px;
+        height: 36px;
+        background-size: 8px 8px;
+    }
+    
+    .icon-brain:before {
+        width: 32px;
+        height: 28px;
+    }
+    
+    .icon-support:before {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Enhanced service card hover effects with icons */
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: var(--transition-slow);
+}
+
+.service-card:hover:before {
+    left: 100%;
+}
+
+/* Icon color transitions on hover */
+.service-card:hover .icon-data {
+    border-color: rgba(0, 102, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 102, 255, 0.15);
+}
+
+.service-card:hover .icon-brain {
+    border-color: rgba(0, 212, 170, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 212, 170, 0.15);
+}
+
+.service-card:hover .icon-support {
+    border-color: rgba(99, 91, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(99, 91, 255, 0.15);
+}
 
 /* ===== Process Section ===== */
 .process {

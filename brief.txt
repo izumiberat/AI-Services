@@ -1,3 +1,25 @@
-AxiomeTech is a bilingual AI solutions website serving French Tech companies and SMBs. The site provides strategic AI automation services with clear ROI and fixed-scope pricing. It supports both English and French languages with automatic browser language detection and manual language switching. The implementation uses vanilla HTML/CSS/JS with an i18n.json file for all text content, ensuring accessibility, responsiveness, and SEO optimization. No external dependencies required.
+IzuTech is a modern, professional AI solutions website serving French Tech companies and SMBs. The site provides strategic AI automation services with clear ROI and fixed-scope pricing, featuring a clean, tech-oriented design that reflects innovation and trust.
 
-Keywords: AI automation, data processing, custom AI solutions, GPT-4, Claude 3, business automation, AI consultant, RAG implementation, support co-pilot, knowledge base AI
+Key Features:
+- Bilingual support (English/French) with automatic browser language detection and manual switching
+- Modern, mobile-first responsive design optimized for conversion
+- Professional tech company aesthetic with strategic visual hierarchy
+- Accessibility-focused implementation (WCAG guidelines, semantic HTML, ARIA roles)
+- SEO-optimized with structured data, meta tags, and Open Graph support
+- High performance with optimized Core Web Vitals
+- Interactive elements: mobile menu, form validation, smooth scrolling
+- Productized service cards with clear pricing and ROI metrics
+
+Technical Implementation:
+- Vanilla HTML5, CSS3, and JavaScript (no external dependencies)
+- CSS custom properties for consistent theming
+- i18n.json file for all translatable content
+- Fast-loading, lightweight architecture compatible with GitHub Pages
+- Modern CSS features: Grid, Flexbox, CSS variables, backdrop filters
+
+Target Services:
+- Automated Data Processing (€2k-€8k)
+- Intelligent Internal Knowledge Base (€2k-€15k) 
+- Custom Co-pilot for Customer Support (€2k-€22k)
+
+Keywords: AI automation, data processing, custom AI solutions, GPT-4, Claude 3, business automation, AI consultant, RAG implementation, support co-pilot, knowledge base AI, French tech, SMB AI solutions, process automation

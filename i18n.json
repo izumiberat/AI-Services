@@ -201,34 +201,30 @@
       },
       "service_tech": {
         "tech_stack": "Tech Stack",
-        "key_features": "Key Technical Features",
-        "architecture": "Implementation Process",
-        "use_case": "Real-World Use Case",
+        "architecture": "Implementation Process", 
         "portfolio": "Portfolio Project",
         "view_demo": "View Demo",
         "service1": {
           "tech_stack": "Python, OpenAI GPT-4, Streamlit, pdfplumber, pandas",
           "architecture": [
             "Document upload and text extraction",
-            "AI-powered data parsing and structuring",
+            "AI-powered data parsing and structuring", 
             "Validation and human review interface",
             "Export to target system (CRM, database, spreadsheet)"
           ],
           "portfolio_name": "PDF Invoice-to-Spreadsheet Automator",
-          "portfolio_stack": "Python, Streamlit, OpenAI GPT-4, pdfplumber",
-          "portfolio_steps": "Set up environment, create core app with Streamlit, integrate PDF text extraction with pdfplumber, use GPT-4 for data parsing, export to CSV."
+          "portfolio_stack": "Python, Streamlit, OpenAI GPT-4, pdfplumber"
         },
         "service2": {
           "tech_stack": "Python, OpenAI Embeddings, Pinecone, LangChain, Streamlit",
           "architecture": [
             "Multi-format document processing and chunking",
             "Vector embedding generation and storage",
-            "Semantic search and retrieval system",
+            "Semantic search and retrieval system", 
             "RAG-powered response generation"
           ],
           "portfolio_name": "Company Policy Chatbot",
-          "portfolio_stack": "Python, Streamlit, OpenAI, Pinecone, LangChain",
-          "portfolio_steps": "Process uploaded documents, create vector embeddings, store in Pinecone, implement RAG with LangChain, build query interface."
+          "portfolio_stack": "Python, Streamlit, OpenAI, Pinecone, LangChain"
         },
         "service3": {
           "tech_stack": "Python, OpenAI GPT-4, Support Platform APIs, Custom Integration Layer",
@@ -238,15 +234,13 @@
             "Brand-aligned response generation",
             "Integration with support platform (Zendesk/Intercom)"
           ],
-          "portfolio_name": "Support Email Draft Assistant",
-          "portfolio_stack": "Python, OpenAI GPT-4, Knowledge Base Integration",
-          "portfolio_steps": "Extend knowledge base system, implement context-aware response drafting, add support platform integration, create response review interface."
+          "portfolio_name": "Support Email Draft Assistant", 
+          "portfolio_stack": "Python, OpenAI GPT-4, Knowledge Base Integration"
         }
       },
       "closing": {
         "title": "Ready to build your custom AI solution?",
-        "cta": "Book a Technical Consultation",
-        "contact_link": "Or use our contact form"
+        "cta": "Book a Technical Consultation"
       }
     }
   },
@@ -452,10 +446,8 @@
       },
       "service_tech": {
         "tech_stack": "Pile Technologique",
-        "key_features": "Fonctionnalités Techniques Clés",
         "architecture": "Processus d'Implémentation",
-        "use_case": "Cas d'Usage Réel",
-        "portfolio": "Projet Portfolio",
+        "portfolio": "Projet Portfolio", 
         "view_demo": "Voir la démo",
         "service1": {
           "tech_stack": "Python, OpenAI GPT-4, Streamlit, pdfplumber, pandas",
@@ -466,11 +458,10 @@
             "Export vers le système cible (CRM, base de données, tableur)"
           ],
           "portfolio_name": "Automate PDF Facture-vers-Tableur",
-          "portfolio_stack": "Python, Streamlit, OpenAI GPT-4, pdfplumber",
-          "portfolio_steps": "Configuration de l'environnement, création de l'application avec Streamlit, intégration de l'extraction PDF avec pdfplumber, utilisation de GPT-4 pour l'analyse des données, export en CSV."
+          "portfolio_stack": "Python, Streamlit, OpenAI GPT-4, pdfplumber"
         },
         "service2": {
-          "tech_stack": "Python, OpenAI Embeddings, Pinecone, LangChain, Streamlit",
+          "tech_stack": "Python, OpenAI Embeddings, Pinecone, LangChain, Streamlit", 
           "architecture": [
             "Traitement et segmentation de documents multi-formats",
             "Génération et stockage d'embeddings vectoriels",
@@ -478,26 +469,23 @@
             "Génération de réponses alimentée par RAG"
           ],
           "portfolio_name": "Chatbot de Politiques d'Entreprise",
-          "portfolio_stack": "Python, Streamlit, OpenAI, Pinecone, LangChain",
-          "portfolio_steps": "Traitement des documents téléchargés, création d'embeddings vectoriels, stockage dans Pinecone, implémentation RAG avec LangChain, construction de l'interface de requêtes."
+          "portfolio_stack": "Python, Streamlit, OpenAI, Pinecone, LangChain"
         },
         "service3": {
           "tech_stack": "Python, OpenAI GPT-4, APIs des plateformes de support, Couche d'intégration personnalisée",
           "architecture": [
-            "Analyse du contexte des tickets et classification de l'intention",
+            "Analyse du contexte des tickets et classification de l'intention", 
             "Récupération d'informations pertinentes depuis la base de connaissances",
             "Génération de réponses alignées avec la marque",
             "Intégration avec la plateforme de support (Zendesk/Intercom)"
           ],
           "portfolio_name": "Assistant de Rédaction d'Emails de Support",
-          "portfolio_stack": "Python, OpenAI GPT-4, Intégration Base de Connaissance",
-          "portfolio_steps": "Extension du système de base de connaissances, implémentation de la rédaction contextuelle de réponses, ajout de l'intégration plateforme de support, création de l'interface de revue des réponses."
+          "portfolio_stack": "Python, OpenAI GPT-4, Intégration Base de Connaissance"
         }
       },
       "closing": {
         "title": "Prêt à créer votre solution IA personnalisée ?",
-        "cta": "Planifier une consultation technique",
-        "contact_link": "Ou utilisez notre formulaire de contact"
+        "cta": "Planifier une consultation technique"
       }
     }
   }

@@ -1269,6 +1269,21 @@ h3 {
         margin-bottom: 0;
     }
     
+    .contact-option-card .btn-secondary {
+        display: inline-flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        background: transparent;
+        color: var(--primary-blue);
+        border: 2px solid var(--primary-blue);
+    }
+
+    .contact-option-card .btn-secondary:hover {
+        background: var(--primary-blue);
+        color: white;
+    }
+
+    
     /* Form & Trust Container */
     .contact-form-and-trust {
         display: none;

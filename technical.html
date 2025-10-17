@@ -110,7 +110,7 @@
                         <h4 data-i18n="technical.service_tech.portfolio">Portfolio Project</h4>
                         <h5 data-i18n="technical.service_tech.service1.portfolio_name">PDF Invoice-to-Spreadsheet Automator</h5>
                         <div class="portfolio-stack" data-i18n="technical.service_tech.service1.portfolio_stack">Python, Streamlit, OpenAI GPT-4, pdfplumber</div>
-                        <a href="#contact" class="btn btn-card" data-i18n="technical.service_tech.view_demo">View Demo</a>
+                        <button class="btn btn-card tech-details-btn" onclick="openTechModal()" data-i18n="technical.details.show_details">Technical Details</button>
                     </div>
                 </article>
 
@@ -195,6 +195,106 @@
             </div>
         </div>
     </footer>
+
+    <!-- Technical Details Modal -->
+    <div class="modal-overlay" id="techModal">
+        <div class="tech-modal">
+            <div class="modal-header">
+                <button class="close-modal" id="closeModal">&times;</button>
+                <h3 data-i18n="services.service1.title">Automated Data Processing</h3>
+                <p class="modal-subtitle" data-i18n="technical.details.service1.executive_summary.title">Project Overview: Intelligent Invoice Processing</p>
+            </div>
+            
+            <div class="modal-content">
+                <!-- Executive Summary Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.service1.executive_summary.problem">The Business Challenge</h4>
+                    <p data-i18n="technical.details.service1.executive_summary.problem_text">Manual invoice processing costs businesses 5-15 minutes per invoice and introduces costly human errors in critical financial data.</p>
+                    
+                    <h4 data-i18n="technical.details.service1.executive_summary.solution">Our AI Solution</h4>
+                    <p data-i18n="technical.details.service1.executive_summary.solution_text">An intelligent system that automatically extracts key business information from PDF invoices and converts it into structured, actionable data.</p>
+                    
+                    <h4 data-i18n="technical.details.service1.executive_summary.benefits">Key Results</h4>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <h5>🚀 Efficiency</h5>
+                            <p data-i18n="technical.details.service1.executive_summary.benefit1">90% reduction in processing time</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>🎯 Accuracy</h5>
+                            <p data-i18n="technical.details.service1.executive_summary.benefit2">99% accuracy in data extraction</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>🔌 Integration</h5>
+                            <p data-i18n="technical.details.service1.executive_summary.benefit3">Direct export to accounting systems</p>
+                        </div>
+                    </div>
+                </section>
+    
+                <!-- Technical Architecture Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.service1.technical_architecture.title">Technical Architecture</h4>
+                    
+                    <h5 data-i18n="technical.details.service1.technical_architecture.stack">Technology Stack</h5>
+                    <div class="tech-stack-grid">
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service1.technical_architecture.frontend">Frontend</strong>
+                            <span>Streamlit</span>
+                        </div>
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service1.technical_architecture.ai_engine">AI Engine</strong>
+                            <span>OpenAI GPT-4</span>
+                        </div>
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service1.technical_architecture.pdf_processing">PDF Processing</strong>
+                            <span>pdfplumber</span>
+                        </div>
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service1.technical_architecture.deployment">Deployment</strong>
+                            <span>Streamlit Cloud</span>
+                        </div>
+                    </div>
+    
+                    <h5 data-i18n="technical.details.service1.technical_architecture.architecture">System Architecture</h5>
+                    <ul class="architecture-steps">
+                        <li data-i18n="technical.details.service1.technical_architecture.step1">PDF upload & text extraction</li>
+                        <li data-i18n="technical.details.service1.technical_architecture.step2">AI-powered data parsing & structuring</li>
+                        <li data-i18n="technical.details.service1.technical_architecture.step3">Validation & quality assurance</li>
+                        <li data-i18n="technical.details.service1.technical_architecture.step4">Export to CSV/JSON formats</li>
+                    </ul>
+                </section>
+    
+                <!-- Business Value Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.service1.business_value.title">Business Value</h4>
+                    
+                    <div class="business-proposition">
+                        <p data-i18n="technical.details.service1.business_value.proposition">Transform accounts payable from a cost center to a strategic advantage. Our AI-powered processor reduces invoice processing costs by 85% while providing real-time financial insights.</p>
+                    </div>
+    
+                    <h5 data-i18n="technical.details.service1.business_value.demo_features">Live Demo Capabilities</h5>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h5>⚡ Real-time Processing</h5>
+                            <p data-i18n="technical.details.service1.business_value.feature1">Real-time invoice processing</p>
+                        </div>
+                        <div class="feature-card">
+                            <h5>📄 Multi-format</h5>
+                            <p data-i18n="technical.details.service1.business_value.feature2">Multi-format handling</p>
+                        </div>
+                        <div class="feature-card">
+                            <h5>💾 Export Ready</h5>
+                            <p data-i18n="technical.details.service1.business_value.feature3">Export functionality</p>
+                        </div>
+                        <div class="feature-card">
+                            <h5>🛡️ Error Handling</h5>
+                            <p data-i18n="technical.details.service1.business_value.feature4">Error handling demonstration</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
 
     <script src="technical.js"></script>
 </body>

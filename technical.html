@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the technical stack and real-world portfolio behind AI automation, knowledge bases, and customer support co-pilots.">
+    <meta name="keywords" content="AI technical stack, RAG implementation, AI architecture, Python AI, OpenAI integration">
+    <meta name="author" content="IzuTech">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Technical Overview | AI Automation & Knowledge Solutions">
+    <meta property="og:description" content="Explore the technical stack and real-world portfolio behind AI automation, knowledge bases, and customer support co-pilots.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://izutech.com/technical">
+    <meta property="og:image" content="https://izutech.com/photo/IzuTech-logo.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Technical Overview | AI Automation & Knowledge Solutions">
+    <meta name="twitter:description" content="Explore the technical stack and real-world portfolio behind AI automation solutions.">
+    <meta name="twitter:image" content="https://izutech.com/photo/IzuTech-logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="photo/IzuTech-logo.png">
+    <link rel="apple-touch-icon" href="photo/IzuTech-logo.png">
+    <link rel="icon" type="image/x-icon" href="photo/IzuTech-logo.ico">
+    
+    <title>Technical Overview | AI Automation & Knowledge Solutions | IzuTech</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"></noscript>
+    
+    <style>
+        /* ===== CSS Variables for Modern Tech Theme ===== */
+        :root {
+            /* Modern Tech Color Palette */
+            --primary-blue: #0066FF;
+            --primary-dark: #0A2540;
+            --primary-accent: #00D4AA;
+            --secondary-accent: #635BFF;
+            
+            /* Neutral Palette */
+            --light-bg: #FFFFFF;
+            --light-surface: #F8FAFC;
+            --light-text: #0A2540;
+            --light-text-secondary: #425466;
+            --light-border: #E6EBF0;
+            --light-hover: #F6F9FC;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-accent) 100%);
+            --gradient-hero: linear-gradient(135deg, #0A2540 0%, #1A365D 100%);
+            
+            /* Spacing */
+            --section-padding: 6rem 0;
+            --container-max-width: 1200px;
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-accent: 'Playfair Display', serif;
+            
+            /* Border Radius */
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 24px;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
+            
+            /* Transitions */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== Reset & Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--light-text);
+            background-color: var(--light-bg);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ===== Typography ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            margin-bottom: 1rem;
+            color: var(--light-text);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--light-text-secondary);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--light-border);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 10px 0;
+        }
+
+        .nav-logo img {
+            height: 60px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            padding: 8px 16px;
+            border: 1px solid var(--light-border);
+            border-radius: var(--border-radius);
+            background: var(--light-bg);
+            color: var(--light-text);
+            font-family: var(--font-primary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-left: 1rem;
+        }
+
+        .language-selector:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .bar {
+            width: 25px;
+            height: 2px;
+            background: var(--light-text);
+            margin: 3px 0;
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            padding: 140px 0 100px;
+            background: var(--gradient-hero);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.05"><polygon fill="white" points="0,1000 1000,0 1000,1000"/></svg>') no-repeat bottom right;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.375rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            margin-bottom: 2rem;
+        }
+
+        .back-link:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 32px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+            text-align: center;
+            gap: 8px;
+            line-height: 1.4;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-card {
+            width: 100%;
+            background: var(--light-surface);
+            color: var(--light-text);
+            border: 1px solid var(--light-border);
+            margin-top: 1rem;
+        }
+
+        .btn-card:hover {
+            background: var(--light-hover);
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        /* ===== Technical Services Section ===== */
+        .technical-services {
+            padding: var(--section-padding);
+            background: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
+            border: 1px solid var(--light-border);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-blue);
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 1rem 0;
+        }
+
+        .service-pitch {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: var(--light-text-secondary);
+        }
+
+        .tech-stack {
+            background: rgba(0, 102, 255, 0.05);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .tech-stack h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .architecture-list, .use-case {
+            background: var(--light-surface);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--light-border);
+        }
+
+        .architecture-list ul, .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .architecture-list li, .service-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .architecture-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-accent);
+            font-weight: bold;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-accent);
+            font-weight: bold;
+        }
+
+        .portfolio-project {
+            background: rgba(0, 212, 170, 0.05);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+            border-left: 4px solid var(--primary-accent);
+        }
+
+        .portfolio-stack {
+            font-family: monospace;
+            background: var(--light-surface);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            border: 1px solid var(--light-border);
+        }
+
+        /* ===== Service Icons ===== */
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .icon-data {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(99, 91, 255, 0.1) 100%);
+            border: 1.5px solid rgba(0, 102, 255, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.08);
+        }
+
+        .icon-data:before {
+            content: "";
+            width: 32px;
+            height: 40px;
+            background: 
+                linear-gradient(45deg, transparent 45%, var(--primary-blue) 45%, var(--primary-blue) 55%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, var(--primary-blue) 45%, var(--primary-blue) 55%, transparent 55%);
+            background-size: 10px 10px;
+            background-position: 0 0, 0 10px;
+            background-repeat: no-repeat;
+            border: 2px solid var(--primary-blue);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .icon-brain {
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.1) 0%, rgba(99, 91, 255, 0.1) 100%);
+            border: 1.5px solid rgba(0, 212, 170, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 212, 170, 0.08);
+        }
+
+        .icon-brain:before {
+            content: "";
+            width: 36px;
+            height: 32px;
+            background: 
+                radial-gradient(circle at 8px 12px, var(--primary-accent) 4px, transparent 4px),
+                radial-gradient(circle at 18px 8px, var(--primary-accent) 4px, transparent 4px),
+                radial-gradient(circle at 28px 12px, var(--primary-accent) 4px, transparent 4px);
+            border: 2px solid var(--primary-accent);
+            border-top: none;
+            border-radius: 0 0 18px 18px;
+            position: relative;
+        }
+
+        .icon-support {
+            background: linear-gradient(135deg, rgba(99, 91, 255, 0.1) 0%, rgba(0, 102, 255, 0.1) 100%);
+            border: 1.5px solid rgba(99, 91, 255, 0.15);
+            box-shadow: 0 4px 12px rgba(99, 91, 255, 0.08);
+        }
+
+        .icon-support:before {
+            content: "";
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--secondary-accent);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .icon-support:after {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-accent);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* ===== Closing Section ===== */
+        .closing {
+            padding: var(--section-padding);
+            background: var(--light-surface);
+            text-align: center;
+        }
+
+        .closing-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--light-text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            color: var(--primary-blue);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 4rem 0 3rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-logo img {
+            height: 100px;
+            width: auto;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .footer p {
+            margin: 0;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 500px;
+        }
+
+        /* ===== Mobile Responsive Design ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: var(--light-bg);
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                box-shadow: var(--shadow-lg);
+                padding: 2rem 0;
+                gap: 1.5rem;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero {
+                padding: 120px 0 80px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card {
+                padding: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .language-selector {
+                margin-top: 1rem;
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .service-icon {
+                width: 70px;
+                height: 70px;
+                margin: 0 auto 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="photo/IzuTech-logo.png" alt="IzuTech - AI Solutions for French Businesses" width="160" height="40">
+            </a>            
+            <ul class="nav-menu" role="menubar">
+                <li class="nav-item" role="none">
+                    <a href="index.html#services" class="nav-link" role="menuitem" data-i18n="nav.services">Services</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="index.html#process" class="nav-link" role="menuitem" data-i18n="nav.process">Process</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="index.html#faq" class="nav-link" role="menuitem" data-i18n="nav.faq">FAQ</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="index.html#contact" class="nav-link" role="menuitem" data-i18n="nav.contact">Contact</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <select id="language-selector" class="language-selector" aria-label="Select language">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="main-content">
+        <div class="container">
+            <div class="hero-content">
+                <a href="index.html" class="back-link" data-i18n="technical.intro.back">← Back to Overview</a>
+                <h1 class="hero-title" data-i18n="technical.intro.title">Under the Hood: How My AI Solutions Work</h1>
+                <p class="hero-subtitle" data-i18n="technical.intro.subtitle">This page provides a technical deep-dive into the architecture, technology stack, and real portfolio projects behind each AI service.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Services Section -->
+    <section class="technical-services">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <article class="service-card">
+                    <div class="service-icon icon-data" aria-hidden="true"></div>
+                    <h3 data-i18n="services.service1.title">Automated Data Processing</h3>
+                    <p class="service-price" data-i18n="services.service1.price">€2k - €8k</p>
+                    <p class="service-pitch" data-i18n="services.service1.pitch">I automate the manual and repetitive task of data extraction from your emails, PDFs, spreadsheets or forms.</p>
+                    
+                    <div class="tech-stack">
+                        <h4 data-i18n="technical.service_tech.tech_stack">Tech Stack</h4>
+                        <p data-i18n="technical.service_tech.service1.tech_stack">Python, OpenAI GPT-4, Streamlit, pdfplumber, pandas</p>
+                    </div>
+
+                    <div class="features-grid">
+                        <div>
+                            <h4 data-i18n="technical.service_tech.key_features">Key Technical Features</h4>
+                            <ul class="service-features">
+                                <li data-i18n="services.service1.features.0">Multi-format processing (PDFs, emails, spreadsheets)</li>
+                                <li data-i18n="services.service1.features.1">Custom integration with your CRM or database</li>
+                                <li data-i18n="services.service1.features.2">Validation system with human control</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="architecture-list">
+                            <h4 data-i18n="technical.service_tech.architecture">Implementation Process</h4>
+                            <ul>
+                                <li data-i18n="technical.service_tech.service1.architecture.0">Document upload and text extraction</li>
+                                <li data-i18n="technical.service_tech.service1.architecture.1">AI-powered data parsing and structuring</li>
+                                <li data-i18n="technical.service_tech.service1.architecture.2">Validation and human review interface</li>
+                                <li data-i18n="technical.service_tech.service1.architecture.3">Export to target system (CRM, database, spreadsheet)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="use-case">
+                        <h4 data-i18n="technical.service_tech.use_case">Real-World Use Case</h4>
+                        <p data-i18n="services.service1.useCaseText">Automation of daily PDF invoice processing in QuickBooks.</p>
+                    </div>
+
+                    <div class="portfolio-project">
+                        <h4 data-i18n="technical.service_tech.portfolio">Portfolio Project</h4>
+                        <h5 data-i18n="technical.service_tech.service1.portfolio_name">PDF Invoice-to-Spreadsheet Automator</h5>
+                        <div class="portfolio-stack" data-i18n="technical.service_tech.service1.portfolio_stack">Python, Streamlit, OpenAI GPT-4, pdfplumber</div>
+                        <p data-i18n="technical.service_tech.service1.portfolio_steps">Set up environment, create core app with Streamlit, integrate PDF text extraction with pdfplumber, use GPT-4 for data parsing, export to CSV.</p>
+                        <a href="#contact" class="btn btn-card" data-i18n="technical.service_tech.view_demo">View Demo</a>
+                    </div>
+                </article>
+
+                <!-- Service 2 -->
+                <article class="service-card">
+                    <div class="service-icon icon-brain" aria-hidden="true"></div>
+                    <h3 data-i18n="services.service2.title">Intelligent Internal Knowledge Base</h3>
+                    <p class="service-price" data-i18n="services.service2.price">€2k - €15k</p>
+                    <p class="service-pitch" data-i18n="services.service2.pitch">I build a chatbot that gives your team instant answers from your company documents.</p>
+                    
+                    <div class="tech-stack">
+                        <h4 data-i18n="technical.service_tech.tech_stack">Tech Stack</h4>
+                        <p data-i18n="technical.service_tech.service2.tech_stack">Python, OpenAI Embeddings, Pinecone, LangChain, Streamlit</p>
+                    </div>
+
+                    <div class="features-grid">
+                        <div>
+                            <h4 data-i18n="technical.service_tech.key_features">Key Technical Features</h4>
+                            <ul class="service-features">
+                                <li data-i18n="services.service2.features.0">RAG implementation with Pinecone for accurate answers</li>
+                                <li data-i18n="services.service2.features.1">Multi-source document integration</li>
+                                <li data-i18n="services.service2.features.2">Secure internal deployment</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="architecture-list">
+                            <h4 data-i18n="technical.service_tech.architecture">Implementation Process</h4>
+                            <ul>
+                                <li data-i18n="technical.service_tech.service2.architecture.0">Multi-format document processing and chunking</li>
+                                <li data-i18n="technical.service_tech.service2.architecture.1">Vector embedding generation and storage</li>
+                                <li data-i18n="technical.service_tech.service2.architecture.2">Semantic search and retrieval system</li>
+                                <li data-i18n="technical.service_tech.service2.architecture.3">RAG-powered response generation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="use-case">
+                        <h4 data-i18n="technical.service_tech.use_case">Real-World Use Case</h4>
+                        <p data-i18n="services.service2.useCaseText">A research center for company procedures and policies.</p>
+                    </div>
+
+                    <div class="portfolio-project">
+                        <h4 data-i18n="technical.service_tech.portfolio">Portfolio Project</h4>
+                        <h5 data-i18n="technical.service_tech.service2.portfolio_name">Company Policy Chatbot</h5>
+                        <div class="portfolio-stack" data-i18n="technical.service_tech.service2.portfolio_stack">Python, Streamlit, OpenAI, Pinecone, LangChain</div>
+                        <p data-i18n="technical.service_tech.service2.portfolio_steps">Process uploaded documents, create vector embeddings, store in Pinecone, implement RAG with LangChain, build query interface.</p>
+                        <a href="#contact" class="btn btn-card" data-i18n="technical.service_tech.view_demo">View Demo</a>
+                    </div>
+                </article>
+
+                <!-- Service 3 -->
+                <article class="service-card">
+                    <div class="service-icon icon-support" aria-hidden="true"></div>
+                    <h3 data-i18n="services.service3.title">Custom Co-pilot for Customer Support</h3>
+                    <p class="service-price" data-i18n="services.service3.price">€2k - €22k</p>
+                    <p class="service-pitch" data-i18n="services.service3.pitch">I build an AI assistant for your support team that drafts high-quality responses aligned with your brand voice.</p>
+                    
+                    <div class="tech-stack">
+                        <h4 data-i18n="technical.service_tech.tech_stack">Tech Stack</h4>
+                        <p data-i18n="technical.service_tech.service3.tech_stack">Python, OpenAI GPT-4, Support Platform APIs, Custom Integration Layer</p>
+                    </div>
+
+                    <div class="features-grid">
+                        <div>
+                            <h4 data-i18n="technical.service_tech.key_features">Key Technical Features</h4>
+                            <ul class="service-features">
+                                <li data-i18n="services.service3.features.0">Integration with Zendesk, Intercom or Freshdesk</li>
+                                <li data-i18n="services.service3.features.1">Consistent brand voice and tone</li>
+                                <li data-i18n="services.service3.features.2">Continuous learning from past tickets</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="architecture-list">
+                            <h4 data-i18n="technical.service_tech.architecture">Implementation Process</h4>
+                            <ul>
+                                <li data-i18n="technical.service_tech.service3.architecture.0">Ticket context analysis and intent classification</li>
+                                <li data-i18n="technical.service_tech.service3.architecture.1">Knowledge base retrieval for relevant information</li>
+                                <li data-i18n="technical.service_tech.service3.architecture.2">Brand-aligned response generation</li>
+                                <li data-i18n="technical.service_tech.service3.architecture.3">Integration with support platform (Zendesk/Intercom)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="use-case">
+                        <h4 data-i18n="technical.service_tech.use_case">Real-World Use Case</h4>
+                        <p data-i18n="services.service3.useCaseText">An AI co-pilot that suggests responses in Zendesk.</p>
+                    </div>
+
+                    <div class="portfolio-project">
+                        <h4 data-i18n="technical.service_tech.portfolio">Portfolio Project</h4>
+                        <h5 data-i18n="technical.service_tech.service3.portfolio_name">Support Email Draft Assistant</h5>
+                        <div class="portfolio-stack" data-i18n="technical.service_tech.service3.portfolio_stack">Python, OpenAI GPT-4, Knowledge Base Integration</div>
+                        <p data-i18n="technical.service_tech.service3.portfolio_steps">Extend knowledge base system, implement context-aware response drafting, add support platform integration, create response review interface.</p>
+                        <a href="#contact" class="btn btn-card" data-i18n="technical.service_tech.view_demo">View Demo</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="closing">
+        <div class="container">
+            <div class="closing-content">
+                <h2 class="section-title" data-i18n="technical.closing.title">Ready to build your custom AI solution?</h2>
+                <a href="https://calendly.com/izutech-fr/30min" target="_blank" class="btn btn-primary" data-i18n="technical.closing.cta">Book a Technical Consultation</a>
+                <a href="index.html#contact" class="contact-link" data-i18n="technical.closing.contact_link">Or use our contact form</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="photo/IzuTech-logo.png" alt="IzuTech" width="120" height="30">
+                </div>
+                <p data-i18n="footer.copyright">© 2025 IzuTech. All rights reserved.</p>
+                <p data-i18n="footer.privacy">Data processing GDPR compliant. Your information is secure with us.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Self-contained language management and mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    hamburger.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (navMenu?.classList.contains('active') && 
+                    !e.target.closest('.nav-menu') && 
+                    !e.target.closest('.hamburger') &&
+                    !e.target.closest('.language-selector')) {
+                    closeMobileMenu();
+                }
+            });
+            
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
+                    closeMobileMenu();
+                    hamburger?.focus();
+                }
+            });
+            
+            function closeMobileMenu() {
+                hamburger?.classList.remove('active');
+                navMenu?.classList.remove('active');
+                hamburger?.setAttribute('aria-expanded', 'false');
+                document.activeElement?.blur();
+            }
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(element => {
+                element.addEventListener('click', () => {
+                    closeMobileMenu();
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Language management
+            const languageSelector = document.getElementById('language-selector');
+            let currentLanguage = 'en';
+            let translations = {};
+
+            // Load translations
+            async function loadTranslations(lang) {
+                if (translations[lang]) {
+                    return translations[lang];
+                }
+
+                try {
+                    const response = await fetch('i18n.json');
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    
+                    const allTranslations = await response.json();
+                    translations = allTranslations;
+                    
+                    return translations[lang] || {};
+                } catch (error) {
+                    console.error('Error loading translations:', error);
+                    return {};
+                }
+            }
+
+            // Update page content with translations
+            function updateContent(translations) {
+                if (!translations.meta) return;
+
+                // Update meta tags
+                document.title = translations.technical.meta.title;
+                const metaDescription = document.querySelector('meta[name="description"]');
+                if (metaDescription) {
+                    metaDescription.setAttribute('content', translations.technical.meta.description);
+                }
+
+                // Update Open Graph tags
+                const ogTitle = document.querySelector('meta[property="og:title"]');
+                const ogDescription = document.querySelector('meta[property="og:description"]');
+                if (ogTitle) ogTitle.setAttribute('content', translations.technical.meta.title);
+                if (ogDescription) ogDescription.setAttribute('content', translations.technical.meta.description);
+                
+                // Update all elements with data-i18n attribute
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    const value = getNestedValue(translations, key);
+                    
+                    if (value !== undefined && value !== null) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.setAttribute('placeholder', value);
+                            if (!element.value) {
+                                element.value = value;
+                            }
+                        } else if (element.tagName === 'IMG' && element.hasAttribute('alt')) {
+                            element.setAttribute('alt', value);
+                        } else if (element.hasAttribute('aria-label')) {
+                            element.setAttribute('aria-label', value);
+                        } else {
+                            element.textContent = value;
+                        }
+                    }
+                });
+
+                // Update HTML lang attribute
+                document.documentElement.setAttribute('lang', currentLanguage);
+                
+                // Update language selector
+                if (languageSelector) {
+                    languageSelector.value = currentLanguage;
+                }
+            }
+
+            // Helper function to get nested object values
+            function getNestedValue(obj, path) {
+                return path.split('.').reduce((current, key) => {
+                    return current && current[key] !== undefined ? current[key] : undefined;
+                }, obj);
+            }
+
+            // Initialize language
+            async function initLanguage() {
+                const browserLang = navigator.language || navigator.userLanguage;
+                const userLang = browserLang.startsWith('fr') ? 'fr' : 'en';
+                
+                currentLanguage = localStorage.getItem('preferredLanguage') || userLang;
+                
+                const loadedTranslations = await loadTranslations(currentLanguage);
+                updateContent(loadedTranslations);
+            }
+
+            // Language selector change event
+            if (languageSelector) {
+                languageSelector.addEventListener('change', async function(e) {
+                    currentLanguage = e.target.value;
+                    localStorage.setItem('preferredLanguage', currentLanguage);
+                    
+                    const loadedTranslations = await loadTranslations(currentLanguage);
+                    updateContent(loadedTranslations);
+                    
+                    // Close mobile menu after language change on mobile
+                    if (window.innerWidth <= 768 && navMenu?.classList.contains('active')) {
+                        closeMobileMenu();
+                    }
+                });
+            }
+
+            // Initialize the page
+            initLanguage();
+
+            // Performance: Preload other language
+            const browserLang = navigator.language || navigator.userLanguage;
+            const otherLang = browserLang.startsWith('fr') ? 'en' : 'fr';
+            loadTranslations(otherLang);
+        });
+    </script>
+</body>
+</html>

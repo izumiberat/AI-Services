@@ -245,6 +245,17 @@
       "details": {
         "show_details": "Technical Details",
         "hide_details": "Hide Details",
+        "benefit_titles": {
+          "efficiency": "Efficiency",
+          "accuracy": "Accuracy", 
+          "integration": "Integration"
+        },
+        "feature_titles": {
+          "realtime": "Real-time Processing",
+          "multiformat": "Multi-format",
+          "export": "Export Ready",
+          "error_handling": "Error Handling"
+        },
         "service1": {
           "executive_summary": {
             "title": "Project Overview: Intelligent Invoice Processing",
@@ -530,6 +541,17 @@
       "details": {
         "show_details": "Détails Techniques", 
         "hide_details": "Masquer les Détails",
+        "benefit_titles": {
+          "efficiency": "Efficacité",
+          "accuracy": "Précision",
+          "integration": "Intégration"
+        },
+        "feature_titles": {
+          "realtime": "Traitement en Temps Réel",
+          "multiformat": "Multi-format",
+          "export": "Export Prêt",
+          "error_handling": "Gestion des Erreurs"
+        },
         "service1": {
           "executive_summary": {
             "title": "Aperçu du Projet : Traitement Intelligent des Factures",

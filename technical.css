@@ -604,3 +604,246 @@ h3 {
         font-size: 1.1rem;
     }
 }
+
+/* ===== Modal Styles ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 37, 64, 0.8);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 2rem;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.tech-modal {
+    background: var(--light-bg);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    border: 1px solid var(--light-border);
+}
+
+.modal-header {
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid var(--light-border);
+    position: sticky;
+    top: 0;
+    background: var(--light-bg);
+    z-index: 10;
+    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+}
+
+.modal-header h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.modal-subtitle {
+    color: var(--light-text-secondary);
+    font-size: 1.1rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--light-text-secondary);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    background: var(--light-hover);
+    color: var(--primary-blue);
+}
+
+.modal-content {
+    padding: 2rem;
+}
+
+.modal-section {
+    margin-bottom: 2.5rem;
+}
+
+.modal-section:last-child {
+    margin-bottom: 0;
+}
+
+.modal-section h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.benefits-grid, .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.benefit-card, .feature-card {
+    background: var(--light-surface);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-accent);
+}
+
+.benefit-card h5, .feature-card h5 {
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.tech-item {
+    background: var(--light-surface);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid var(--light-border);
+    transition: var(--transition);
+}
+
+.tech-item:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+.tech-item strong {
+    display: block;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.architecture-steps {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.architecture-steps li {
+    padding: 1rem 0 1rem 3rem;
+    position: relative;
+    border-bottom: 1px solid var(--light-border);
+}
+
+.architecture-steps li:last-child {
+    border-bottom: none;
+}
+
+.architecture-steps li:before {
+    content: counter(step);
+    counter-increment: step;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.architecture-steps {
+    counter-reset: step;
+}
+
+.business-proposition {
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 212, 170, 0.05) 100%);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid var(--secondary-accent);
+    margin: 2rem 0;
+}
+
+.business-proposition p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--light-text);
+    margin: 0;
+}
+
+/* Enhanced service card for technical details */
+.service-card.has-details {
+    position: relative;
+}
+
+.tech-details-btn {
+    width: 100%;
+    background: var(--light-surface);
+    color: var(--light-text);
+    border: 1px solid var(--light-border);
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+.tech-details-btn:hover {
+    background: var(--light-hover);
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+/* Mobile responsive for modal */
+@media (max-width: 768px) {
+    .modal-overlay {
+        padding: 1rem;
+    }
+    
+    .modal-content {
+        padding: 1.5rem;
+    }
+    
+    .modal-header {
+        padding: 1.5rem 1.5rem 1rem;
+    }
+    
+    .benefits-grid, .features-grid, .tech-stack-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .business-proposition {
+        padding: 1.5rem;
+    }
+    
+    .close-modal {
+        top: 1rem;
+        right: 1rem;
+    }
+}

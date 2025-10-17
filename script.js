@@ -202,18 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-    
-        if (backToOptions && contactFormContainer && contactOptions) {
-            backToOptions.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    contactFormContainer.classList.remove('active');
-                    contactOptions.style.display = 'grid';
-                    // Smooth scroll back to options
-                    contactOptions.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-            });
-        }
-    }
 
     // Initialize trust section animations
     function initTrustSection() {

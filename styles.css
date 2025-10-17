@@ -780,6 +780,12 @@ h3 {
     margin-bottom: 0.5rem;
 }
 
+.option-actions .btn-secondary {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
 .email-direct-btn {
     font-size: 0.9rem;
     padding: 10px 16px;

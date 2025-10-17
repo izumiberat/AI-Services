@@ -1,3 +1,43 @@
+
+// Modal functionality
+    function openTechModal() {
+        const modal = document.getElementById('techModal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+    
+    function closeTechModal() {
+        const modal = document.getElementById('techModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+    
+    // Initialize modal events
+    function initModal() {
+        const modal = document.getElementById('techModal');
+        const closeBtn = document.getElementById('closeModal');
+        
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeTechModal);
+        }
+        
+        // Close modal when clicking outside content
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeTechModal();
+                }
+            });
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeTechModal();
+            }
+        });
+    }
+
 // Language management and mobile menu functionality for technical page
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
@@ -61,6 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Initialize modal
+    initModal();
 
     // Language management
     const languageSelector = document.getElementById('language-selector');

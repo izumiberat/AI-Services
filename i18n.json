@@ -241,6 +241,46 @@
       "closing": {
         "title": "Ready to build your custom AI solution?",
         "cta": "Book a Technical Consultation"
+      },
+      "details": {
+        "show_details": "Technical Details",
+        "hide_details": "Hide Details",
+        "service1": {
+          "executive_summary": {
+            "title": "Project Overview: Intelligent Invoice Processing",
+            "problem": "The Business Challenge",
+            "problem_text": "Manual invoice processing costs businesses 5-15 minutes per invoice and introduces costly human errors in critical financial data.",
+            "solution": "Our AI Solution", 
+            "solution_text": "An intelligent system that automatically extracts key business information from PDF invoices and converts it into structured, actionable data.",
+            "benefits": "Key Results",
+            "benefit1": "90% reduction in processing time",
+            "benefit2": "99% accuracy in data extraction",
+            "benefit3": "Direct export to accounting systems"
+          },
+          "technical_architecture": {
+            "title": "Technical Architecture",
+            "stack": "Technology Stack",
+            "frontend": "Streamlit (Python)",
+            "ai_engine": "OpenAI GPT-4",
+            "pdf_processing": "pdfplumber + Custom Extraction",
+            "deployment": "Streamlit Community Cloud",
+            "security": "Environment Secrets + Secure API",
+            "architecture": "System Architecture",
+            "step1": "PDF upload & text extraction",
+            "step2": "AI-powered data parsing & structuring",
+            "step3": "Validation & quality assurance",
+            "step4": "Export to CSV/JSON formats"
+          },
+          "business_value": {
+            "title": "Business Value",
+            "proposition": "Transform accounts payable from a cost center to a strategic advantage. Our AI-powered processor reduces invoice processing costs by 85% while providing real-time financial insights.",
+            "demo_features": "Live Demo Capabilities",
+            "feature1": "Real-time invoice processing",
+            "feature2": "Multi-format handling",
+            "feature3": "Export functionality",
+            "feature4": "Error handling demonstration"
+          }
+        }
       }
     }
   },
@@ -486,6 +526,46 @@
       "closing": {
         "title": "Prêt à créer votre solution IA personnalisée ?",
         "cta": "Planifier une consultation technique"
+      },
+      "details": {
+        "show_details": "Détails Techniques", 
+        "hide_details": "Masquer les Détails",
+        "service1": {
+          "executive_summary": {
+            "title": "Aperçu du Projet : Traitement Intelligent des Factures",
+            "problem": "Le Défi Commercial",
+            "problem_text": "Le traitement manuel des factures coûte aux entreprises 5 à 15 minutes par facture et introduit des erreurs humaines coûteuses dans les données financières critiques.",
+            "solution": "Notre Solution IA",
+            "solution_text": "Un système intelligent qui extrait automatiquement les informations commerciales clés des factures PDF et les convertit en données structurées et exploitables.",
+            "benefits": "Résultats Clés", 
+            "benefit1": "Réduction de 90% du temps de traitement",
+            "benefit2": "Précision de 99% dans l'extraction des données",
+            "benefit3": "Export direct vers les systèmes comptables"
+          },
+          "technical_architecture": {
+            "title": "Architecture Technique",
+            "stack": "Pile Technologique",
+            "frontend": "Streamlit (Python)",
+            "ai_engine": "OpenAI GPT-4", 
+            "pdf_processing": "pdfplumber + Extraction Personnalisée",
+            "deployment": "Streamlit Community Cloud",
+            "security": "Secrets d'Environnement + API Sécurisée",
+            "architecture": "Architecture du Système",
+            "step1": "Téléchargement PDF & extraction de texte",
+            "step2": "Analyse et structuration des données par IA",
+            "step3": "Validation & assurance qualité",
+            "step4": "Export aux formats CSV/JSON"
+          },
+          "business_value": {
+            "title": "Valeur Commerciale",
+            "proposition": "Transformez vos comptes fournisseurs d'un centre de coût en avantage stratégique. Notre processeur alimenté par l'IA réduit les coûts de traitement des factures de 85% tout en fournissant des insights financiers en temps réel.",
+            "demo_features": "Capacités de Démo en Direct",
+            "feature1": "Traitement de factures en temps réel",
+            "feature2": "Gestion multi-format",
+            "feature3": "Fonctionnalité d'export",
+            "feature4": "Démonstration de la gestion des erreurs"
+          }
+        }
       }
     }
   }

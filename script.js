@@ -172,6 +172,36 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Mobile contact section interactions
+    function initContactSection() {
+        const showFormBtn = document.querySelector('.show-form-btn');
+        const backToOptions = document.querySelector('.back-to-options');
+        const contactFormContainer = document.querySelector('.contact-form-container');
+        const contactOptions = document.querySelector('.contact-options');
+        
+        if (showFormBtn && contactFormContainer && contactOptions) {
+            showFormBtn.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    contactOptions.style.display = 'none';
+                    contactFormContainer.classList.add('active');
+                    // Smooth scroll to form
+                    contactFormContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        }
+        
+        if (backToOptions && contactFormContainer && contactOptions) {
+            backToOptions.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    contactFormContainer.classList.remove('active');
+                    contactOptions.style.display = 'grid';
+                    // Smooth scroll back to options
+                    contactOptions.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        }
+    }
 
     // Form submission with Formspree
     const contactForm = document.getElementById('lead-form');
@@ -307,6 +337,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize the page
     initLanguage();
+
+    // Initialize contact section interactions
+    initContactSection();
 
     // Performance: Preload other language
     const browserLang = navigator.language || navigator.userLanguage;

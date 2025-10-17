@@ -119,65 +119,65 @@
       ]
     },
     "contact": {
-        "title": "Start Your AI Automation Project",
-        "subtitle": "Book a free consultation or send us your project details",
-        "options": {
-            "form": {
-                "title": "Send us a message",
-                "description": "Share your project details and we'll get back to you within 24 hours",
-                "button": "Fill out form"
-            },
-            "call": {
-                "title": "Schedule a call",
-                "description": "30-minute free consultation to discuss your needs",
-                "button": "Book a call"
-            },
-            "email": {
-                "title": "Email us directly",
-                "description": "Prefer to start with an email? We're here to help.",
-                "button": "contact@izutech.fr"
-            }
+      "title": "Start Your AI Automation Project",
+      "subtitle": "Book a free consultation or send us your project details",
+      "options": {
+        "form": {
+          "title": "Send us a message",
+          "description": "Share your project details and we'll get back to you within 24 hours",
+          "button": "Fill out form"
         },
-            "form": {
-              "title": "Tell us about your project",
-              "back": "← Back to options",
-              "name": "Name *",
-              "email": "Email *",
-              "phone": "Phone Number (Optional)",
-              "company": "Company",
-              "message": "Project details or questions *",
-              "submit": "Send Message"
-          },
-          "trust": {
-            "title": "Why Businesses Choose IzuTech",
-            "points": [
-              {
-                "icon": "🚀",
-                "title": "Quick Start",
-                "text": "Functional prototype in 1-2 weeks"
-              },
-              {
-                "icon": "🛡️",
-                "title": "GDPR Compliant",
-                "text": "Data security built into every solution"
-              },
-              {
-                "icon": "💬",
-                "title": "24h Response Time",
-                "text": "We get back to you within one business day"
-              },
-              {
-                "icon": "📊",
-                "title": "Clear ROI",
-                "text": "Transparent pricing with measurable results"
-              }
-            ]
-          },
-        "success": {
-            "title": "Message Sent Successfully!",
-            "message": "Thank you for your inquiry. We'll be in touch within 24 hours to discuss your project.",
-            "button": "Send Another Message"
+        "call": {
+          "title": "Schedule a call",
+          "description": "30-minute free consultation to discuss your needs",
+          "button": "Book a call"
+        },
+        "email": {
+          "title": "Email us directly",
+          "description": "Prefer to start with an email? We're here to help.",
+          "button": "contact@izutech.fr"
         }
+      },
+      "form": {
+        "title": "Tell us about your project",
+        "back": "← Back to options",
+        "name": "Name *",
+        "email": "Email *",
+        "phone": "Phone Number (Optional)",
+        "company": "Company",
+        "message": "Project details or questions *",
+        "submit": "Send Message"
+      },
+      "trust": {
+        "title": "Why Businesses Choose IzuTech",
+        "points": [
+          {
+            "icon": "🚀",
+            "title": "Quick Start",
+            "text": "Functional prototype in 1-2 weeks"
+          },
+          {
+            "icon": "🛡️",
+            "title": "GDPR Compliant",
+            "text": "Data security built into every solution"
+          },
+          {
+            "icon": "💬",
+            "title": "24h Response Time",
+            "text": "We get back to you within one business day"
+          },
+          {
+            "icon": "📊",
+            "title": "Clear ROI",
+            "text": "Transparent pricing with measurable results"
+          }
+        ]
+      },
+      "success": {
+        "title": "Message Sent Successfully!",
+        "message": "Thank you for your inquiry. We'll be in touch within 24 hours to discuss your project.",
+        "button": "Send Another Message"
+      }
     },
     "footer": {
       "copyright": "© 2025 IzuTech. All rights reserved.",
@@ -304,65 +304,65 @@
       ]
     },
     "contact": {
-        "title": "Démarrez Votre Projet d'Automatisation IA",
-        "subtitle": "Réservez une consultation gratuite ou envoyez-nous les détails de votre projet",
-        "options": {
-            "form": {
-                "title": "Envoyez-nous un message",
-                "description": "Partagez les détails de votre projet et nous vous répondrons dans les 24 heures",
-                "button": "Remplir le formulaire"
-            },
-            "call": {
-                "title": "Planifier un appel",
-                "description": "Consultation gratuite de 30 minutes pour discuter de vos besoins",
-                "button": "Réserver un appel"
-            },
-            "email": {
-                "title": "Envoyez-nous un email",
-                "description": "Vous préférez commencer par un email ? Nous sommes là pour vous aider.",
-                "button": "contact@izutech.fr"
-            }
+      "title": "Démarrez Votre Projet d'Automatisation IA",
+      "subtitle": "Réservez une consultation gratuite ou envoyez-nous les détails de votre projet",
+      "options": {
+        "form": {
+          "title": "Envoyez-nous un message",
+          "description": "Partagez les détails de votre projet et nous vous répondrons dans les 24 heures",
+          "button": "Remplir le formulaire"
         },
-            "form": {
-                "title": "Parlez-nous de votre projet",
-                "back": "← Retour aux options",
-                "name": "Nom *",
-                "email": "Email *",
-                "phone": "Numéro de téléphone (Optionnel)",
-                "company": "Entreprise",
-                "message": "Détails du projet ou questions *",
-                "submit": "Envoyer le Message"
-            },
-            "trust": {
-            "title": "Pourquoi les Entreprises Choisissent IzuTech",
-            "points": [
-              {
-                "icon": "🚀",
-                "title": "Démarrage Rapide",
-                "text": "Prototype fonctionnel en 1-2 semaines"
-              },
-              {
-                "icon": "🛡️",
-                "title": "Conforme RGPD",
-                "text": "Sécurité des données intégrée à chaque solution"
-              },
-              {
-                "icon": "💬",
-                "title": "Réponse sous 24h",
-                "text": "Nous vous répondons dans un jour ouvrable"
-              },
-              {
-                "icon": "📊",
-                "title": "ROI Clair",
-                "text": "Tarification transparente avec résultats mesurables"
-              }
-            ]
-          },
-        "success": {
-            "title": "Message Envoyé avec Succès !",
-            "message": "Merci pour votre demande. Nous vous recontacterons dans les 24 heures pour discuter de votre projet.",
-            "button": "Envoyer un Autre Message"
+        "call": {
+          "title": "Planifier un appel",
+          "description": "Consultation gratuite de 30 minutes pour discuter de vos besoins",
+          "button": "Réserver un appel"
+        },
+        "email": {
+          "title": "Envoyez-nous un email",
+          "description": "Vous préférez commencer par un email ? Nous sommes là pour vous aider.",
+          "button": "contact@izutech.fr"
         }
+      },
+      "form": {
+        "title": "Parlez-nous de votre projet",
+        "back": "← Retour aux options",
+        "name": "Nom *",
+        "email": "Email *",
+        "phone": "Numéro de téléphone (Optionnel)",
+        "company": "Entreprise",
+        "message": "Détails du projet ou questions *",
+        "submit": "Envoyer le Message"
+      },
+      "trust": {
+        "title": "Pourquoi les Entreprises Choisissent IzuTech",
+        "points": [
+          {
+            "icon": "🚀",
+            "title": "Démarrage Rapide",
+            "text": "Prototype fonctionnel en 1-2 semaines"
+          },
+          {
+            "icon": "🛡️",
+            "title": "Conforme RGPD",
+            "text": "Sécurité des données intégrée à chaque solution"
+          },
+          {
+            "icon": "💬",
+            "title": "Réponse sous 24h",
+            "text": "Nous vous répondons dans un jour ouvrable"
+          },
+          {
+            "icon": "📊",
+            "title": "ROI Clair",
+            "text": "Tarification transparente avec résultats mesurables"
+          }
+        ]
+      },
+      "success": {
+        "title": "Message Envoyé avec Succès !",
+        "message": "Merci pour votre demande. Nous vous recontacterons dans les 24 heures pour discuter de votre projet.",
+        "button": "Envoyer un Autre Message"
+      }
     },
     "footer": {
       "copyright": "© 2025 IzuTech. Tous droits réservés.",

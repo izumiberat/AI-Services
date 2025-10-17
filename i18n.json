@@ -138,16 +138,41 @@
                 "button": "contact@izutech.fr"
             }
         },
-        "form": {
-          "title": "Tell us about your project",
-          "back": "← Back to options",
-          "name": "Name *",
-          "email": "Email *",
-          "phone": "Phone Number (Optional)",
-          "company": "Company",
-          "message": "Project details or questions *",
-          "submit": "Send Message"
-      },
+            "form": {
+              "title": "Tell us about your project",
+              "back": "← Back to options",
+              "name": "Name *",
+              "email": "Email *",
+              "phone": "Phone Number (Optional)",
+              "company": "Company",
+              "message": "Project details or questions *",
+              "submit": "Send Message"
+          },
+          "trust": {
+            "title": "Why Businesses Choose IzuTech",
+            "points": [
+              {
+                "icon": "🚀",
+                "title": "Quick Start",
+                "text": "Functional prototype in 1-2 weeks"
+              },
+              {
+                "icon": "🛡️",
+                "title": "GDPR Compliant",
+                "text": "Data security built into every solution"
+              },
+              {
+                "icon": "💬",
+                "title": "24h Response Time",
+                "text": "We get back to you within one business day"
+              },
+              {
+                "icon": "📊",
+                "title": "Clear ROI",
+                "text": "Transparent pricing with measurable results"
+              }
+            ]
+          },
         "success": {
             "title": "Message Sent Successfully!",
             "message": "Thank you for your inquiry. We'll be in touch within 24 hours to discuss your project.",
@@ -298,16 +323,41 @@
                 "button": "contact@izutech.fr"
             }
         },
-        "form": {
-            "title": "Parlez-nous de votre projet",
-            "back": "← Retour aux options",
-            "name": "Nom *",
-            "email": "Email *",
-            "phone": "Numéro de téléphone (Optionnel)",
-            "company": "Entreprise",
-            "message": "Détails du projet ou questions *",
-            "submit": "Envoyer le Message"
-        },
+            "form": {
+                "title": "Parlez-nous de votre projet",
+                "back": "← Retour aux options",
+                "name": "Nom *",
+                "email": "Email *",
+                "phone": "Numéro de téléphone (Optionnel)",
+                "company": "Entreprise",
+                "message": "Détails du projet ou questions *",
+                "submit": "Envoyer le Message"
+            },
+            "trust": {
+            "title": "Pourquoi les Entreprises Choisissent IzuTech",
+            "points": [
+              {
+                "icon": "🚀",
+                "title": "Démarrage Rapide",
+                "text": "Prototype fonctionnel en 1-2 semaines"
+              },
+              {
+                "icon": "🛡️",
+                "title": "Conforme RGPD",
+                "text": "Sécurité des données intégrée à chaque solution"
+              },
+              {
+                "icon": "💬",
+                "title": "Réponse sous 24h",
+                "text": "Nous vous répondons dans un jour ouvrable"
+              },
+              {
+                "icon": "📊",
+                "title": "ROI Clair",
+                "text": "Tarification transparente avec résultats mesurables"
+              }
+            ]
+          },
         "success": {
             "title": "Message Envoyé avec Succès !",
             "message": "Merci pour votre demande. Nous vous recontacterons dans les 24 heures pour discuter de votre projet.",

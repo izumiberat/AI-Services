@@ -1113,6 +1113,10 @@ h3 {
         display: none !important;
     }
     
+    .trust-section-mobile {
+        display: none !important;
+    }
+    
     .trust-section {
         position: sticky;
         top: 100px;
@@ -1288,22 +1292,9 @@ h3 {
     }
     
     /* Trust section inside form view */
+    
     .contact-form-and-trust.active .trust-section {
-        display: block;
-        margin-top: 2rem;
-        padding: 1.5rem;
-    }
-    
-    .contact-form-and-trust.active .trust-points {
-        gap: 1rem;
-    }
-    
-    .contact-form-and-trust.active .trust-point {
-        padding: 1rem;
-    }
-    
-    .contact-form-and-trust.active .trust-icon {
-        font-size: 1.25rem;
+        display: none !important;
     }
 
     /* Service icons mobile */

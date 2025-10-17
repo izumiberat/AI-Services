@@ -121,28 +121,40 @@
     "contact": {
         "title": "Start Your AI Automation Project",
         "subtitle": "Book a free consultation or send us your project details",
-        "form": {
-            "name": "Name",
-            "email": "Email",
-            "company": "Company",
-            "message": "Project details or questions",
-            "submit": "Send Message"
+        "options": {
+            "form": {
+                "title": "Send us a message",
+                "description": "Share your project details and we'll get back to you within 24 hours",
+                "button": "Fill out form"
+            },
+            "call": {
+                "title": "Schedule a call",
+                "description": "30-minute free consultation to discuss your needs",
+                "button": "Book a call"
+            },
+            "email": {
+                "title": "Email us directly",
+                "description": "Prefer to start with an email? We're here to help.",
+                "button": "contact@izutech.fr"
+            }
         },
+        "form": {
+          "title": "Tell us about your project",
+          "back": "← Back to options",
+          "name": "Name *",
+          "email": "Email *",
+          "phone": "Phone Number (Optional)",
+          "company": "Company",
+          "message": "Project details or questions *",
+          "submit": "Send Message"
+      },
         "success": {
             "title": "Message Sent Successfully!",
             "message": "Thank you for your inquiry. We'll be in touch within 24 hours to discuss your project.",
             "button": "Send Another Message"
-        },
-        "schedule": {
-            "title": "Prefer to schedule a call?",
-            "text": "Book a 30-minute consultation to discuss your specific needs and get a preliminary assessment.",
-            "button": "Schedule a Call",
-            "details": {
-                "emailLabel": "Email:",
-                "availability": "Available for international clients and French SMBs"
-            }
         }
-    },
+    }
+
     "footer": {
       "copyright": "© 2025 IzuTech. All rights reserved.",
       "privacy": "Data processing GDPR compliant. Your information is secure with us."
@@ -270,28 +282,39 @@
     "contact": {
         "title": "Démarrez Votre Projet d'Automatisation IA",
         "subtitle": "Réservez une consultation gratuite ou envoyez-nous les détails de votre projet",
+        "options": {
+            "form": {
+                "title": "Envoyez-nous un message",
+                "description": "Partagez les détails de votre projet et nous vous répondrons dans les 24 heures",
+                "button": "Remplir le formulaire"
+            },
+            "call": {
+                "title": "Planifier un appel",
+                "description": "Consultation gratuite de 30 minutes pour discuter de vos besoins",
+                "button": "Réserver un appel"
+            },
+            "email": {
+                "title": "Envoyez-nous un email",
+                "description": "Vous préférez commencer par un email ? Nous sommes là pour vous aider.",
+                "button": "contact@izutech.fr"
+            }
+        },
         "form": {
-            "name": "Nom",
-            "email": "Email",
+            "title": "Parlez-nous de votre projet",
+            "back": "← Retour aux options",
+            "name": "Nom *",
+            "email": "Email *",
+            "phone": "Numéro de téléphone (Optionnel)",
             "company": "Entreprise",
-            "message": "Détails du projet ou questions",
+            "message": "Détails du projet ou questions *",
             "submit": "Envoyer le Message"
         },
         "success": {
             "title": "Message Envoyé avec Succès !",
             "message": "Merci pour votre demande. Nous vous recontacterons dans les 24 heures pour discuter de votre projet.",
             "button": "Envoyer un Autre Message"
-        },
-        "schedule": {
-            "title": "Préférez-vous planifier un appel ?",
-            "text": "Réservez une consultation de 30 minutes pour discuter de vos besoins spécifiques et obtenir une évaluation préliminaire.",
-            "button": "Planifier un Appel",
-            "details": {
-                "emailLabel": "Email:",
-                "availability": "Disponible pour les clients internationaux et les PME françaises"
-            }
         }
-    },
+    }
     "footer": {
       "copyright": "© 2025 IzuTech. Tous droits réservés.",
       "privacy": "Traitement des données conforme RGPD. Vos informations sont sécurisées avec nous."

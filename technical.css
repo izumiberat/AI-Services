@@ -696,13 +696,37 @@ h3 {
     color: var(--primary-blue);
     margin-bottom: 1rem;
     font-size: 1.25rem;
+    margin-top: 2rem; /* Add space above headings */
+}
+
+.modal-section h4:first-child {
+    margin-top: 0; /* First heading in section shouldn't have top margin */
+}
+
+.modal-section h5 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1.5rem; /* Space above subheadings */
+}
+
+.modal-section p {
+    margin-bottom: 1.5rem; /* Consistent paragraph spacing */
+    line-height: 1.6;
+    color: var(--light-text);
+}
+
+/* Fix spacing for specific sections */
+.modal-section .benefits-grid,
+.modal-section .features-grid,
+.modal-section .tech-stack-grid {
+    margin: 1.5rem 0 2rem 0; /* More space below grids */
 }
 
 .benefits-grid, .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
-    margin: 1.5rem 0;
 }
 
 .benefit-card, .feature-card {
@@ -718,11 +742,16 @@ h3 {
     font-size: 1rem;
 }
 
+.benefit-card p, .feature-card p {
+    margin-bottom: 0; /* No margin in cards */
+    font-size: 0.95rem;
+    color: var(--light-text-secondary);
+}
+
 .tech-stack-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-    margin: 1.5rem 0;
 }
 
 .tech-item {
@@ -748,7 +777,7 @@ h3 {
 
 .architecture-steps {
     list-style: none;
-    margin: 1.5rem 0;
+    margin: 1.5rem 0 2rem 0; /* More space below steps */
 }
 
 .architecture-steps li {
@@ -796,7 +825,7 @@ h3 {
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--light-text);
-    margin: 0;
+    margin: 0; /* No margin in proposition box */
 }
 
 /* Enhanced service card for technical details */
@@ -840,10 +869,19 @@ h3 {
     
     .business-proposition {
         padding: 1.5rem;
+        margin: 1.5rem 0;
     }
     
     .close-modal {
         top: 1rem;
         right: 1rem;
+    }
+    
+    .modal-section h4 {
+        margin-top: 1.5rem;
+    }
+    
+    .modal-section h5 {
+        margin-top: 1.25rem;
     }
 }

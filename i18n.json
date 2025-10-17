@@ -187,6 +187,67 @@
     "footer": {
       "copyright": "© 2025 IzuTech. All rights reserved.",
       "privacy": "Data processing GDPR compliant. Your information is secure with us."
+    },
+    
+    "technical": {
+      "meta": {
+        "title": "Technical Overview | AI Automation & Knowledge Solutions",
+        "description": "Explore the technical stack and real-world portfolio behind AI automation, knowledge bases, and customer support co-pilots."
+      },
+      "intro": {
+        "title": "Under the Hood: How My AI Solutions Work",
+        "subtitle": "This page provides a technical deep-dive into the architecture, technology stack, and real portfolio projects behind each AI service.",
+        "back": "← Back to Overview"
+      },
+      "service_tech": {
+        "tech_stack": "Tech Stack",
+        "key_features": "Key Technical Features",
+        "architecture": "Implementation Process",
+        "use_case": "Real-World Use Case",
+        "portfolio": "Portfolio Project",
+        "view_demo": "View Demo",
+        "service1": {
+          "tech_stack": "Python, OpenAI GPT-4, Streamlit, pdfplumber, pandas",
+          "architecture": [
+            "Document upload and text extraction",
+            "AI-powered data parsing and structuring",
+            "Validation and human review interface",
+            "Export to target system (CRM, database, spreadsheet)"
+          ],
+          "portfolio_name": "PDF Invoice-to-Spreadsheet Automator",
+          "portfolio_stack": "Python, Streamlit, OpenAI GPT-4, pdfplumber",
+          "portfolio_steps": "Set up environment, create core app with Streamlit, integrate PDF text extraction with pdfplumber, use GPT-4 for data parsing, export to CSV."
+        },
+        "service2": {
+          "tech_stack": "Python, OpenAI Embeddings, Pinecone, LangChain, Streamlit",
+          "architecture": [
+            "Multi-format document processing and chunking",
+            "Vector embedding generation and storage",
+            "Semantic search and retrieval system",
+            "RAG-powered response generation"
+          ],
+          "portfolio_name": "Company Policy Chatbot",
+          "portfolio_stack": "Python, Streamlit, OpenAI, Pinecone, LangChain",
+          "portfolio_steps": "Process uploaded documents, create vector embeddings, store in Pinecone, implement RAG with LangChain, build query interface."
+        },
+        "service3": {
+          "tech_stack": "Python, OpenAI GPT-4, Support Platform APIs, Custom Integration Layer",
+          "architecture": [
+            "Ticket context analysis and intent classification",
+            "Knowledge base retrieval for relevant information",
+            "Brand-aligned response generation",
+            "Integration with support platform (Zendesk/Intercom)"
+          ],
+          "portfolio_name": "Support Email Draft Assistant",
+          "portfolio_stack": "Python, OpenAI GPT-4, Knowledge Base Integration",
+          "portfolio_steps": "Extend knowledge base system, implement context-aware response drafting, add support platform integration, create response review interface."
+        }
+      },
+      "closing": {
+        "title": "Ready to build your custom AI solution?",
+        "cta": "Book a Technical Consultation",
+        "contact_link": "Or use our contact form"
+      }
     }
   },
   "fr": {
@@ -377,6 +438,67 @@
     "footer": {
       "copyright": "© 2025 IzuTech. Tous droits réservés.",
       "privacy": "Traitement des données conforme RGPD. Vos informations sont sécurisées avec nous."
+    },
+
+    "technical": {
+      "meta": {
+        "title": "Aperçu Technique | Solutions d'Automatisation et de Connaissance IA",
+        "description": "Découvrez les piles technologiques et projets réels derrière mes solutions d'automatisation, bases de connaissances et copilotes de support client."
+      },
+      "intro": {
+        "title": "Sous le capot : comment fonctionnent mes solutions IA",
+        "subtitle": "Cette page propose une plongée technique dans l'architecture, la pile technologique et les projets portfolio réels derrière chaque service d'IA.",
+        "back": "← Retour à l'accueil"
+      },
+      "service_tech": {
+        "tech_stack": "Pile Technologique",
+        "key_features": "Fonctionnalités Techniques Clés",
+        "architecture": "Processus d'Implémentation",
+        "use_case": "Cas d'Usage Réel",
+        "portfolio": "Projet Portfolio",
+        "view_demo": "Voir la démo",
+        "service1": {
+          "tech_stack": "Python, OpenAI GPT-4, Streamlit, pdfplumber, pandas",
+          "architecture": [
+            "Téléchargement de documents et extraction de texte",
+            "Analyse et structuration des données par IA",
+            "Interface de validation et revue humaine",
+            "Export vers le système cible (CRM, base de données, tableur)"
+          ],
+          "portfolio_name": "Automate PDF Facture-vers-Tableur",
+          "portfolio_stack": "Python, Streamlit, OpenAI GPT-4, pdfplumber",
+          "portfolio_steps": "Configuration de l'environnement, création de l'application avec Streamlit, intégration de l'extraction PDF avec pdfplumber, utilisation de GPT-4 pour l'analyse des données, export en CSV."
+        },
+        "service2": {
+          "tech_stack": "Python, OpenAI Embeddings, Pinecone, LangChain, Streamlit",
+          "architecture": [
+            "Traitement et segmentation de documents multi-formats",
+            "Génération et stockage d'embeddings vectoriels",
+            "Système de recherche sémantique et récupération",
+            "Génération de réponses alimentée par RAG"
+          ],
+          "portfolio_name": "Chatbot de Politiques d'Entreprise",
+          "portfolio_stack": "Python, Streamlit, OpenAI, Pinecone, LangChain",
+          "portfolio_steps": "Traitement des documents téléchargés, création d'embeddings vectoriels, stockage dans Pinecone, implémentation RAG avec LangChain, construction de l'interface de requêtes."
+        },
+        "service3": {
+          "tech_stack": "Python, OpenAI GPT-4, APIs des plateformes de support, Couche d'intégration personnalisée",
+          "architecture": [
+            "Analyse du contexte des tickets et classification de l'intention",
+            "Récupération d'informations pertinentes depuis la base de connaissances",
+            "Génération de réponses alignées avec la marque",
+            "Intégration avec la plateforme de support (Zendesk/Intercom)"
+          ],
+          "portfolio_name": "Assistant de Rédaction d'Emails de Support",
+          "portfolio_stack": "Python, OpenAI GPT-4, Intégration Base de Connaissance",
+          "portfolio_steps": "Extension du système de base de connaissances, implémentation de la rédaction contextuelle de réponses, ajout de l'intégration plateforme de support, création de l'interface de revue des réponses."
+        }
+      },
+      "closing": {
+        "title": "Prêt à créer votre solution IA personnalisée ?",
+        "cta": "Planifier une consultation technique",
+        "contact_link": "Ou utilisez notre formulaire de contact"
+      }
     }
   }
 }

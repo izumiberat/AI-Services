@@ -154,25 +154,29 @@
           {
             "icon": "🚀",
             "title": "Quick Start",
-            "text": "Functional prototype in 1-2 weeks"
+            "text": "Functional prototype in 1-2 weeks",
+            "mobileText": "1-2 weeks"
           },
           {
-            "icon": "🛡️",
+            "icon": "🛡️", 
             "title": "GDPR Compliant",
-            "text": "Data security built into every solution"
+            "text": "Data security built into every solution",
+            "mobileText": "Secure data"
           },
           {
             "icon": "💬",
             "title": "24h Response Time",
-            "text": "We get back to you within one business day"
+            "text": "We get back to you within one business day",
+            "mobileText": "Fast reply"
           },
           {
             "icon": "📊",
             "title": "Clear ROI",
-            "text": "Transparent pricing with measurable results"
+            "text": "Transparent pricing with measurable results",
+            "mobileText": "Measurable results"
           }
         ],
-        "securityBadge": "GDPR Compliant & Secure",
+        "securityBadge": "GDPR Compliant & Secure"
       },
       "success": {
         "title": "Message Sent Successfully!",
@@ -340,25 +344,29 @@
           {
             "icon": "🚀",
             "title": "Démarrage Rapide",
-            "text": "Prototype fonctionnel en 1-2 semaines"
+            "text": "Prototype fonctionnel en 1-2 semaines",
+            "mobileText": "1-2 semaines"
           },
           {
             "icon": "🛡️",
             "title": "Conforme RGPD",
-            "text": "Sécurité des données intégrée à chaque solution"
+            "text": "Sécurité des données intégrée à chaque solution", 
+            "mobileText": "Données sécurisées"
           },
           {
             "icon": "💬",
             "title": "Réponse sous 24h",
-            "text": "Nous vous répondons dans un jour ouvrable"
+            "text": "Nous vous répondons dans un jour ouvrable",
+            "mobileText": "Réponse rapide"
           },
           {
             "icon": "📊",
             "title": "ROI Clair",
-            "text": "Tarification transparente avec résultats mesurables"
+            "text": "Tarification transparente avec résultats mesurables",
+            "mobileText": "Résultats mesurables"
           }
         ],
-      "securityBadge": "Conforme RGPD et Sécurisé",
+        "securityBadge": "Conforme RGPD et Sécurisé"
       },
       "success": {
         "title": "Message Envoyé avec Succès !",

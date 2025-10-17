@@ -318,53 +318,103 @@
                     </div>
                 </div>
     
-                <!-- Contact Form - Initially hidden on mobile -->
-                <div class="contact-form-container">
-                    <div class="form-header">
-                        <h3 data-i18n="contact.form.title">Tell us about your project</h3>
-                        <button class="back-to-options btn btn-text" data-i18n="contact.form.back">← Back to options</button>
-                    </div>
-                    
-                    <div class="contact-form">
-                        <form id="lead-form" action="https://formspree.io/f/mjkajzlq" method="POST">
-                            <div class="form-group">
-                                <label for="name" data-i18n="contact.form.name">Name *</label>
-                                <input type="text" id="name" name="name" required aria-required="true">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email" data-i18n="contact.form.email">Email *</label>
-                                <input type="email" id="email" name="email" required aria-required="true">
-                            </div>
+                <!-- Contact Form & Trust Section -->
+                <div class="contact-form-and-trust">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <div class="form-header">
+                            <h3 data-i18n="contact.form.title">Tell us about your project</h3>
+                            <button class="back-to-options btn btn-text" data-i18n="contact.form.back">← Back to options</button>
+                        </div>
+                        
+                        <div class="contact-form">
+                            <form id="lead-form" action="https://formspree.io/f/mjkajzlq" method="POST">
+                                <div class="form-group">
+                                    <label for="name" data-i18n="contact.form.name">Name *</label>
+                                    <input type="text" id="name" name="name" required aria-required="true">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" data-i18n="contact.form.email">Email *</label>
+                                    <input type="email" id="email" name="email" required aria-required="true">
+                                </div>
     
-                            <div class="form-group">
-                                <label for="phone" data-i18n="contact.form.phone">Phone Number (Optional)</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+33 1 23 45 67 89">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="company" data-i18n="contact.form.company">Company</label>
-                                <input type="text" id="company" name="company">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message" data-i18n="contact.form.message">Project details or questions *</label>
-                                <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">
-                                <span class="btn-text">Send Message</span>
-                                <span class="btn-loading" style="display: none;">Sending...</span>
-                            </button>
-                        </form>
+                                <div class="form-group">
+                                    <label for="phone" data-i18n="contact.form.phone">Phone Number (Optional)</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+33 1 23 45 67 89">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="company" data-i18n="contact.form.company">Company</label>
+                                    <input type="text" id="company" name="company">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" data-i18n="contact.form.message">Project details or questions *</label>
+                                    <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-loading" style="display: none;">Sending...</span>
+                                </button>
+                            </form>
+                        </div>
+    
+                        <!-- Success Message -->
+                        <div id="form-success" class="form-success-message" style="display: none;">
+                            <div class="success-icon">✓</div>
+                            <h3 data-i18n="contact.success.title">Message Sent Successfully!</h3>
+                            <p data-i18n="contact.success.message">Thank you for your inquiry. We'll be in touch within 24 hours to discuss your project.</p>
+                            <button onclick="resetForm()" class="btn btn-secondary" data-i18n="contact.success.button">Send Another Message</button>
+                        </div>
                     </div>
     
-                    <!-- Success Message -->
-                    <div id="form-success" class="form-success-message" style="display: none;">
-                        <div class="success-icon">✓</div>
-                        <h3 data-i18n="contact.success.title">Message Sent Successfully!</h3>
-                        <p data-i18n="contact.success.message">Thank you for your inquiry. We'll be in touch within 24 hours to discuss your project.</p>
-                        <button onclick="resetForm()" class="btn btn-secondary" data-i18n="contact.success.button">Send Another Message</button>
+                    <!-- Trust Section -->
+                    <div class="trust-section">
+                        <h3 data-i18n="contact.trust.title">Why Businesses Choose IzuTech</h3>
+                        
+                        <div class="trust-points">
+                            <div class="trust-point">
+                                <div class="trust-icon">🚀</div>
+                                <div class="trust-content">
+                                    <h4 data-i18n="contact.trust.points.0.title">Quick Start</h4>
+                                    <p data-i18n="contact.trust.points.0.text">Functional prototype in 1-2 weeks</p>
+                                </div>
+                            </div>
+                            
+                            <div class="trust-point">
+                                <div class="trust-icon">🛡️</div>
+                                <div class="trust-content">
+                                    <h4 data-i18n="contact.trust.points.1.title">GDPR Compliant</h4>
+                                    <p data-i18n="contact.trust.points.1.text">Data security built into every solution</p>
+                                </div>
+                            </div>
+                            
+                            <div class="trust-point">
+                                <div class="trust-icon">💬</div>
+                                <div class="trust-content">
+                                    <h4 data-i18n="contact.trust.points.2.title">24h Response Time</h4>
+                                    <p data-i18n="contact.trust.points.2.text">We get back to you within one business day</p>
+                                </div>
+                            </div>
+                            
+                            <div class="trust-point">
+                                <div class="trust-icon">📊</div>
+                                <div class="trust-content">
+                                    <h4 data-i18n="contact.trust.points.3.title">Clear ROI</h4>
+                                    <p data-i18n="contact.trust.points.3.text">Transparent pricing with measurable results</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional trust element -->
+                        <div class="trust-footer">
+                            <div class="security-badge">
+                                <span class="badge-icon">🛡️</span>
+                                <span class="badge-text">GDPR Compliant & Secure</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -177,20 +177,32 @@ document.addEventListener('DOMContentLoaded', function() {
     function initContactSection() {
         const showFormBtn = document.querySelector('.show-form-btn');
         const backToOptions = document.querySelector('.back-to-options');
-        const contactFormContainer = document.querySelector('.contact-form-container');
+        const contactFormAndTrust = document.querySelector('.contact-form-and-trust');
         const contactOptions = document.querySelector('.contact-options');
         
-        if (showFormBtn && contactFormContainer && contactOptions) {
+        if (showFormBtn && contactFormAndTrust && contactOptions) {
             showFormBtn.addEventListener('click', function() {
                 if (window.innerWidth <= 768) {
                     contactOptions.style.display = 'none';
-                    contactFormContainer.classList.add('active');
+                    contactFormAndTrust.classList.add('active');
                     // Smooth scroll to form
-                    contactFormContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    contactFormAndTrust.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
             });
         }
         
+        if (backToOptions && contactFormAndTrust && contactOptions) {
+            backToOptions.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    contactFormAndTrust.classList.remove('active');
+                    contactOptions.style.display = 'grid';
+                    // Smooth scroll back to options
+                    contactOptions.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        }
+    }
+    
         if (backToOptions && contactFormContainer && contactOptions) {
             backToOptions.addEventListener('click', function() {
                 if (window.innerWidth <= 768) {
@@ -201,6 +213,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
+    }
+
+    // Initialize trust section animations
+    function initTrustSection() {
+        const trustPoints = document.querySelectorAll('.trust-point');
+        
+        // Add intersection observer for trust section animations
+        const trustObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        trustPoints.forEach(point => {
+            trustObserver.observe(point);
+        });
     }
 
     // Form submission with Formspree
@@ -340,6 +370,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize contact section interactions
     initContactSection();
+
+    // Initialize trust section animations
+    initTrustSection();
 
     // Performance: Preload other language
     const browserLang = navigator.language || navigator.userLanguage;

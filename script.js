@@ -149,7 +149,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (element.hasAttribute('aria-label')) {
                     element.setAttribute('aria-label', value);
                 } else {
-                    element.textContent = value;
+                    // FIX: Use innerHTML instead of textContent to preserve HTML entities like →
+                    element.innerHTML = value;
                 }
             }
         });

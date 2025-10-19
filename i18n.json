@@ -185,6 +185,27 @@
       }
     },
     "footer": {
+      "businesses": {
+        "title": "Explore Our Business Ecosystem",
+        "cta": "Discover →",
+        "play": {
+          "title": "Quick Kid Activities",
+          "description": "Creative activities for busy parents"
+        },
+        "seniors": {
+          "title": "Tech Help for Seniors", 
+          "description": "Patient technology assistance"
+        },
+        "web": {
+          "title": "Professional Websites",
+          "description": "Local business web solutions"
+        },
+        "events": {
+          "title": "Event Dashboards",
+          "description": "Real-time event analytics"
+        }
+      },
+      "tagline": "Transforming Businesses with AI & Technology Solutions",
       "copyright": "© 2025 IzuTech. All rights reserved.",
       "privacy": "Data processing GDPR compliant. Your information is secure with us."
     },
@@ -481,8 +502,29 @@
       }
     },
     "footer": {
+      "businesses": {
+        "title": "Découvrez Notre Écosystème d'Entreprises",
+        "cta": "Découvrir →",
+        "play": {
+          "title": "Activités Enfants Rapides",
+          "description": "Activités créatives pour parents occupés"
+        },
+        "seniors": {
+          "title": "Aide Technologique Séniors",
+          "description": "Assistance technologique patiente"
+        },
+        "web": {
+          "title": "Sites Web Professionnels",
+          "description": "Solutions web pour entreprises locales"
+        },
+        "events": {
+          "title": "Tableaux de Bord Événements",
+          "description": "Analyses d'événements en temps réel"
+        }
+      },
+      "tagline": "Transformer les Entreprises avec des Solutions IA & Technologie",
       "copyright": "© 2025 IzuTech. Tous droits réservés.",
-      "privacy": "Traitement des données conforme RGPD. Vos informations sont sécurisées avec nous."
+      "privacy": "Traitement des données conforme RGPD. Vos informations sont sécurisées."
     },
 
     "technical": {

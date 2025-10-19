@@ -576,65 +576,6 @@
     </footer>
 
     <script src="script.js" defer></script>
-    
-    <!-- Lazy load non-critical resources -->
-    <script>
-    // Enhanced lazy loading with error handling
-    function initLazyLoading() {
-        // For browsers that support native lazy loading
-        if ('loading' in HTMLImageElement.prototype) {
-            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-            lazyImages.forEach(img => {
-                // Ensure src is preserved for footer logo
-                if (!img.src && img.getAttribute('src')) {
-                    // Image already has src, no action needed
-                    return;
-                }
-            });
-        } else {
-            // Fallback for older browsers
-            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-            
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.classList.add('loaded');
-                            imageObserver.unobserve(img);
-                        }
-                    });
-                });
 
-                lazyImages.forEach(img => {
-                    imageObserver.observe(img);
-                });
-            } else {
-                // Fallback for very old browsers - load all images immediately
-                lazyImages.forEach(img => {
-                    img.classList.add('loaded');
-                });
-            }
-        }
-    }
-
-    // Initialize lazy loading when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initLazyLoading);
-    } else {
-        initLazyLoading();
-    }
-    
-    // Service Worker Registration for Performance (optional)
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/sw.js').then(function(registration) {
-                console.log('ServiceWorker registration successful');
-            }, function(err) {
-                console.log('ServiceWorker registration failed: ', err);
-            });
-        });
-    }
-    </script>
 </body>
 </html>

@@ -22,14 +22,9 @@ function initLazyLoading() {
     }
 }
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-    initLazyLoading();
-    // Your existing DOMContentLoaded code here...
-});
-
 // Language management and mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
+    initLazyLoading();
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');

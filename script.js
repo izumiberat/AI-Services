@@ -1,3 +1,33 @@
+// Performance: Lazy loading for images
+function initLazyLoading() {
+    // Only for browsers that don't support native lazy loading
+    if (!('loading' in HTMLImageElement.prototype)) {
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    }
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    initLazyLoading();
+    // Your existing DOMContentLoaded code here...
+});
+
 // Language management and mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle

@@ -310,308 +310,307 @@
   },
   "fr": {
     "meta": {
-      "title": "Solutions d'IA Stratégiques | Pour les Tech Françaises & PME",
-      "description": "Solutions pratiques d'automatisation IA pour les entreprises françaises. De la stratégie au code, nous construisons et déployons des outils IA qui automatisent vos opérations."
+      "title": "Solutions IA Stratégiques | Pour les Entreprises Françaises & PME",
+      "description": "Automatisez vos processus métier avec nos solutions IA sur mesure. De la stratégie au déploiement, nous concevons des outils intelligents qui boostent votre productivité."
     },
     "nav": {
       "logo": "IzuTech",
-      "services": "Services",
-      "process": "Processus",
+      "services": "Nos Solutions",
+      "process": "Notre Méthode",
       "faq": "FAQ",
       "contact": "Contact"
     },
     "hero": {
-      "title": "Solutions d'IA Stratégiques pour les Entreprises Françaises",
-      "subtitle": "Nous concevons et déployons des outils d'IA pratiques qui automatisent vos opérations commerciales, en combinant expertise technique et vision stratégique.",
-      "ctaPrimary": "Réserver une Consultation Gratuite",
-      "ctaSecondary": "Découvrir nos Services",
+      "title": "Libérez le Potentiel de Votre Entreprise avec l'IA",
+      "subtitle": "Nous développons des solutions IA concrètes qui automatisent vos processus métier, alliant expertise technique et vision stratégique pour votre croissance.",
+      "ctaPrimary": "Consultation Gratuite",
+      "ctaSecondary": "Découvrir nos Solutions",
       "stats": {
-        "timeSaved": "Réduction des tâches manuelles",
-        "weeks": "Semaines jusqu'à l'implémentation",
-        "startingPrice": "Prix de départ"
+        "timeSaved": "Tâches manuelles réduites",
+        "weeks": "Déploiement rapide",
+        "startingPrice": "Budget accessible"
       }
     },
     "services": {
-      "title": "Services d'IA Productisés",
-      "subtitle": "Des solutions à périmètre fixe avec un ROI clair et une tarification transparente",
-      "inquire": "Renseignez-vous sur ce service",
+      "title": "Nos Solutions IA Clés en Main",
+      "subtitle": "Des services au périmètre défini avec ROI mesurable et tarification transparente",
+      "inquire": "Obtenir un devis personnalisé",
       "service1": {
-        "title": "Traitement Automatisé des Données",
-        "price": "€2k - €8k",
-        "pitch": "J'automatise la tâche manuelle et répétitive d'extraction de données de vos emails, PDFs, feuilles de calcul ou formulaires.",
-        "featuresTitle": "Fonctionnalités :",
+        "title": "Automatisation du Traitement des Données",
+        "price": "À partir de 2 000 €",
+        "pitch": "Éliminez les saisies manuelles fastidieuses en automatisant l'extraction et le traitement de vos données depuis emails, PDF et tableurs.",
+        "featuresTitle": "Ce que nous faisons :",
         "features": [
-          "Traitement multi-format (PDFs, emails, feuilles de calcul)",
-          "Intégration personnalisée avec votre CRM ou base de données",
-          "Système de validation avec contrôle humain"
+          "Traitement multi-format (PDF, emails, tableurs)",
+          "Intégration sur mesure à votre CRM ou base de données",
+          "Système de validation avec contrôle humain intégré"
         ],
-        "benefitsTitle": "Avantages :",
+        "benefitsTitle": "Vos bénéfices :",
         "benefits": [
-          "Réduction du temps de saisie de 80%",
-          "Élimination des erreurs humaines dans les données critiques"
+          "Jusqu'à 80% de temps gagné sur la saisie",
+          "Fin des erreurs de saisie dans vos données critiques"
         ],
-        "useCase": "Cas d'usage :",
-        "useCaseText": "Automatisation du traitement des factures PDF quotidiennes dans QuickBooks."
+        "useCase": "Exemple concret :",
+        "useCaseText": "Automatisation complète du traitement des factures PDF dans votre logiciel de comptabilité."
       },
       "service2": {
-        "title": "Base de Connaissance Interne Intelligente",
-        "price": "€2k - €15k",
-        "pitch": "Je construis un chatbot qui donne à votre équipe des réponses instantanées à partir de vos documents d'entreprise.",
-        "featuresTitle": "Fonctionnalités :",
+        "title": "Base de Connaissance Intelligente",
+        "price": "À partir de 2 000 €",
+        "pitch": "Donnez à vos équipes un assistant IA qui trouve instantanément les informations dans vos documents d'entreprise.",
+        "featuresTitle": "Ce que nous faisons :",
         "features": [
-          "Implémentation RAG avec Pinecone pour des réponses précises",
-          "Intégration de documents multi-sources",
-          "Déploiement interne sécurisé"
+          "Technologie RAG avec Pinecone pour des réponses précises",
+          "Intégration de toutes vos sources documentaires",
+          "Déploiement sécurisé dans votre environnement"
         ],
-        "benefitsTitle": "Avantages :",
+        "benefitsTitle": "Vos bénéfices :",
         "benefits": [
-          "Réduction de 90% du temps de recherche d'information",
-          "Moitié du temps d'onboarding pour les nouveaux employés"
+          "90% de temps gagné dans la recherche d'information",
+          "Intégration des nouvelles recrues 2x plus rapide"
         ],
-        "useCase": "Cas d'usage :",
-        "useCaseText": "Un centre de recherche pour les procédures et politiques de l'entreprise."
+        "useCase": "Exemple concret :",
+        "useCaseText": "Centre de ressources intelligent pour les procédures et politiques internes."
       },
       "service3": {
-        "title": "Co-pilot Personnalisé pour le Support Client",
-        "price": "€2k - €22k",
-        "pitch": "Je construis un assistant IA pour votre équipe de support qui rédige des réponses de haute qualité alignées sur la voix de votre marque.",
-        "featuresTitle": "Fonctionnalités :",
+        "title": "Assistant IA pour le Support Client",
+        "price": "À partir de 2 000 €",
+        "pitch": "Équipez vos conseillers d'un co-pilot IA qui rédige des réponses personnalisées, fidèles à l'identité de votre marque.",
+        "featuresTitle": "Ce que nous faisons :",
         "features": [
-          "Intégration avec Zendesk, Intercom ou Freshdesk",
-          "Voix de marque et ton cohérents",
-          "Apprentissage continu à partir des tickets passés"
+          "Intégration native avec Zendesk, Intercom, Freshdesk",
+          "Maintien de votre ton et style rédactionnel",
+          "Amélioration continue par apprentissage"
         ],
-        "benefitsTitle": "Avantages :",
+        "benefitsTitle": "Vos bénéfices :",
         "benefits": [
-          "Réduction de 50% du temps moyen de traitement des tickets",
-          "Amélioration de la cohérence et de la qualité du support"
+          "Temps de traitement des tickets réduit de 50%",
+          "Qualité et cohérence du service renforcées"
         ],
-        "useCase": "Cas d'usage :",
-        "useCaseText": "Un co-pilot IA qui suggère des réponses dans Zendesk."
+        "useCase": "Exemple concret :",
+        "useCaseText": "Assistant intelligent qui suggère des réponses pertinentes dans Zendesk."
       }
     },
     "process": {
-      "title": "Notre Processus Stratégique",
-      "subtitle": "Une approche concentrée qui dérisque votre investissement IA",
+      "title": "Notre Méthode de Collaboration",
+      "subtitle": "Une approche étape par étape qui sécurise votre investissement IA",
       "step1": {
-        "title": "Découverte & Stratégie",
-        "text": "Nous identifions vos plus gros problèmes et définissons des métriques de succès claires avec ROI tangible."
+        "title": "Audit & Stratégie",
+        "text": "Nous identifions ensemble vos processus les plus chronophages et définissons des objectifs concrets avec ROI mesurable."
       },
       "step2": {
-        "title": "Construction & Prototype",
-        "text": "Je construis un prototype fonctionnel en 1-2 semaines pour valider la solution avant l'implémentation complète."
+        "title": "Prototypage & Validation",
+        "text": "Développement d'un prototype fonctionnel en 1-2 semaines pour valider la solution avant le déploiement complet."
       },
       "step3": {
-        "title": "Lancement & Support",
-        "text": "Déploiement de la solution de production avec documentation et options de support continu."
+        "title": "Déploiement & Accompagnement",
+        "text": "Mise en production avec documentation complète et options de support adaptées à vos besoins."
       }
     },
     "faq": {
       "title": "Questions Fréquentes",
       "questions": [
         {
-          "question": "Comment assurez-vous la sécurité des données et la conformité RGPD ?",
-          "answer": "Toutes les solutions sont conçues avec les principes RGPD dès la conception. Nous pouvons traiter les données localement, utiliser le déploiement on-premise ou sélectionner des providers cloud conformes."
+          "question": "Comment garantissez-vous la sécurité des données et le respect du RGPD ?",
+          "answer": "Toutes nos solutions intègrent les principes RGPD dès leur conception. Nous privilégions le traitement local des données, les déploiements on-premise ou des hébergeurs cloud certifiés."
         },
         {
-          "question": "Avec quels systèmes pouvez-vous vous intégrer ?",
-          "answer": "La plupart des CRM populaires (Salesforce, HubSpot), bases de données, plateformes de support (Zendesk, Intercom) et systèmes documentaires (Google Workspace, Confluence, SharePoint)."
+          "question": "Quelles sont vos possibilités d'intégration ?",
+          "answer": "Nous connectons nos solutions à l'ensemble de votre écosystème : CRM (Salesforce, HubSpot), bases de données, plateformes de support (Zendesk, Intercom) et outils collaboratifs."
         },
         {
-          "question": "Quel support fournissez-vous après le lancement ?",
-          "answer": "30 jours de support inclus, avec des packages de maintenance continus optionnels. Documentation complète et formation pour votre équipe."
+          "question": "Quel accompagnement après la mise en service ?",
+          "answer": "30 jours de support inclus, avec possibilité de maintenance continue. Nous fournissons également documentation complète et formation de vos équipes."
         },
         {
-          "question": "Quel est le délai typique ?",
-          "answer": "Prototype en 1-2 semaines, implémentation complète en 4-8 semaines selon la complexité. Nous commençons par un prototype concret pour dérisquer le projet."
+          "question": "Quels sont vos délais de réalisation ?",
+          "answer": "Prototype en 1-2 semaines, solution finale en 4-8 semaines selon la complexité. Nous validons d'abord un prototype concret pour minimiser les risques."
         }
       ]
     },
     "contact": {
-      "title": "Démarrez Votre Projet d'Automatisation IA",
-      "subtitle": "Réservez une consultation gratuite ou envoyez-nous les détails de votre projet",
+      "title": "Lancez Votre Projet d'IA Dès Maintenant",
+      "subtitle": "Discutons de vos besoins lors d'une consultation gratuite ou partagez-nous les détails de votre projet",
       "options": {
         "form": {
-          "title": "Envoyez-nous un message",
-          "description": "Partagez les détails de votre projet et nous vous répondrons dans les 24 heures",
-          "button": "Remplir le formulaire"
+          "title": "Échangeons par message",
+          "description": "Décrivez votre projet et recevez une réponse sous 24 heures",
+          "button": "Nous écrire"
         },
         "call": {
-          "title": "Planifier un appel",
-          "description": "Consultation gratuite de 30 minutes pour discuter de vos besoins",
-          "button": "Réserver un appel"
+          "title": "Consultation téléphonique",
+          "description": "30 minutes d'échange gratuit pour analyser vos besoins",
+          "button": "Planifier un appel"
         },
         "email": {
-          "title": "Envoyez-nous un email",
-          "description": "Vous préférez commencer par un email ? Nous sommes là pour vous aider.",
+          "title": "Contact par email",
+          "description": "Vous préférez échanger par email ? Nous sommes à votre écoute.",
           "button": "contact@izutech.fr"
         }
       },
       "form": {
-        "title": "Parlez-nous de votre projet",
-        "back": "← Retour aux options",
+        "title": "Parlons de Votre Projet",
+        "back": "← Retour aux options de contact",
         "name": "Nom *",
         "email": "Email *",
-        "phone": "Numéro de téléphone (Optionnel)",
+        "phone": "Téléphone (Optionnel)",
         "company": "Entreprise",
-        "message": "Détails du projet ou questions *",
-        "submit": "Envoyer le Message"
+        "message": "Détails de votre projet ou questions *",
+        "submit": "Envoyer ma Demande"
       },
       "trust": {
-        "title": "Pourquoi les Entreprises Choisissent IzuTech",
+        "title": "Pourquoi Nous Faire Confiance ?",
         "points": [
           {
             "icon": "🚀",
-            "title": "Démarrage Rapide",
+            "title": "Rapidité d'exécution",
             "text": "Prototype fonctionnel en 1-2 semaines",
-            "mobileText": "1-2 semaines"
+            "mobileText": "Démarrage rapide"
           },
           {
             "icon": "🛡️",
-            "title": "Conforme RGPD",
-            "text": "Sécurité des données intégrée à chaque solution", 
-            "mobileText": "Données sécurisées"
+            "title": "Conformité RGPD",
+            "text": "Sécurité des données intégrée à chaque solution",
+            "mobileText": "Données protégées"
           },
           {
             "icon": "💬",
-            "title": "Réponse sous 24h",
-            "text": "Nous vous répondons dans un jour ouvrable",
-            "mobileText": "Réponse rapide"
+            "title": "Réactivité",
+            "text": "Réponse garantie sous 24h ouvrées",
+            "mobileText": "Réponse sous 24h"
           },
           {
             "icon": "📊",
-            "title": "ROI Clair",
-            "text": "Tarification transparente avec résultats mesurables",
+            "title": "ROI Tangible",
+            "text": "Résultats concrets et tarification transparente",
             "mobileText": "Résultats mesurables"
           }
         ],
-        "securityBadge": "Conforme RGPD et Sécurisé"
+        "securityBadge": "Conforme RGPD & Sécurisé"
       },
       "success": {
-        "title": "Message Envoyé avec Succès !",
-        "message": "Merci pour votre demande. Nous vous recontacterons dans les 24 heures pour discuter de votre projet.",
-        "button": "Envoyer un Autre Message"
+        "title": "Message Envoyé !",
+        "message": "Merci pour votre confiance. Nous vous recontactons dans les 24 heures pour échanger sur votre projet.",
+        "button": "Nouveau Message"
       }
     },
     "footer": {
       "businesses": {
-        "title": "Découvrez Notre Écosystème d'Entreprises",
-        "cta": "Découvrir →",
+        "title": "Découvrez Notre Écosystème",
+        "cta": "Explorer →",
         "web": {
           "title": "Sites Web Professionnels",
-          "description": "Solutions web pour entreprises locales"
+          "description": "Solutions digitales sur mesure pour TPE/PME"
         },
         "events": {
-          "title": "Tableaux de Bord Événements",
-          "description": "Analyses d'événements en temps réel"
+          "title": "Dashboards Événementiels",
+          "description": "Analytics temps réel pour vos événements"
         }
       },
-      "tagline": "Transformer les Entreprises avec des Solutions IA & Technologie",
+      "tagline": "Nous Accélérons la Transformation Digitale des Entreprises avec l'IA",
       "copyright": "© 2025 IzuTech. Tous droits réservés.",
-      "privacy": "Traitement des données conforme RGPD. Vos informations sont sécurisées."
+      "privacy": "Vos données sont traitées en conformité avec le RGPD et sécurisées."
     },
-
     "technical": {
       "meta": {
-        "title": "Aperçu Technique | Solutions d'Automatisation et de Connaissance IA",
-        "description": "Découvrez les piles technologiques et projets réels derrière mes solutions d'automatisation, bases de connaissances et copilotes de support client."
+        "title": "Expertise Technique | Solutions d'Automatisation IA & Bases de Connaissance",
+        "description": "Découvrez notre stack technique et nos réalisations concrètes en automatisation IA, bases de connaissances intelligentes et assistants pour support client."
       },
       "intro": {
-        "title": "Sous le capot : comment fonctionnent mes solutions IA",
-        "subtitle": "Cette page propose une plongée technique dans l'architecture, la pile technologique et les projets portfolio réels derrière chaque service d'IA.",
+        "title": "Notre Savoir-Faire Technique",
+        "subtitle": "Plongée dans l'architecture, les technologies et les cas réels qui alimentent chacune de nos solutions IA.",
         "back": "← Retour à l'accueil"
       },
       "service_tech": {
-        "tech_stack": "Pile Technologique",
-        "architecture": "Processus d'Implémentation",
-        "portfolio": "Projet Portfolio", 
-        "view_demo": "Voir la démo",
+        "tech_stack": "Technologies Utilisées",
+        "architecture": "Notre Processus de Développement",
+        "portfolio": "Projet Réalisé",
+        "view_demo": "Voir la Démo",
         "service1": {
           "tech_stack": "Python, OpenAI GPT-4, Streamlit, pdfplumber, pandas",
           "architecture": [
-            "Téléchargement de documents et extraction de texte",
-            "Analyse et structuration des données par IA",
-            "Interface de validation et revue humaine",
-            "Export vers le système cible (CRM, base de données, tableur)"
+            "Import des documents et extraction du contenu",
+            "Analyse et structuration intelligente des données",
+            "Interface de validation et contrôle qualité",
+            "Export vers vos systèmes (CRM, base de données)"
           ],
-          "portfolio_name": "Automate PDF Facture-vers-Tableur",
+          "portfolio_name": "Automate de Traitement de Factures PDF",
           "portfolio_stack": "Python, Streamlit, OpenAI GPT-4, pdfplumber"
         },
         "service2": {
-          "tech_stack": "Python, OpenAI Embeddings, Pinecone, LangChain, Streamlit", 
+          "tech_stack": "Python, OpenAI Embeddings, Pinecone, LangChain, Streamlit",
           "architecture": [
-            "Traitement et segmentation de documents multi-formats",
-            "Génération et stockage d'embeddings vectoriels",
-            "Système de recherche sémantique et récupération",
-            "Génération de réponses alimentée par RAG"
+            "Traitement et segmentation des documents",
+            "Création et indexation des embeddings vectoriels",
+            "Moteur de recherche sémantique performant",
+            "Génération de réponses contextuelles par RAG"
           ],
-          "portfolio_name": "Chatbot de Politiques d'Entreprise",
+          "portfolio_name": "Assistant Intelligent aux Politiques d'Entreprise",
           "portfolio_stack": "Python, Streamlit, OpenAI, Pinecone, LangChain"
         },
         "service3": {
-          "tech_stack": "Python, OpenAI GPT-4, APIs des plateformes de support, Couche d'intégration personnalisée",
+          "tech_stack": "Python, OpenAI GPT-4, APIs des plateformes de support, Intégration sur mesure",
           "architecture": [
-            "Analyse du contexte des tickets et classification de l'intention", 
-            "Récupération d'informations pertinentes depuis la base de connaissances",
-            "Génération de réponses alignées avec la marque",
-            "Intégration avec la plateforme de support (Zendesk/Intercom)"
+            "Analyse contextuelle des tickets et identification du besoin",
+            "Recherche intelligente dans la base de connaissances",
+            "Génération de réponses alignées avec votre marque",
+            "Intégration transparente avec votre outil de support"
           ],
-          "portfolio_name": "Assistant de Rédaction d'Emails de Support",
+          "portfolio_name": "Assistant de Rédaction pour Support Client",
           "portfolio_stack": "Python, OpenAI GPT-4, Intégration Base de Connaissance"
         }
       },
       "closing": {
-        "title": "Prêt à créer votre solution IA personnalisée ?",
-        "cta": "Planifier une consultation technique"
+        "title": "Prêt à Développer Votre Solution IA ?",
+        "cta": "Échanger avec un Expert"
       },
       "details": {
-        "show_details": "Détails Techniques", 
-        "hide_details": "Masquer les Détails",
+        "show_details": "Voir les Détails Techniques",
+        "hide_details": "Réduire les Détails",
         "benefit_titles": {
-          "efficiency": "Efficacité",
+          "efficiency": "Gain d'Efficacité",
           "accuracy": "Précision",
           "integration": "Intégration"
         },
         "feature_titles": {
-          "realtime": "Traitement en Temps Réel",
+          "realtime": "Temps Réel",
           "multiformat": "Multi-format",
-          "export": "Export Prêt",
+          "export": "Export Facile",
           "error_handling": "Gestion des Erreurs"
         },
         "service1": {
           "executive_summary": {
-            "title": "Aperçu du Projet : Traitement Intelligent des Factures",
-            "problem": "Le Défi Commercial",
-            "problem_text": "Le traitement manuel des factures coûte aux entreprises 5 à 15 minutes par facture et introduit des erreurs humaines coûteuses dans les données financières critiques.",
-            "solution": "Notre Solution IA",
-            "solution_text": "Un système intelligent qui extrait automatiquement les informations commerciales clés des factures PDF et les convertit en données structurées et exploitables.",
-            "benefits": "Résultats Clés", 
+            "title": "Projet : Automatisation du Traitement des Factures",
+            "problem": "Le Défi Rencontré",
+            "problem_text": "Le traitement manuel des factures consomme 5 à 15 minutes par document et génère des erreurs coûteuses dans les données financières.",
+            "solution": "Notre Solution",
+            "solution_text": "Un système IA qui extrait automatiquement les informations clés des factures PDF et les transforme en données structurées et exploitables.",
+            "benefits": "Résultats Obtenus",
             "benefit1": "Réduction de 90% du temps de traitement",
-            "benefit2": "Précision de 99% dans l'extraction des données",
-            "benefit3": "Export direct vers les systèmes comptables"
+            "benefit2": "Précision de 99% sur l'extraction des données",
+            "benefit3": "Intégration directe avec vos outils comptables"
           },
           "technical_architecture": {
             "title": "Architecture Technique",
-            "stack": "Pile Technologique",
+            "stack": "Stack Technique",
             "frontend": "Streamlit (Python)",
-            "ai_engine": "OpenAI GPT-4", 
+            "ai_engine": "OpenAI GPT-4",
             "pdf_processing": "pdfplumber + Extraction Personnalisée",
             "deployment": "Streamlit Community Cloud",
-            "security": "Secrets d'Environnement + API Sécurisée",
-            "architecture": "Architecture du Système",
-            "step1": "Téléchargement PDF & extraction de texte",
-            "step2": "Analyse et structuration des données par IA",
-            "step3": "Validation & assurance qualité",
+            "security": "Environnement Sécurisé + API Protégée",
+            "architecture": "Fonctionnement du Système",
+            "step1": "Import PDF et extraction du texte",
+            "step2": "Analyse et structuration par IA",
+            "step3": "Validation et contrôle qualité",
             "step4": "Export aux formats CSV/JSON"
           },
           "business_value": {
-            "title": "Valeur Commerciale",
-            "proposition": "Transformez vos comptes fournisseurs d'un centre de coût en avantage stratégique. Notre processeur alimenté par l'IA réduit les coûts de traitement des factures de 85% tout en fournissant des insights financiers en temps réel.",
-            "demo_features": "Capacités de Démo en Direct",
+            "title": "Valeur Business",
+            "proposition": "Transformez votre service comptable avec une solution qui réduit les coûts de traitement de 85% tout en fournissant des insights financiers en temps réel.",
+            "demo_features": "Fonctionnalités Démonstrées",
             "feature1": "Traitement de factures en temps réel",
-            "feature2": "Gestion multi-format",
-            "feature3": "Fonctionnalité d'export",
-            "feature4": "Démonstration de la gestion des erreurs"
+            "feature2": "Gestion de tous les formats",
+            "feature3": "Export automatisé",
+            "feature4": "Gestion robuste des erreurs"
           }
         }
       }

@@ -1040,32 +1040,98 @@ h3 {
 .footer {
     background: var(--primary-dark);
     color: white;
-    padding: 4rem 0 3rem;
+    position: relative;
+}
+
+/* Footer Business Ecosystem */
+.footer-businesses {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #1a365d 100%);
+    padding: 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section-title {
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    font-family: var(--font-accent);
 }
 
-.footer:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.03) 0%, transparent 50%);
-    pointer-events: none;
+.businesses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.business-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.business-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+}
+
+.business-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.business-card h5 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.business-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.business-link {
+    color: var(--primary-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.business-link:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Main Footer Content */
 .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    position: relative;
-    z-index: 1;
+    align-items: center;
+    padding: 2rem 0;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.footer-brand {
+    text-align: left;
 }
 
 .footer-logo {
@@ -1073,7 +1139,7 @@ h3 {
 }
 
 .footer-logo img {
-    height: 100px;
+    height: 60px;
     width: auto;
     opacity: 0.9;
     transition: var(--transition);
@@ -1084,11 +1150,22 @@ h3 {
     transform: scale(1.05);
 }
 
-.footer p {
+.footer-tagline {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.footer-info {
+    text-align: right;
+}
+
+.footer-info p {
     margin: 0;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
-    max-width: 500px;
 }
 
 /* ===== Desktop Layout ===== */
@@ -1342,6 +1419,41 @@ h3 {
         width: 28px;
         height: 28px;
     }
+    .footer-businesses {
+        padding: 2rem 0;
+    }
+    
+    .businesses-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .business-card {
+        padding: 1.25rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .footer-brand,
+    .footer-info {
+        text-align: center;
+    }
+    
+    .footer-section-title {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .footer-logo img {
+        height: 50px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1399,6 +1511,10 @@ select:focus-visible {
         --light-text: #000000;
         --light-border: #000000;
     }
+    .business-card {
+        background: rgba(0, 0, 0, 0.8);
+        border: 2px solid white;
+    }
 }
 
 /* Print styles */
@@ -1415,5 +1531,8 @@ select:focus-visible {
     
     .hero-title, .hero-subtitle {
         color: black !important;
+    }
+    .footer-businesses {
+        display: none;
     }
 }

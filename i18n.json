@@ -188,14 +188,6 @@
       "businesses": {
         "title": "Explore Our Business Ecosystem",
         "cta": "Discover →",
-        "play": {
-          "title": "Quick Kid Activities",
-          "description": "Creative activities for busy parents"
-        },
-        "seniors": {
-          "title": "Tech Help for Seniors", 
-          "description": "Patient technology assistance"
-        },
         "web": {
           "title": "Professional Websites",
           "description": "Local business web solutions"
@@ -505,14 +497,6 @@
       "businesses": {
         "title": "Découvrez Notre Écosystème d'Entreprises",
         "cta": "Découvrir →",
-        "play": {
-          "title": "Activités Enfants Rapides",
-          "description": "Activités créatives pour parents occupés"
-        },
-        "seniors": {
-          "title": "Aide Technologique Séniors",
-          "description": "Assistance technologique patiente"
-        },
         "web": {
           "title": "Sites Web Professionnels",
           "description": "Solutions web pour entreprises locales"

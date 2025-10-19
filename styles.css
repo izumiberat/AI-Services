@@ -1077,6 +1077,12 @@ h3 {
     backdrop-filter: blur(10px);
 }
 
+/* Add focus styles for business cards */
+.business-card:focus-within {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+}
+
 .business-card:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-5px);
@@ -1110,6 +1116,7 @@ h3 {
     font-size: 0.9rem;
     transition: var(--transition);
     display: inline-block;
+    cursor: pointer;
 }
 
 .business-link:hover {

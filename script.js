@@ -1,395 +1,310 @@
-// Performance: Lazy loading for images
-function initLazyLoading() {
-    // Only for browsers that don't support native lazy loading
-    if (!('loading' in HTMLImageElement.prototype)) {
-        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-        
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.classList.add('loaded');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
+// Internationalization (i18n) setup
+const i18n = {
+    en: {
+        // English translations
+    },
+    fr: {
+        // French translations  
+    }
+};
 
-            lazyImages.forEach(img => {
-                imageObserver.observe(img);
+// Fetch translations from i18n.json
+fetch('i18n.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(translations => {
+        i18n.en = translations.en;
+        i18n.fr = translations.fr;
+        
+        // Initialize with default language
+        const defaultLang = 'en';
+        let currentLang = localStorage.getItem('selectedLanguage') || defaultLang;
+        
+        // Initialize the page with the correct language
+        updateContent(currentLang);
+        
+        // Set up language selector
+        const languageSelector = document.getElementById('language-selector');
+        if (languageSelector) {
+            languageSelector.value = currentLang;
+            languageSelector.addEventListener('change', (e) => {
+                const newLang = e.target.value;
+                currentLang = newLang;
+                localStorage.setItem('selectedLanguage', newLang);
+                updateContent(newLang);
+                
+                // Update URL for French pages
+                updateURLForLanguage(newLang);
             });
+        }
+    })
+    .catch(error => {
+        console.error('Error loading translations:', error);
+    });
+
+// Utility function to get nested object properties
+function getNestedValue(obj, path) {
+    return path.split('.').reduce((current, key) => {
+        return current && current[key] !== undefined ? current[key] : null;
+    }, obj);
+}
+
+// Update content based on selected language
+function updateContent(lang) {
+    const translations = i18n[lang];
+    if (!translations) return;
+
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const value = getNestedValue(translations, key);
+        
+        if (value !== undefined && value !== null) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.setAttribute('placeholder', value);
+                // Keep current value if user has started typing
+                if (!element.value) {
+                    element.value = value;
+                }
+            } else if (element.tagName === 'IMG' && element.hasAttribute('alt')) {
+                element.setAttribute('alt', value);
+            } else {
+                // For all other elements, update the text content
+                element.textContent = value;
+                // If the element has an aria-label, update it too
+                if (element.hasAttribute('aria-label')) {
+                    element.setAttribute('aria-label', value);
+                }
+            }
+        }
+    });
+
+    // Update language attribute
+    document.documentElement.setAttribute('lang', lang);
+
+    // Update meta tags for SEO
+    updateMetaTags(lang);
+
+    // Update canonical and hreflang
+    updateCanonicalAndHreflang(lang);
+}
+
+// Update meta tags for SEO
+function updateMetaTags(lang) {
+    const translations = i18n[lang];
+    if (!translations) return;
+
+    // Update page title
+    const title = getNestedValue(translations, 'meta.title');
+    if (title) {
+        document.title = title;
+    }
+
+    // Update meta description
+    const description = getNestedValue(translations, 'meta.description');
+    if (description) {
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+            metaDescription.setAttribute('content', description);
+        }
+        
+        // Update Open Graph description
+        const ogDescription = document.querySelector('meta[property="og:description"]');
+        if (ogDescription) {
+            ogDescription.setAttribute('content', description);
+        }
+        
+        // Update Twitter description
+        const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+        if (twitterDescription) {
+            twitterDescription.setAttribute('content', description);
         }
     }
 }
 
-// Language management and mobile menu functionality
+// Update canonical URL and hreflang tags
+function updateCanonicalAndHreflang(lang) {
+    const baseURL = 'https://izutech.fr';
+    let canonicalURL = baseURL;
+    
+    if (lang === 'fr') {
+        canonicalURL = `${baseURL}/fr/`;
+    }
+    
+    // Update canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.rel = 'canonical';
+        document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = canonicalURL;
+    
+    // Update hreflang tags
+    updateHreflangTags(lang, baseURL);
+}
+
+// Update hreflang tags for multilingual SEO
+function updateHreflangTags(currentLang, baseURL) {
+    // Remove existing hreflang tags
+    const existingHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
+    existingHreflangs.forEach(link => link.remove());
+    
+    // Add new hreflang tags
+    const languages = ['en', 'fr'];
+    languages.forEach(lang => {
+        const link = document.createElement('link');
+        link.rel = 'alternate';
+        link.hreflang = lang;
+        link.href = lang === 'en' ? baseURL : `${baseURL}/${lang}/`;
+        document.head.appendChild(link);
+    });
+    
+    // Add x-default hreflang
+    const xDefaultLink = document.createElement('link');
+    xDefaultLink.rel = 'alternate';
+    xDefaultLink.hreflang = 'x-default';
+    xDefaultLink.href = baseURL;
+    document.head.appendChild(xDefaultLink);
+}
+
+// Update URL for language changes
+function updateURLForLanguage(lang) {
+    const basePath = window.location.pathname;
+    const newPath = lang === 'en' ? '/' : `/${lang}/`;
+    
+    // Only update URL if we're not already on the correct language path
+    if (!basePath.startsWith(newPath)) {
+        const newURL = `${window.location.origin}${newPath}`;
+        window.history.replaceState(null, '', newURL);
+    }
+}
+
+// Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
-    initLazyLoading();
-    // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
-    if (hamburger) {
+    if (hamburger && navMenu) {
         hamburger.addEventListener('click', function() {
-            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-            hamburger.classList.toggle('active');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
             navMenu.classList.toggle('active');
-            hamburger.setAttribute('aria-expanded', !isExpanded);
+            
+            // Update hamburger animation
+            this.classList.toggle('active');
         });
     }
-
-    // Close mobile menu when clicking on a link or outside
-    document.addEventListener('click', (e) => {
-        if (navMenu?.classList.contains('active') && 
-            !e.target.closest('.nav-menu') && 
-            !e.target.closest('.hamburger') &&
-            !e.target.closest('.language-selector')) {
-            closeMobileMenu();
-        }
-    });
     
-    // Close mobile menu on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
-            closeMobileMenu();
-            hamburger?.focus();
-        }
-    });
-    
-    function closeMobileMenu() {
-        hamburger?.classList.remove('active');
-        navMenu?.classList.remove('active');
-        hamburger?.setAttribute('aria-expanded', 'false');
-        
-        // Remove any focus from navigation elements
-        document.activeElement?.blur();
-    }
-    
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(element => {
-        element.addEventListener('click', () => {
-            closeMobileMenu();
-        });
-    });
-
-    // Smooth scrolling for anchor links
+    // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const headerHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = target.offsetTop - headerHeight - 20;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
     });
-
-    // Language management
-    const languageSelector = document.getElementById('language-selector');
-    let currentLanguage = 'en';
-    let translations = {};
-
-    // Load translations with caching
-    async function loadTranslations(lang) {
-        // Return cached translations if available
-        if (translations[lang]) {
-            return translations[lang];
-        }
-
-        try {
-            const response = await fetch('i18n.json');
-            if (!response.ok) throw new Error('Network response was not ok');
+    
+    // Contact form handling
+    const contactForm = document.getElementById('lead-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            const allTranslations = await response.json();
-            translations = allTranslations; // Cache all translations
+            const submitButton = this.querySelector('button[type="submit"]');
+            const btnText = submitButton.querySelector('.btn-text');
+            const btnLoading = submitButton.querySelector('.btn-loading');
             
-            return translations[lang] || {};
-        } catch (error) {
-            console.error('Error loading translations:', error);
-            return {};
-        }
-    }
-
-    // Update page content with translations
-    function updateContent(translations) {
-        if (!translations.meta) return;
-
-        // Update meta tags
-        document.title = translations.meta.title;
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', translations.meta.description);
-        }
-
-        // Update Open Graph tags if they exist
-        const ogTitle = document.querySelector('meta[property="og:title"]');
-        const ogDescription = document.querySelector('meta[property="og:description"]');
-        if (ogTitle) ogTitle.setAttribute('content', translations.meta.title);
-        if (ogDescription) ogDescription.setAttribute('content', translations.meta.description);
-        
-        // Update all elements with data-i18n attribute
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            const value = getNestedValue(translations, key);
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-block';
+            submitButton.disabled = true;
             
-            if (value !== undefined && value !== null) {
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.setAttribute('placeholder', value);
-                    // Keep current value if user has started typing
-                    if (!element.value) {
-                        element.value = value;
-                    }
-                } else if (element.tagName === 'IMG' && element.hasAttribute('alt')) {
-                    element.setAttribute('alt', value);
-                } else if (element.hasAttribute('aria-label')) {
-                    element.setAttribute('aria-label', value);
-                } else {
-                    // FIX: Use innerHTML instead of textContent to preserve HTML entities like →
-                    element.innerHTML = value;
-                }
-            }
-        });
-
-        // Update HTML lang attribute
-        document.documentElement.setAttribute('lang', currentLanguage);
-        
-        // Update language selector
-        if (languageSelector) {
-            languageSelector.value = currentLanguage;
-        }
-    }
-
-    // Helper function to get nested object values
-    function getNestedValue(obj, path) {
-        return path.split('.').reduce((current, key) => {
-            return current && current[key] !== undefined ? current[key] : undefined;
-        }, obj);
-    }
-
-    // Initialize language
-    async function initLanguage() {
-        // Get browser language or default to English
-        const browserLang = navigator.language || navigator.userLanguage;
-        const userLang = browserLang.startsWith('fr') ? 'fr' : 'en';
-        
-        currentLanguage = localStorage.getItem('preferredLanguage') || userLang;
-        
-        const loadedTranslations = await loadTranslations(currentLanguage);
-        updateContent(loadedTranslations);
-    }
-
-    // Language selector change event
-    if (languageSelector) {
-        languageSelector.addEventListener('change', async function(e) {
-            currentLanguage = e.target.value;
-            localStorage.setItem('preferredLanguage', currentLanguage);
-            
-            const loadedTranslations = await loadTranslations(currentLanguage);
-            updateContent(loadedTranslations);
-            
-            // Close mobile menu after language change on mobile
-            if (window.innerWidth <= 768 && navMenu?.classList.contains('active')) {
-                closeMobileMenu();
-            }
+            // Simulate form submission
+            setTimeout(() => {
+                // Hide form and show success message
+                contactForm.style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+                
+                // Reset button state (for when form is shown again)
+                btnText.style.display = 'inline-block';
+                btnLoading.style.display = 'none';
+                submitButton.disabled = false;
+            }, 1500);
         });
     }
     
-    // Mobile contact section interactions
-    function initContactSection() {
-        const showFormBtn = document.querySelector('.show-form-btn');
-        const backToOptions = document.querySelector('.back-to-options');
-        const contactFormAndTrust = document.querySelector('.contact-form-and-trust');
-        const contactOptions = document.querySelector('.contact-options');
-        
-        if (showFormBtn && contactFormAndTrust && contactOptions) {
-            showFormBtn.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    contactOptions.style.display = 'none';
-                    contactFormAndTrust.classList.add('active');
-                    // Smooth scroll to form
-                    contactFormAndTrust.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-            });
-        }
-        
-        if (backToOptions && contactFormAndTrust && contactOptions) {
-            backToOptions.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    contactFormAndTrust.classList.remove('active');
-                    contactOptions.style.display = 'grid';
-                    // Smooth scroll back to options
-                    contactOptions.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-            });
-        }
-    }
-
-    // Initialize trust section animations
-    function initTrustSection() {
-        const trustPoints = document.querySelectorAll('.trust-point');
-        
-        // Add intersection observer for trust section animations
-        const trustObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        trustPoints.forEach(point => {
-            trustObserver.observe(point);
+    // Contact options toggle functionality
+    const showFormBtn = document.querySelector('.show-form-btn');
+    const backToOptionsBtn = document.querySelector('.back-to-options');
+    const contactOptions = document.querySelector('.contact-options');
+    const contactFormContainer = document.querySelector('.contact-form-and-trust');
+    
+    if (showFormBtn && contactOptions && contactFormContainer) {
+        showFormBtn.addEventListener('click', function() {
+            contactOptions.style.display = 'none';
+            contactFormContainer.style.display = 'block';
+            this.setAttribute('aria-expanded', 'true');
         });
     }
-
-    // Form submission with Formspree
-    const contactForm = document.getElementById('lead-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Basic validation
-            const name = document.getElementById('name');
-            const email = document.getElementById('email');
-            const message = document.getElementById('message');
-            let isValid = true;
-
-            // Reset previous errors
-            contactForm.querySelectorAll('.error-message').forEach(msg => msg.remove());
-            contactForm.querySelectorAll('.error').forEach(field => field.classList.remove('error'));
-
-            // Validate required fields
-            if (!name?.value.trim()) {
-                showError(name, 'Name is required');
-                isValid = false;
-            }
-
-            if (!email?.value.trim()) {
-                showError(email, 'Email is required');
-                isValid = false;
-            } else if (!isValidEmail(email.value)) {
-                showError(email, 'Please enter a valid email address');
-                isValid = false;
-            }
-
-            if (!message?.value.trim()) {
-                showError(message, 'Message is required');
-                isValid = false;
-            }
-
-            if (isValid) {
-                // Show loading state
-                const submitBtn = contactForm.querySelector('button[type="submit"]');
-                const form = contactForm;
-                form.classList.add('form-loading');
-                submitBtn.disabled = true;
-
-                try {
-                    const formData = new FormData(form);
-                    
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    if (response.ok) {
-                        // Show success message
-                        showSuccessMessage();
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                    
-                } catch (error) {
-                    console.error('Form submission error:', error);
-                    alert('Sorry, there was an error sending your message. Please try again or email us directly.');
-                } finally {
-                    form.classList.remove('form-loading');
-                    submitBtn.disabled = false;
-                }
-            }
+    
+    if (backToOptionsBtn && contactOptions && contactFormContainer) {
+        backToOptionsBtn.addEventListener('click', function() {
+            contactFormContainer.style.display = 'none';
+            contactOptions.style.display = 'grid';
+            showFormBtn.setAttribute('aria-expanded', 'false');
         });
     }
-
-    function showSuccessMessage() {
-        const form = document.getElementById('lead-form');
-        const successMessage = document.getElementById('form-success');
+    
+    // Reset form function
+    window.resetForm = function() {
+        const contactForm = document.getElementById('lead-form');
+        const formSuccess = document.getElementById('form-success');
         
-        if (form && successMessage) {
-            // Hide form, show success message
-            form.style.display = 'none';
-            successMessage.style.display = 'block';
-            
-            // Smooth scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (contactForm && formSuccess) {
+            contactForm.reset();
+            contactForm.style.display = 'block';
+            formSuccess.style.display = 'none';
         }
+    };
+    
+    // Performance monitoring
+    if ('performance' in window) {
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const perfEntries = performance.getEntriesByType('navigation');
+                if (perfEntries.length > 0) {
+                    const navEntry = perfEntries[0];
+                    console.log('Page load time:', navEntry.loadEventEnd - navEntry.fetchStart, 'ms');
+                }
+            }, 0);
+        });
     }
-
-    function resetForm() {
-        const form = document.getElementById('lead-form');
-        const successMessage = document.getElementById('form-success');
-        
-        if (form && successMessage) {
-            // Show form, hide success message
-            form.style.display = 'block';
-            successMessage.style.display = 'none';
-            
-            // Reset form fields
-            form.reset();
-            
-            // Scroll to form
-            form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-    }
-
-    // Make resetForm globally available for the success message button
-    window.resetForm = resetForm;
-
-    function showError(field, message) {
-        if (!field) return;
-        
-        field.classList.add('error');
-        const errorElement = document.createElement('div');
-        errorElement.className = 'error-message';
-        errorElement.style.cssText = 'color: #E74C3C; font-size: 0.875rem; margin-top: 0.25rem;';
-        errorElement.textContent = message;
-        field.parentNode.appendChild(errorElement);
-    }
-
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    // Add CSS for error states
-    const style = document.createElement('style');
-    style.textContent = `
-        .form-group input.error,
-        .form-group textarea.error {
-            border-color: #E74C3C !important;
-            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1) !important;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Initialize the page
-    initLanguage();
-
-    // Initialize contact section interactions
-    initContactSection();
-
-    // Initialize trust section animations
-    initTrustSection();
-
-    // Performance: Preload other language
-    const browserLang = navigator.language || navigator.userLanguage;
-    const otherLang = browserLang.startsWith('fr') ? 'en' : 'fr';
-    loadTranslations(otherLang);
 });
+
+// Error handling for failed resources
+window.addEventListener('error', function(e) {
+    console.error('Error loading resource:', e.target.src || e.target.href);
+}, true);
+
+// Service Worker registration for PWA capabilities (optional)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+                console.log('SW registration failed: ', registrationError);
+            });
+    });
+}

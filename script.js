@@ -20,9 +20,8 @@ fetch('i18n.json')
         i18n.en = translations.en;
         i18n.fr = translations.fr;
         
-        // Initialize with default language
-        const defaultLang = 'en';
-        let currentLang = localStorage.getItem('selectedLanguage') || defaultLang;
+        // Initialize with proper language detection
+        const currentLang = initializeLanguage();
         
         // Initialize the page with the correct language
         updateContent(currentLang);
@@ -33,17 +32,18 @@ fetch('i18n.json')
             languageSelector.value = currentLang;
             languageSelector.addEventListener('change', (e) => {
                 const newLang = e.target.value;
-                currentLang = newLang;
                 localStorage.setItem('selectedLanguage', newLang);
                 updateContent(newLang);
                 
-                // Update URL for French pages
+                // Update URL without changing path - using search params
                 updateURLForLanguage(newLang);
             });
         }
     })
     .catch(error => {
         console.error('Error loading translations:', error);
+        // Fallback to English
+        updateContent('en');
     });
 
 // Utility function to get nested object properties
@@ -81,6 +81,7 @@ function updateContent(lang) {
                 }
             }
         }
+        updateSocialMetaTags(lang);
     });
 
     // Update language attribute
@@ -126,25 +127,41 @@ function updateMetaTags(lang) {
     }
 }
 
+// Initialize language based on URL parameter or stored preference
+function initializeLanguage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const storedLang = localStorage.getItem('selectedLanguage');
+    const browserLang = navigator.language.split('-')[0]; // Get primary language
+    
+    // Priority: URL param > stored preference > browser language > default (en)
+    let lang = 'en';
+    if (urlLang && (urlLang === 'en' || urlLang === 'fr')) {
+        lang = urlLang;
+    } else if (storedLang) {
+        lang = storedLang;
+    } else if (browserLang === 'fr') {
+        lang = 'fr';
+    }
+    
+    return lang;
+}
+
+
 // Update canonical URL and hreflang tags
 function updateCanonicalAndHreflang(lang) {
     const baseURL = 'https://izutech.fr';
-    let canonicalURL = baseURL;
     
-    if (lang === 'fr') {
-        canonicalURL = `${baseURL}/fr/`;
-    }
-    
-    // Update canonical URL
+    // Update canonical URL - always point to main domain
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
         canonicalLink = document.createElement('link');
         canonicalLink.rel = 'canonical';
         document.head.appendChild(canonicalLink);
     }
-    canonicalLink.href = canonicalURL;
+    canonicalLink.href = baseURL;
     
-    // Update hreflang tags
+    // Update hreflang tags with proper URLs
     updateHreflangTags(lang, baseURL);
 }
 
@@ -154,13 +171,17 @@ function updateHreflangTags(currentLang, baseURL) {
     const existingHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
     existingHreflangs.forEach(link => link.remove());
     
-    // Add new hreflang tags
-    const languages = ['en', 'fr'];
+    // Add new hreflang tags with proper self-referencing
+    const languages = [
+        { code: 'en', url: baseURL },
+        { code: 'fr', url: `${baseURL}?lang=fr` }
+    ];
+    
     languages.forEach(lang => {
         const link = document.createElement('link');
         link.rel = 'alternate';
-        link.hreflang = lang;
-        link.href = lang === 'en' ? baseURL : `${baseURL}/${lang}/`;
+        link.hreflang = lang.code;
+        link.href = lang.url;
         document.head.appendChild(link);
     });
     
@@ -170,17 +191,47 @@ function updateHreflangTags(currentLang, baseURL) {
     xDefaultLink.hreflang = 'x-default';
     xDefaultLink.href = baseURL;
     document.head.appendChild(xDefaultLink);
+    
+    // Set self-referencing hreflang for current language
+    const selfLink = document.createElement('link');
+    selfLink.rel = 'alternate';
+    selfLink.hreflang = 'x-default';
+    selfLink.href = currentLang === 'en' ? baseURL : `${baseURL}?lang=${currentLang}`;
+    document.head.appendChild(selfLink);
 }
 
 // Update URL for language changes
 function updateURLForLanguage(lang) {
-    const basePath = window.location.pathname;
-    const newPath = lang === 'en' ? '/' : `/${lang}/`;
+    // Use URL search parameters instead of path changes
+    const url = new URL(window.location);
     
-    // Only update URL if we're not already on the correct language path
-    if (!basePath.startsWith(newPath)) {
-        const newURL = `${window.location.origin}${newPath}`;
-        window.history.replaceState(null, '', newURL);
+    if (lang === 'en') {
+        // Remove language parameter for English (default)
+        url.searchParams.delete('lang');
+    } else {
+        // Set language parameter for other languages
+        url.searchParams.set('lang', lang);
+    }
+    
+    // Update URL without page reload
+    window.history.replaceState(null, '', url.toString());
+}
+
+// Update Open Graph and social media URLs
+function updateSocialMetaTags(lang) {
+    const baseURL = 'https://izutech.fr';
+    const ogUrl = lang === 'en' ? baseURL : `${baseURL}?lang=${lang}`;
+    
+    // Update Open Graph URL
+    const ogUrlMeta = document.querySelector('meta[property="og:url"]');
+    if (ogUrlMeta) {
+        ogUrlMeta.content = ogUrl;
+    }
+    
+    // Update og:locale based on language
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) {
+        ogLocale.content = lang === 'en' ? 'en_US' : 'fr_FR';
     }
 }
 

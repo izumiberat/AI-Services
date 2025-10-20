@@ -53,6 +53,26 @@ function getNestedValue(obj, path) {
     }, obj);
 }
 
+// Initialize language based on URL parameter or stored preference
+function initializeLanguage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const storedLang = localStorage.getItem('selectedLanguage');
+    const browserLang = navigator.language.split('-')[0]; // Get primary language
+    
+    // Priority: URL param > stored preference > browser language > default (en)
+    let lang = 'en';
+    if (urlLang && (urlLang === 'en' || urlLang === 'fr')) {
+        lang = urlLang;
+    } else if (storedLang) {
+        lang = storedLang;
+    } else if (browserLang === 'fr') {
+        lang = 'fr';
+    }
+    
+    return lang;
+}
+
 // Update content based on selected language
 function updateContent(lang) {
     const translations = i18n[lang];
@@ -81,7 +101,6 @@ function updateContent(lang) {
                 }
             }
         }
-        updateSocialMetaTags(lang);
     });
 
     // Update language attribute
@@ -92,6 +111,9 @@ function updateContent(lang) {
 
     // Update canonical and hreflang
     updateCanonicalAndHreflang(lang);
+
+    // Update social meta tags - MOVED OUTSIDE THE LOOP
+    updateSocialMetaTags(lang);
 }
 
 // Update meta tags for SEO
@@ -127,27 +149,6 @@ function updateMetaTags(lang) {
     }
 }
 
-// Initialize language based on URL parameter or stored preference
-function initializeLanguage() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    const storedLang = localStorage.getItem('selectedLanguage');
-    const browserLang = navigator.language.split('-')[0]; // Get primary language
-    
-    // Priority: URL param > stored preference > browser language > default (en)
-    let lang = 'en';
-    if (urlLang && (urlLang === 'en' || urlLang === 'fr')) {
-        lang = urlLang;
-    } else if (storedLang) {
-        lang = storedLang;
-    } else if (browserLang === 'fr') {
-        lang = 'fr';
-    }
-    
-    return lang;
-}
-
-
 // Update canonical URL and hreflang tags
 function updateCanonicalAndHreflang(lang) {
     const baseURL = 'https://izutech.fr';
@@ -165,13 +166,13 @@ function updateCanonicalAndHreflang(lang) {
     updateHreflangTags(lang, baseURL);
 }
 
-// Update hreflang tags for multilingual SEO
+// Update hreflang tags for multilingual SEO - SIMPLIFIED
 function updateHreflangTags(currentLang, baseURL) {
     // Remove existing hreflang tags
     const existingHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
     existingHreflangs.forEach(link => link.remove());
     
-    // Add new hreflang tags with proper self-referencing
+    // Add new hreflang tags
     const languages = [
         { code: 'en', url: baseURL },
         { code: 'fr', url: `${baseURL}?lang=fr` }
@@ -191,13 +192,6 @@ function updateHreflangTags(currentLang, baseURL) {
     xDefaultLink.hreflang = 'x-default';
     xDefaultLink.href = baseURL;
     document.head.appendChild(xDefaultLink);
-    
-    // Set self-referencing hreflang for current language
-    const selfLink = document.createElement('link');
-    selfLink.rel = 'alternate';
-    selfLink.hreflang = 'x-default';
-    selfLink.href = currentLang === 'en' ? baseURL : `${baseURL}?lang=${currentLang}`;
-    document.head.appendChild(selfLink);
 }
 
 // Update URL for language changes
@@ -235,6 +229,7 @@ function updateSocialMetaTags(lang) {
     }
 }
 
+// The rest of your existing code (mobile menu, form handling, etc.) remains the same...
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');

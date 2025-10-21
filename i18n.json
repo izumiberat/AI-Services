@@ -336,7 +336,7 @@
       "inquire": "Obtenir un devis personnalisé",
       "service1": {
         "title": "Automatisation du Traitement des Données",
-        "price": "À partir de 2 000 €",
+        "price": "À partir de 900 €",
         "pitch": "Éliminez les saisies manuelles fastidieuses en automatisant l'extraction et le traitement de vos données depuis emails, PDF et tableurs.",
         "featuresTitle": "Ce que nous faisons :",
         "features": [
@@ -354,7 +354,7 @@
       },
       "service2": {
         "title": "Base de Connaissance Intelligente",
-        "price": "À partir de 2 000 €",
+        "price": "À partir de 1 200 €",
         "pitch": "Donnez à vos équipes un assistant IA qui trouve instantanément les informations dans vos documents d'entreprise.",
         "featuresTitle": "Ce que nous faisons :",
         "features": [
@@ -372,7 +372,7 @@
       },
       "service3": {
         "title": "Assistant IA pour le Support Client",
-        "price": "À partir de 2 000 €",
+        "price": "À partir de 1 800 €",
         "pitch": "Équipez vos conseillers d'un co-pilot IA qui rédige des réponses personnalisées, fidèles à l'identité de votre marque.",
         "featuresTitle": "Ce que nous faisons :",
         "features": [

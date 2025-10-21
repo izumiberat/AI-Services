@@ -28,7 +28,7 @@
       "inquire": "Get a Custom Quote",
       "service1": {
         "title": "Automated Data Processing",
-        "price": "From €2,000",
+        "price": "From €900",
         "pitch": "Eliminate tedious manual data entry by automating extraction from your emails, PDFs, spreadsheets, and forms.",
         "featuresTitle": "What we deliver:",
         "features": [
@@ -46,7 +46,7 @@
       },
       "service2": {
         "title": "Intelligent Knowledge Base",
-        "price": "From €2,000",
+        "price": "From €1,200",
         "pitch": "Give your team an AI assistant that instantly finds answers in your company documents.",
         "featuresTitle": "What we deliver:",
         "features": [
@@ -64,7 +64,7 @@
       },
       "service3": {
         "title": "AI Assistant for Customer Support",
-        "price": "From €2,000",
+        "price": "From €1,800",
         "pitch": "Equip your support team with an AI co-pilot that drafts personalized responses, true to your brand voice.",
         "featuresTitle": "What we deliver:",
         "features": [

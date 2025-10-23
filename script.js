@@ -112,8 +112,27 @@ function updateContent(lang) {
     // Update canonical and hreflang
     updateCanonicalAndHreflang(lang);
 
-    // Update social meta tags - MOVED OUTSIDE THE LOOP
+    // Update social meta tags
     updateSocialMetaTags(lang);
+
+    // NEW: Hide navbar when language is changed
+    hideNavbarOnLanguageChange();
+}
+
+// New function to handle navbar hiding with smooth transition
+function hideNavbarOnLanguageChange() {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        // Add fade-out effect
+        navbar.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        navbar.style.opacity = '0';
+        navbar.style.transform = 'translateY(-100%)';
+        
+        // Completely hide after transition
+        setTimeout(() => {
+            navbar.style.display = 'none';
+        }, 300);
+    }
 }
 
 // Update meta tags for SEO

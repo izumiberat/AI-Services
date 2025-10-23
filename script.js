@@ -8,6 +8,9 @@ const i18n = {
     }
 };
 
+// Track if this is the initial page load
+let isInitialLoad = true;
+
 // Fetch translations from i18n.json
 fetch('i18n.json')
     .then(response => {
@@ -24,7 +27,7 @@ fetch('i18n.json')
         const currentLang = initializeLanguage();
         
         // Initialize the page with the correct language
-        updateContent(currentLang);
+        updateContent(currentLang, true); // true = initial load
         
         // Set up language selector
         const languageSelector = document.getElementById('language-selector');
@@ -33,17 +36,21 @@ fetch('i18n.json')
             languageSelector.addEventListener('change', (e) => {
                 const newLang = e.target.value;
                 localStorage.setItem('selectedLanguage', newLang);
-                updateContent(newLang);
+                updateContent(newLang, false); // false = user-initiated change
                 
                 // Update URL without changing path - using search params
                 updateURLForLanguage(newLang);
             });
         }
+        
+        // Mark initial load as complete
+        isInitialLoad = false;
     })
     .catch(error => {
         console.error('Error loading translations:', error);
         // Fallback to English
-        updateContent('en');
+        updateContent('en', true);
+        isInitialLoad = false;
     });
 
 // Utility function to get nested object properties
@@ -74,7 +81,7 @@ function initializeLanguage() {
 }
 
 // Update content based on selected language
-function updateContent(lang) {
+function updateContent(lang, isInitialLoad = false) {
     const translations = i18n[lang];
     if (!translations) return;
 
@@ -115,23 +122,24 @@ function updateContent(lang) {
     // Update social meta tags
     updateSocialMetaTags(lang);
 
-    // NEW: Hide navbar when language is changed
-    hideNavbarOnLanguageChange();
+    // NEW: Only collapse mobile menu when language is actively changed by user, not on initial load
+    if (!isInitialLoad) {
+        closeMobileMenu();
+    }
 }
 
-// New function to handle navbar hiding with smooth transition
-function hideNavbarOnLanguageChange() {
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        // Add fade-out effect
-        navbar.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        navbar.style.opacity = '0';
-        navbar.style.transform = 'translateY(-100%)';
+// New function to close mobile menu (same behavior as when nav items are clicked)
+function closeMobileMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.querySelector('.hamburger');
+    
+    if (navMenu && hamburger) {
+        // Close the mobile menu
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         
-        // Completely hide after transition
-        setTimeout(() => {
-            navbar.style.display = 'none';
-        }, 300);
+        console.log('Mobile menu closed after language change');
     }
 }
 
@@ -248,7 +256,6 @@ function updateSocialMetaTags(lang) {
     }
 }
 
-// The rest of your existing code (mobile menu, form handling, etc.) remains the same...
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
@@ -265,11 +272,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Smooth scrolling for navigation links
+    // Smooth scrolling for navigation links - UPDATED to close mobile menu
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
+            
+            // Close mobile menu when nav link is clicked
+            closeMobileMenu();
+            
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',

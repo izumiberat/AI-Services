@@ -166,7 +166,7 @@
                         <h4 data-i18n="technical.service_tech.portfolio">Real Client Project</h4>
                         <h5 data-i18n="technical.service_tech.service3.portfolio_name">Support Response Writing Assistant</h5>
                         <div class="portfolio-stack" data-i18n="technical.service_tech.service3.portfolio_stack">Python, OpenAI GPT-4, Knowledge Base Integration</div>
-                        <a href="#contact" class="btn btn-card" data-i18n="technical.service_tech.view_demo">Request Demo</a>
+                        <button class="btn btn-card tech-details-btn" onclick="openTechModal3()" data-i18n="technical.details.show_details">View Technical Details</button>
                     </div>
                 </article>
             </div>
@@ -433,6 +433,179 @@
                         <p data-i18n="technical.details.live_demo.description">Experience the solution in action with our interactive demo:</p>
                         <a href="https://appuction-ready-intelligent-knowledge-base-etryykamcjvwyarodpl.streamlit.app/" target="_blank" class="btn btn-primary demo-link" data-i18n="technical.details.live_demo.button2">
                             🚀 Launch Intelligent Knowledge Base Demo
+                        </a>
+                        <p class="demo-note" data-i18n="technical.details.live_demo.note">Note: Demo uses sample data. Full functionality requires an OpenAI API key - contact us to enable it for your demo session.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Details Modal 3 (AI Assistant for Customer Support) -->
+    <div class="modal-overlay" id="techModal3">
+        <div class="tech-modal">
+            <div class="modal-header">
+                <button class="close-modal" onclick="closeTechModal3()">&times;</button>
+                <h3 data-i18n="services.service3.title">AI Assistant for Customer Support</h3>
+                <p class="modal-subtitle" data-i18n="technical.details.service3.executive_summary.title">Project: Support Co-pilot - AI-Powered Customer Service</p>
+            </div>
+            
+            <div class="modal-content">
+                <!-- Executive Summary Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.service3.executive_summary.problem">The Business Challenge</h4>
+                    <p data-i18n="technical.details.service3.executive_summary.problem_text">Customer support teams face long response times (10+ minutes per ticket), inconsistent information across agents, agent burnout from repetitive drafting, and knowledge gaps when new agents join.</p>
+                    
+                    <h4 data-i18n="technical.details.service3.executive_summary.solution">Our Solution</h4>
+                    <p data-i18n="technical.details.service3.executive_summary.solution_text">An AI-powered Support Co-pilot that helps customer service teams draft high-quality, accurate responses 50% faster by combining artificial intelligence with your company's knowledge base.</p>
+                    
+                    <h4 data-i18n="technical.details.service3.executive_summary.benefits">Results Achieved</h4>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <h5>🚀 <span data-i18n="technical.details.benefit_titles.efficiency">Efficiency Gain</span></h5>
+                            <p data-i18n="technical.details.service3.executive_summary.benefit1">Reduce response time from 10 minutes to 2 minutes</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>🎯 <span data-i18n="technical.details.benefit_titles.accuracy">Accuracy</span></h5>
+                            <p data-i18n="technical.details.service3.executive_summary.benefit2">Ensure 100% accuracy with verified knowledge base</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>📈 <span data-i18n="technical.details.service3.executive_summary.benefit3_title">Consistency</span></h5>
+                            <p data-i18n="technical.details.service3.executive_summary.benefit3">Maintain brand voice across all customer interactions</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-highlight">
+                        <h5 data-i18n="technical.details.service3.executive_summary.demo_highlight">Demo Scenario</h5>
+                        <div class="scenario-card">
+                            <strong data-i18n="technical.details.service3.executive_summary.scenario">Customer Issue:</strong>
+                            <p data-i18n="technical.details.service3.executive_summary.scenario_text">"I can't login and have an important meeting in 30 minutes!"</p>
+                            <strong data-i18n="technical.details.service3.executive_summary.response">Co-pilot Response:</strong>
+                            <ul>
+                                <li data-i18n="technical.details.service3.executive_summary.response_point1">Detects urgent tone automatically</li>
+                                <li data-i18n="technical.details.service3.executive_summary.response_point2">References login troubleshooting steps from knowledge base</li>
+                                <li data-i18n="technical.details.service3.executive_summary.response_point3">Shows empathy while providing immediate solutions</li>
+                                <li data-i18n="technical.details.service3.executive_summary.response_point4">Maintains professional brand voice</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+    
+                <!-- Technical Architecture Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.service3.technical_architecture.title">Technical Architecture</h4>
+                    
+                    <h5 data-i18n="technical.details.service3.technical_architecture.stack">Core Architecture</h5>
+                    <div class="architecture-diagram">
+                        <p data-i18n="technical.details.service3.technical_architecture.diagram">User Input → Streamlit UI → RAG Engine → GPT-4 → Professional Response</p>
+                        <p style="text-align: center; margin: 0.5rem 0;">↓</p>
+                        <p data-i18n="technical.details.service3.technical_architecture.diagram2">Pinecone Vector DB ↔ Company Knowledge Base</p>
+                    </div>
+
+                    <div class="tech-stack-grid">
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service3.technical_architecture.frontend">Frontend</strong>
+                            <span>Streamlit</span>
+                        </div>
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service3.technical_architecture.ai_engine">AI Engine</strong>
+                            <span>OpenAI GPT-4</span>
+                        </div>
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service3.technical_architecture.embeddings">Embeddings</strong>
+                            <span>text-embedding-3-small</span>
+                        </div>
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service3.technical_architecture.vector_db">Vector Database</strong>
+                            <span>Pinecone</span>
+                        </div>
+                    </div>
+    
+                    <h5 data-i18n="technical.details.service3.technical_architecture.architecture">AI Engine Workflow</h5>
+                    <ul class="architecture-steps">
+                        <li data-i18n="technical.details.service3.technical_architecture.step1">Intelligent knowledge retrieval using RAG with semantic search</li>
+                        <li data-i18n="technical.details.service3.technical_architecture.step2">Context-aware response generation with tone adaptation</li>
+                        <li data-i18n="technical.details.service3.technical_architecture.step3">Production-ready features with error handling and logging</li>
+                        <li data-i18n="technical.details.service3.technical_architecture.step4">Source attribution for response transparency</li>
+                    </ul>
+                </section>
+    
+                <!-- Technical Innovation Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.service3.technical_innovation.title">Technical Differentiators</h4>
+                    
+                    <div class="business-proposition">
+                        <p data-i18n="technical.details.service3.technical_innovation.proposition">Unlike generic ChatGPT, our solution grounds responses in your specific knowledge base, prevents hallucinations by using verified information, and provides source references for every response.</p>
+                    </div>
+    
+                    <h5 data-i18n="technical.details.service3.technical_innovation.features">Advanced Features</h5>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h5>🔍 <span data-i18n="technical.details.service3.technical_innovation.feature1_title">Accuracy Through RAG</span></h5>
+                            <p data-i18n="technical.details.service3.technical_innovation.feature1">Grounds responses in your verified knowledge base</p>
+                        </div>
+                        <div class="feature-card">
+                            <h5>⚡ <span data-i18n="technical.details.service3.technical_innovation.feature2_title">Performance Optimized</span></h5>
+                            <p data-i18n="technical.details.service3.technical_innovation.feature2">Vector indexing for sub-second knowledge retrieval</p>
+                        </div>
+                        <div class="feature-card">
+                            <h5>🏢 <span data-i18n="technical.details.service3.technical_innovation.feature3_title">Enterprise Ready</span></h5>
+                            <p data-i18n="technical.details.service3.technical_innovation.feature3">Tone detection, conversation history, multi-tenant architecture</p>
+                        </div>
+                        <div class="feature-card">
+                            <h5>🔌 <span data-i18n="technical.details.service3.technical_innovation.feature4_title">Easy Integration</span></h5>
+                            <p data-i18n="technical.details.service3.technical_innovation.feature4">REST API for ticketing systems, webhooks, custom knowledge bases</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Business Value Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.service3.business_value.title">Business Value & Metrics</h4>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <h5>⏱️ <span data-i18n="technical.details.service3.business_value.metric1_title">Response Time</span></h5>
+                            <p data-i18n="technical.details.service3.business_value.metric1">2-5 seconds end-to-end</p>
+                        </div>
+                        <div class="metric-card">
+                            <h5>🎯 <span data-i18n="technical.details.service3.business_value.metric2_title">Accuracy</span></h5>
+                            <p data-i18n="technical.details.service3.business_value.metric2">95%+ using knowledge-grounded responses</p>
+                        </div>
+                        <div class="metric-card">
+                            <h5>📈 <span data-i18n="technical.details.service3.business_value.metric3_title">Scalability</span></h5>
+                            <p data-i18n="technical.details.service3.business_value.metric3">Handles 1000+ concurrent users</p>
+                        </div>
+                        <div class="metric-card">
+                            <h5>🔄 <span data-i18n="technical.details.service3.business_value.metric4_title">Uptime</span></h5>
+                            <p data-i18n="technical.details.service3.business_value.metric4">99.9% with comprehensive error handling</p>
+                        </div>
+                    </div>
+
+                    <h5 data-i18n="technical.details.service3.business_value.perfect_for">Perfect For</h5>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <h5>👥 <span data-i18n="technical.details.service3.business_value.target1_title">Support Teams</span></h5>
+                            <p data-i18n="technical.details.service3.business_value.target1">Handling 100+ tickets daily</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>🏭 <span data-i18n="technical.details.service3.business_value.target2_title">Complex Products</span></h5>
+                            <p data-i18n="technical.details.service3.business_value.target2">Companies requiring accurate information</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>📊 <span data-i18n="technical.details.service3.business_value.target3_title">Quality Focus</span></h5>
+                            <p data-i18n="technical.details.service3.business_value.target3">Organizations wanting consistent customer experiences</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Live Demo Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.live_demo.title">Live Demo</h4>
+                    <div class="demo-link-container">
+                        <p data-i18n="technical.details.live_demo.description">Experience the Support Co-pilot in action with our interactive demo:</p>
+                        <a href="https://initial-support-co-pilot-deployment-gfz74bhuvdaqcr8mi9mpfj.streamlit.app/" target="_blank" class="btn btn-primary demo-link" data-i18n="technical.details.live_demo.button3">
+                            🚀 Launch Support Co-pilot Demo
                         </a>
                         <p class="demo-note" data-i18n="technical.details.live_demo.note">Note: Demo uses sample data. Full functionality requires an OpenAI API key - contact us to enable it for your demo session.</p>
                     </div>

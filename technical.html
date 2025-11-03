@@ -110,7 +110,7 @@
                         <h4 data-i18n="technical.service_tech.portfolio">Real Client Project</h4>
                         <h5 data-i18n="technical.service_tech.service1.portfolio_name">PDF Invoice Processing Automator</h5>
                         <div class="portfolio-stack" data-i18n="technical.service_tech.service1.portfolio_stack">Python, Streamlit, OpenAI GPT-4, pdfplumber</div>
-                        <button class="btn btn-card tech-details-btn" onclick="openTechModal()" data-i18n="technical.details.show_details">See Technical Details</button>
+                        <button class="btn btn-card tech-details-btn" onclick="openTechModal1()" data-i18n="technical.details.show_details">See Technical Details</button>
                     </div>
                 </article>
 
@@ -121,7 +121,7 @@
                     
                     <div class="tech-stack">
                         <h4 data-i18n="technical.service_tech.tech_stack">Technologies We Use</h4>
-                        <p data-i18n="technical.service_tech.service2.tech_stack">Python, OpenAI Embeddings, Pinecone, LangChain, Streamlit</p>
+                        <p data-i18n="technical.service_tech.service2.tech_stack">Python, OpenAI Embeddings, ChromaDB, LangChain, Streamlit</p>
                     </div>
 
                     <div class="architecture">
@@ -137,8 +137,8 @@
                     <div class="portfolio-project">
                         <h4 data-i18n="technical.service_tech.portfolio">Real Client Project</h4>
                         <h5 data-i18n="technical.service_tech.service2.portfolio_name">Intelligent Company Policy Assistant</h5>
-                        <div class="portfolio-stack" data-i18n="technical.service_tech.service2.portfolio_stack">Python, Streamlit, OpenAI, Pinecone, LangChain</div>
-                        <a href="#contact" class="btn btn-card" data-i18n="technical.service_tech.view_demo">Request Demo</a>
+                        <div class="portfolio-stack" data-i18n="technical.service_tech.service2.portfolio_stack">Python, Streamlit, OpenAI, ChromaDB, LangChain</div>
+                        <button class="btn btn-card tech-details-btn" onclick="openTechModal2()" data-i18n="technical.details.show_details">View Technical Details</button>
                     </div>
                 </article>
 
@@ -196,11 +196,11 @@
         </div>
     </footer>
 
-    <!-- Technical Details Modal -->
-    <div class="modal-overlay" id="techModal">
+    <!-- Technical Details Modal 1 (Automated Data Processing) -->
+    <div class="modal-overlay" id="techModal1">
         <div class="tech-modal">
             <div class="modal-header">
-                <button class="close-modal" id="closeModal">&times;</button>
+                <button class="close-modal" onclick="closeTechModal1()">&times;</button>
                 <h3 data-i18n="services.service1.title">Automated Data Processing</h3>
                 <p class="modal-subtitle" data-i18n="technical.details.service1.executive_summary.title">Case Study: Intelligent Invoice Processing</p>
             </div>
@@ -289,6 +289,127 @@
                         <div class="feature-card">
                             <h5>🛡️ <span data-i18n="technical.details.feature_titles.error_handling">Error Handling</span></h5>
                             <p data-i18n="technical.details.service1.business_value.feature4">Robust error handling</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Details Modal 2 (Intelligent Knowledge Base) -->
+    <div class="modal-overlay" id="techModal2">
+        <div class="tech-modal">
+            <div class="modal-header">
+                <button class="close-modal" onclick="closeTechModal2()">&times;</button>
+                <h3 data-i18n="services.service2.title">Intelligent Knowledge Base</h3>
+                <p class="modal-subtitle" data-i18n="technical.details.service2.executive_summary.title">Project Summary: Intelligent Document Intelligence</p>
+            </div>
+            
+            <div class="modal-content">
+                <!-- Executive Summary Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.service2.executive_summary.problem">The Business Problem Solved</h4>
+                    <p data-i18n="technical.details.service2.executive_summary.problem_text">Employees spend 20-30% of their time searching for information. Critical knowledge gets buried in multiple documents, leading to missed information and inconsistencies.</p>
+                    
+                    <h4 data-i18n="technical.details.service2.executive_summary.solution">Our Solution Delivered</h4>
+                    <p data-i18n="technical.details.service2.executive_summary.solution_text">An Intelligent Knowledge Base that transforms how organizations interact with documents. Instead of manual searching, employees ask questions in natural language and get instant, accurate answers with verified source citations.</p>
+                    
+                    <h4 data-i18n="technical.details.service2.executive_summary.benefits">Key Business Benefits</h4>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <h5>🚀 <span data-i18n="technical.details.benefit_titles.efficiency">Efficiency Gain</span></h5>
+                            <p data-i18n="technical.details.service2.executive_summary.benefit1">70% reduction in information search time</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>🎯 <span data-i18n="technical.details.benefit_titles.accuracy">Accuracy</span></h5>
+                            <p data-i18n="technical.details.service2.executive_summary.benefit2">90%+ accuracy on document-based questions</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>📈 <span data-i18n="technical.details.service2.executive_summary.benefit3_title">Productivity</span></h5>
+                            <p data-i18n="technical.details.service2.executive_summary.benefit3">Faster onboarding for new team members</p>
+                        </div>
+                    </div>
+                </section>
+    
+                <!-- Technical Architecture Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.service2.technical_architecture.title">Technical Architecture</h4>
+                    
+                    <h5 data-i18n="technical.details.service2.technical_architecture.stack">Core Architecture Components</h5>
+                    <div class="tech-stack-grid">
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service2.technical_architecture.frontend">Frontend Layer</strong>
+                            <span>Streamlit Web Framework</span>
+                        </div>
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service2.technical_architecture.document_processing">Document Processing</strong>
+                            <span>PyPDF2, Text Extraction</span>
+                        </div>
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service2.technical_architecture.vector_db">Vector Database</strong>
+                            <span>ChromaDB</span>
+                        </div>
+                        <div class="tech-item">
+                            <strong data-i18n="technical.details.service2.technical_architecture.ai_generation">AI Generation</strong>
+                            <span>OpenAI GPT</span>
+                        </div>
+                    </div>
+    
+                    <h5 data-i18n="technical.details.service2.technical_architecture.architecture">System Workflow</h5>
+                    <ul class="architecture-steps">
+                        <li data-i18n="technical.details.service2.technical_architecture.step1">Multi-format document upload and processing</li>
+                        <li data-i18n="technical.details.service2.technical_architecture.step2">Smart chunking and vector embedding creation</li>
+                        <li data-i18n="technical.details.service2.technical_architecture.step3">Semantic search for relevant content</li>
+                        <li data-i18n="technical.details.service2.technical_architecture.step4">AI-powered answer generation with source citations</li>
+                    </ul>
+                </section>
+    
+                <!-- Technical Innovation Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.service2.technical_innovation.title">Technical Innovation Highlights</h4>
+                    
+                    <div class="business-proposition">
+                        <p data-i18n="technical.details.service2.technical_innovation.proposition">Production-ready AI solution built on modern, scalable architecture with semantic understanding and context preservation.</p>
+                    </div>
+    
+                    <h5 data-i18n="technical.details.service2.technical_innovation.features">Innovation Features</h5>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h5>🔍 <span data-i18n="technical.details.service2.technical_innovation.feature1_title">Semantic Search</span></h5>
+                            <p data-i18n="technical.details.service2.technical_innovation.feature1">Understands meaning, not just keywords</p>
+                        </div>
+                        <div class="feature-card">
+                            <h5>📚 <span data-i18n="technical.details.service2.technical_innovation.feature2_title">Multi-Format Support</span></h5>
+                            <p data-i18n="technical.details.service2.technical_innovation.feature2">Handles PDFs, text documents, and more</p>
+                        </div>
+                        <div class="feature-card">
+                            <h5>📍 <span data-i18n="technical.details.service2.technical_innovation.feature3_title">Source Verification</span></h5>
+                            <p data-i18n="technical.details.service2.technical_innovation.feature3">Every answer includes document citations</p>
+                        </div>
+                        <div class="feature-card">
+                            <h5>⚡ <span data-i18n="technical.details.service2.technical_innovation.feature4_title">Instant Results</span></h5>
+                            <p data-i18n="technical.details.service2.technical_innovation.feature4">Answers in seconds, not hours</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Business Value Section -->
+                <section class="modal-section">
+                    <h4 data-i18n="technical.details.service2.business_value.title">Business Value & Applications</h4>
+                    
+                    <h5 data-i18n="technical.details.service2.business_value.real_world">Real-World Applications</h5>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <h5>📋 <span data-i18n="technical.details.service2.business_value.app1_title">Project Management</span></h5>
+                            <p data-i18n="technical.details.service2.business_value.app1">Quick access to project plans and deliverables</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>⚖️ <span data-i18n="technical.details.service2.business_value.app2_title">Compliance & Legal</span></h5>
+                            <p data-i18n="technical.details.service2.business_value.app2">Instant answers to policy questions</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>👥 <span data-i18n="technical.details.service2.business_value.app3_title">HR & Onboarding</span></h5>
+                            <p data-i18n="technical.details.service2.business_value.app3">Streamlined access to company policies</p>
                         </div>
                     </div>
                 </section>

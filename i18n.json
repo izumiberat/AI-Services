@@ -273,6 +273,7 @@
           "description": "Experience the solution in action with our interactive demo:",
           "button": "🚀 Launch Automated Data Processing Demo",
           "button2": "🚀 Launch Intelligent Knowledge Base Demo",
+          "button3": "🚀 Launch Support Co-pilot Demo",
           "note": "Note: Demo uses sample data. Full functionality requires an OpenAI API key - contact us to enable it for your demo session."
         },
         "service1": {
@@ -359,6 +360,74 @@
             "app2_title": "Compliance & Legal",
             "app3": "Streamlined access to company policies",
             "app3_title": "HR & Onboarding"
+          }
+        },
+        "service3": {
+          "executive_summary": {
+            "title": "Project: Support Co-pilot - AI-Powered Customer Service",
+            "problem": "The Business Challenge",
+            "problem_text": "Customer support teams face long response times (10+ minutes per ticket), inconsistent information across agents, agent burnout from repetitive drafting, and knowledge gaps when new agents join.",
+            "solution": "Our Solution",
+            "solution_text": "An AI-powered Support Co-pilot that helps customer service teams draft high-quality, accurate responses 50% faster by combining artificial intelligence with your company's knowledge base.",
+            "benefits": "Results Achieved",
+            "benefit1": "Reduce response time from 10 minutes to 2 minutes",
+            "benefit2": "Ensure 100% accuracy with verified knowledge base",
+            "benefit3": "Maintain brand voice across all customer interactions",
+            "benefit3_title": "Consistency",
+            "demo_highlight": "Demo Scenario",
+            "scenario": "Customer Issue:",
+            "scenario_text": "\"I can't login and have an important meeting in 30 minutes!\"",
+            "response": "Co-pilot Response:",
+            "response_point1": "Detects urgent tone automatically",
+            "response_point2": "References login troubleshooting steps from knowledge base",
+            "response_point3": "Shows empathy while providing immediate solutions",
+            "response_point4": "Maintains professional brand voice"
+          },
+          "technical_architecture": {
+            "title": "Technical Architecture",
+            "stack": "Core Architecture",
+            "diagram": "User Input → Streamlit UI → RAG Engine → GPT-4 → Professional Response",
+            "diagram2": "Pinecone Vector DB ↔ Company Knowledge Base",
+            "frontend": "Frontend",
+            "ai_engine": "AI Engine",
+            "embeddings": "Embeddings",
+            "vector_db": "Vector Database",
+            "architecture": "AI Engine Workflow",
+            "step1": "Intelligent knowledge retrieval using RAG with semantic search",
+            "step2": "Context-aware response generation with tone adaptation",
+            "step3": "Production-ready features with error handling and logging",
+            "step4": "Source attribution for response transparency"
+          },
+          "technical_innovation": {
+            "title": "Technical Differentiators",
+            "proposition": "Unlike generic ChatGPT, our solution grounds responses in your specific knowledge base, prevents hallucinations by using verified information, and provides source references for every response.",
+            "features": "Advanced Features",
+            "feature1": "Grounds responses in your verified knowledge base",
+            "feature1_title": "Accuracy Through RAG",
+            "feature2": "Vector indexing for sub-second knowledge retrieval",
+            "feature2_title": "Performance Optimized",
+            "feature3": "Tone detection, conversation history, multi-tenant architecture",
+            "feature3_title": "Enterprise Ready",
+            "feature4": "REST API for ticketing systems, webhooks, custom knowledge bases",
+            "feature4_title": "Easy Integration"
+          },
+          "business_value": {
+            "title": "Business Value & Metrics",
+            "metric1": "2-5 seconds end-to-end",
+            "metric1_title": "Response Time",
+            "metric2": "95%+ using knowledge-grounded responses",
+            "metric2_title": "Accuracy",
+            "metric3": "Handles 1000+ concurrent users",
+            "metric3_title": "Scalability",
+            "metric4": "99.9% with comprehensive error handling",
+            "metric4_title": "Uptime",
+            "perfect_for": "Perfect For",
+            "target1": "Handling 100+ tickets daily",
+            "target1_title": "Support Teams",
+            "target2": "Companies requiring accurate information",
+            "target2_title": "Complex Products",
+            "target3": "Organizations wanting consistent customer experiences",
+            "target3_title": "Quality Focus"
           }
         }
       }
@@ -638,6 +707,7 @@
           "description": "Découvrez la solution en action avec notre démo interactive :",
           "button": "🚀 Lancer la Démo de Traitement Automatisé des Données",
           "button2": "🚀 Lancer la Démo de Base de Connaissance Intelligente",
+          "button3": "🚀 Lancer la Démo du Co-pilot de Support",
           "note": "Note : La démo utilise des données d'exemple. La fonctionnalité complète nécessite une clé API OpenAI - contactez-nous pour l'activer lors de votre session de démo."
         },
         "service1": {
@@ -724,6 +794,74 @@
             "app2_title": "Conformité & Légal",
             "app3": "Accès rationalisé aux politiques d'entreprise",
             "app3_title": "RH & Intégration"
+          }
+        },
+        "service3": {
+          "executive_summary": {
+            "title": "Projet : Co-pilot de Support - Service Client Propulsé par l'IA",
+            "problem": "Le Défi Rencontré",
+            "problem_text": "Les équipes de support client font face à des temps de réponse longs (10+ minutes par ticket), des informations incohérentes entre agents, l'épuisement des agents dû à la rédaction répétitive, et des lacunes de connaissances lors de l'arrivée de nouveaux agents.",
+            "solution": "Notre Solution",
+            "solution_text": "Un Co-pilot de Support propulsé par l'IA qui aide les équipes de service client à rédiger des réponses de haute qualité et précises 50% plus rapidement en combinant l'intelligence artificielle avec votre base de connaissances d'entreprise.",
+            "benefits": "Résultats Obtenus",
+            "benefit1": "Réduction du temps de réponse de 10 minutes à 2 minutes",
+            "benefit2": "Assure 100% de précision avec la base de connaissances vérifiée",
+            "benefit3": "Maintient la voix de la marque sur toutes les interactions clients",
+            "benefit3_title": "Cohérence",
+            "demo_highlight": "Scénario de Démonstration",
+            "scenario": "Problème Client :",
+            "scenario_text": "\"Je ne peux pas me connecter et j'ai une réunion importante dans 30 minutes !\"",
+            "response": "Réponse du Co-pilot :",
+            "response_point1": "Détecte automatiquement le ton urgent",
+            "response_point2": "Réfère aux étapes de dépannage de connexion depuis la base de connaissances",
+            "response_point3": "Montre de l'empathie tout en fournissant des solutions immédiates",
+            "response_point4": "Maintient la voix professionnelle de la marque"
+          },
+          "technical_architecture": {
+            "title": "Architecture Technique",
+            "stack": "Architecture Principale",
+            "diagram": "Entrée Utilisateur → Interface Streamlit → Moteur RAG → GPT-4 → Réponse Professionnelle",
+            "diagram2": "Base de Données Vectorielle Pinecone ↔ Base de Connaissance d'Entreprise",
+            "frontend": "Frontend",
+            "ai_engine": "Moteur IA",
+            "embeddings": "Embeddings",
+            "vector_db": "Base de Données Vectorielle",
+            "architecture": "Flux du Moteur IA",
+            "step1": "Récupération intelligente des connaissances utilisant RAG avec recherche sémantique",
+            "step2": "Génération de réponses contextuelles avec adaptation du ton",
+            "step3": "Fonctionnalités prêtes pour la production avec gestion des erreurs et journalisation",
+            "step4": "Attribution des sources pour la transparence des réponses"
+          },
+          "technical_innovation": {
+            "title": "Différenciateurs Techniques",
+            "proposition": "Contrairement à ChatGPT générique, notre solution ancre les réponses dans votre base de connaissances spécifique, prévient les hallucinations en utilisant des informations vérifiées et fournit des références de sources pour chaque réponse.",
+            "features": "Fonctionnalités Avancées",
+            "feature1": "Ancre les réponses dans votre base de connaissances vérifiée",
+            "feature1_title": "Précision par RAG",
+            "feature2": "Indexation vectorielle pour une récupération des connaissances en moins d'une seconde",
+            "feature2_title": "Performance Optimisée",
+            "feature3": "Détection du ton, historique des conversations, architecture multi-locataire",
+            "feature3_title": "Prêt pour l'Entreprise",
+            "feature4": "API REST pour les systèmes de ticketing, webhooks, bases de connaissances personnalisées",
+            "feature4_title": "Intégration Facile"
+          },
+          "business_value": {
+            "title": "Valeur Business & Métriques",
+            "metric1": "2-5 secondes de bout en bout",
+            "metric1_title": "Temps de Réponse",
+            "metric2": "95%+ utilisant des réponses ancrées dans la connaissance",
+            "metric2_title": "Précision",
+            "metric3": "Gère 1000+ utilisateurs simultanés",
+            "metric3_title": "Évolutivité",
+            "metric4": "99.9% avec une gestion complète des erreurs",
+            "metric4_title": "Disponibilité",
+            "perfect_for": "Parfait Pour",
+            "target1": "Gérer 100+ tickets quotidiennement",
+            "target1_title": "Équipes de Support",
+            "target2": "Entreprises nécessitant des informations précises",
+            "target2_title": "Produits Complexes",
+            "target3": "Organisations souhaitant des expériences client cohérentes",
+            "target3_title": "Focus Qualité"
           }
         }
       }

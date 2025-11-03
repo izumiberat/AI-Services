@@ -887,6 +887,78 @@ h3 {
     font-style: italic;
 }
 
+/* Additional styles for Support Co-pilot modal */
+.architecture-diagram {
+    background: var(--light-surface);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--light-border);
+    text-align: center;
+    font-family: monospace;
+    margin: 1rem 0;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.demo-highlight {
+    background: linear-gradient(135deg, rgba(99, 91, 255, 0.05) 0%, rgba(0, 102, 255, 0.05) 100%);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--secondary-accent);
+    margin: 1.5rem 0;
+}
+
+.scenario-card {
+    background: var(--light-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--light-border);
+    margin-top: 1rem;
+}
+
+.scenario-card ul {
+    margin: 0.5rem 0 0 1rem;
+}
+
+.scenario-card li {
+    padding: 0.25rem 0;
+    position: relative;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.metric-card {
+    background: var(--light-surface);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid var(--light-border);
+    transition: var(--transition);
+}
+
+.metric-card:hover {
+    border-color: var(--primary-accent);
+    transform: translateY(-2px);
+}
+
+.metric-card h5 {
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.metric-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--light-text-secondary);
+    font-weight: 600;
+}
+
 /* Mobile responsive for demo links */
 @media (max-width: 768px) {
     .demo-link-container {
@@ -933,5 +1005,9 @@ h3 {
     
     .modal-section h5 {
         margin-top: 1.25rem;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
     }
 }

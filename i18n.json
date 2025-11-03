@@ -50,7 +50,7 @@
         "pitch": "Give your team an AI assistant that instantly finds answers in your company documents.",
         "featuresTitle": "What we deliver:",
         "features": [
-          "RAG technology with Pinecone for accurate responses",
+          "RAG technology with ChromaDB for accurate responses",
           "Integration with all your document sources",
           "Secure deployment in your environment"
         ],
@@ -228,7 +228,7 @@
           "portfolio_stack": "Python, Streamlit, OpenAI GPT-4, pdfplumber"
         },
         "service2": {
-          "tech_stack": "Python, OpenAI Embeddings, Pinecone, LangChain, Streamlit",
+          "tech_stack": "Python, OpenAI Embeddings, ChromaDB, LangChain, Streamlit",
           "architecture": [
             "Document processing and segmentation",
             "Vector embedding creation and indexing",
@@ -236,7 +236,7 @@
             "Contextual response generation via RAG"
           ],
           "portfolio_name": "Intelligent Company Policy Assistant",
-          "portfolio_stack": "Python, Streamlit, OpenAI, Pinecone, LangChain"
+          "portfolio_stack": "Python, Streamlit, OpenAI, ChromaDB, LangChain"
         },
         "service3": {
           "tech_stack": "Python, OpenAI GPT-4, Support Platform APIs, Custom Integration Layer",
@@ -303,6 +303,56 @@
             "feature3": "Automated export",
             "feature4": "Robust error handling"
           }
+        },
+        "service2": {
+          "executive_summary": {
+            "title": "Project Summary: Intelligent Document Intelligence",
+            "problem": "The Business Problem Solved",
+            "problem_text": "Employees spend 20-30% of their time searching for information. Critical knowledge gets buried in multiple documents, leading to missed information and inconsistencies.",
+            "solution": "Our Solution Delivered",
+            "solution_text": "An Intelligent Knowledge Base that transforms how organizations interact with documents. Instead of manual searching, employees ask questions in natural language and get instant, accurate answers with verified source citations.",
+            "benefits": "Key Business Benefits",
+            "benefit1": "70% reduction in information search time",
+            "benefit2": "90%+ accuracy on document-based questions",
+            "benefit3": "Faster onboarding for new team members",
+            "benefit3_title": "Productivity"
+          },
+          "technical_architecture": {
+            "title": "Technical Architecture",
+            "stack": "Core Architecture Components",
+            "frontend": "Frontend Layer",
+            "document_processing": "Document Processing",
+            "vector_db": "Vector Database",
+            "ai_generation": "AI Generation",
+            "architecture": "System Workflow",
+            "step1": "Multi-format document upload and processing",
+            "step2": "Smart chunking and vector embedding creation",
+            "step3": "Semantic search for relevant content",
+            "step4": "AI-powered answer generation with source citations"
+          },
+          "technical_innovation": {
+            "title": "Technical Innovation Highlights",
+            "proposition": "Production-ready AI solution built on modern, scalable architecture with semantic understanding and context preservation.",
+            "features": "Innovation Features",
+            "feature1": "Understands meaning, not just keywords",
+            "feature1_title": "Semantic Search",
+            "feature2": "Handles PDFs, text documents, and more",
+            "feature2_title": "Multi-Format Support",
+            "feature3": "Every answer includes document citations",
+            "feature3_title": "Source Verification",
+            "feature4": "Answers in seconds, not hours",
+            "feature4_title": "Instant Results"
+          },
+          "business_value": {
+            "title": "Business Value & Applications",
+            "real_world": "Real-World Applications",
+            "app1": "Quick access to project plans and deliverables",
+            "app1_title": "Project Management",
+            "app2": "Instant answers to policy questions",
+            "app2_title": "Compliance & Legal",
+            "app3": "Streamlined access to company policies",
+            "app3_title": "HR & Onboarding"
+          }
         }
       }
     }
@@ -358,7 +408,7 @@
         "pitch": "Donnez à vos équipes un assistant IA qui trouve instantanément les informations dans vos documents d'entreprise.",
         "featuresTitle": "Ce que nous faisons :",
         "features": [
-          "Technologie RAG avec Pinecone pour des réponses précises",
+          "Technologie RAG avec ChromaDB pour des réponses précises",
           "Intégration de toutes vos sources documentaires",
           "Déploiement sécurisé dans votre environnement"
         ],
@@ -536,7 +586,7 @@
           "portfolio_stack": "Python, Streamlit, OpenAI GPT-4, pdfplumber"
         },
         "service2": {
-          "tech_stack": "Python, OpenAI Embeddings, Pinecone, LangChain, Streamlit",
+          "tech_stack": "Python, OpenAI Embeddings, ChromaDB, LangChain, Streamlit",
           "architecture": [
             "Traitement et segmentation des documents",
             "Création et indexation des embeddings vectoriels",
@@ -544,7 +594,7 @@
             "Génération de réponses contextuelles par RAG"
           ],
           "portfolio_name": "Assistant Intelligent aux Politiques d'Entreprise",
-          "portfolio_stack": "Python, Streamlit, OpenAI, Pinecone, LangChain"
+          "portfolio_stack": "Python, Streamlit, OpenAI, ChromaDB, LangChain"
         },
         "service3": {
           "tech_stack": "Python, OpenAI GPT-4, APIs des plateformes de support, Intégration sur mesure",
@@ -610,6 +660,56 @@
             "feature2": "Gestion de tous les formats",
             "feature3": "Export automatisé",
             "feature4": "Gestion robuste des erreurs"
+          }
+        },
+        "service2": {
+          "executive_summary": {
+            "title": "Résumé du Projet : Intelligence Documentaire Intelligente",
+            "problem": "Le Problème Business Résolu",
+            "problem_text": "Les employés passent 20 à 30% de leur temps à rechercher des informations. Les connaissances critiques sont enfouies dans de multiples documents, entraînant des informations manquées et des incohérences.",
+            "solution": "Notre Solution Livrée",
+            "solution_text": "Une Base de Connaissance Intelligente qui transforme la façon dont les organisations interagissent avec les documents. Au lieu de recherches manuelles, les employés posent des questions en langage naturel et obtiennent des réponses instantanées et précises avec des citations de sources vérifiées.",
+            "benefits": "Avantages Business Clés",
+            "benefit1": "Réduction de 70% du temps de recherche d'information",
+            "benefit2": "Précision de 90%+ sur les questions documentaires",
+            "benefit3": "Intégration plus rapide des nouvelles recrues",
+            "benefit3_title": "Productivité"
+          },
+          "technical_architecture": {
+            "title": "Architecture Technique",
+            "stack": "Composants Principaux de l'Architecture",
+            "frontend": "Couche Frontend",
+            "document_processing": "Traitement de Documents",
+            "vector_db": "Base de Données Vectorielle",
+            "ai_generation": "Génération IA",
+            "architecture": "Flux du Système",
+            "step1": "Téléchargement et traitement multi-format de documents",
+            "step2": "Découpage intelligent et création d'embeddings vectoriels",
+            "step3": "Recherche sémantique de contenu pertinent",
+            "step4": "Génération de réponses par IA avec citations des sources"
+          },
+          "technical_innovation": {
+            "title": "Points Forts de l'Innovation Technique",
+            "proposition": "Solution IA prête pour la production, construite sur une architecture moderne et évolutive avec compréhension sémantique et préservation du contexte.",
+            "features": "Fonctionnalités Innovantes",
+            "feature1": "Comprend le sens, pas seulement les mots-clés",
+            "feature1_title": "Recherche Sémantique",
+            "feature2": "Gère les PDFs, documents texte, et plus",
+            "feature2_title": "Support Multi-Format",
+            "feature3": "Chaque réponse inclut des citations documentaires",
+            "feature3_title": "Vérification des Sources",
+            "feature4": "Réponses en secondes, pas en heures",
+            "feature4_title": "Résultats Instantanés"
+          },
+          "business_value": {
+            "title": "Valeur Business & Applications",
+            "real_world": "Applications Réelles",
+            "app1": "Accès rapide aux plans de projet et livrables",
+            "app1_title": "Gestion de Projet",
+            "app2": "Réponses instantanées aux questions politiques",
+            "app2_title": "Conformité & Légal",
+            "app3": "Accès rationalisé aux politiques d'entreprise",
+            "app3_title": "RH & Intégration"
           }
         }
       }

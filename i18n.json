@@ -268,6 +268,13 @@
           "export": "Easy Export",
           "error_handling": "Error Handling"
         },
+        "live_demo": {
+          "title": "Live Demo",
+          "description": "Experience the solution in action with our interactive demo:",
+          "button": "🚀 Launch Automated Data Processing Demo",
+          "button2": "🚀 Launch Intelligent Knowledge Base Demo",
+          "note": "Note: Demo uses sample data and may have limited functionality"
+        },
         "service1": {
           "executive_summary": {
             "title": "Project: Invoice Processing Automation",
@@ -625,6 +632,13 @@
           "multiformat": "Multi-format",
           "export": "Export Facile",
           "error_handling": "Gestion des Erreurs"
+        },
+        "live_demo": {
+          "title": "Démo en Direct",
+          "description": "Découvrez la solution en action avec notre démo interactive :",
+          "button": "🚀 Lancer la Démo de Traitement Automatisé des Données",
+          "button2": "🚀 Lancer la Démo de Base de Connaissance Intelligente",
+          "note": "Note : La démo utilise des données d'exemple et peut avoir des fonctionnalités limitées"
         },
         "service1": {
           "executive_summary": {

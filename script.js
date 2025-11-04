@@ -256,6 +256,97 @@ function updateSocialMetaTags(lang) {
     }
 }
 
+// Mobile contact section interactions - NEW FUNCTION
+function initContactSection() {
+    const showFormBtn = document.querySelector('.show-form-btn');
+    const backToOptions = document.querySelector('.back-to-options');
+    const contactFormAndTrust = document.querySelector('.contact-form-and-trust');
+    const contactOptions = document.querySelector('.contact-options');
+    
+    if (showFormBtn && contactFormAndTrust && contactOptions) {
+        showFormBtn.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                contactOptions.style.display = 'none';
+                contactFormAndTrust.style.display = 'block';
+                // Update ARIA attributes
+                showFormBtn.setAttribute('aria-expanded', 'true');
+                // Smooth scroll to form
+                contactFormAndTrust.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'nearest' 
+                });
+            } else {
+                // Desktop behavior - just toggle display
+                contactOptions.style.display = 'none';
+                contactFormAndTrust.style.display = 'block';
+                showFormBtn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    }
+    
+    if (backToOptions && contactFormAndTrust && contactOptions) {
+        backToOptions.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                contactFormAndTrust.style.display = 'none';
+                contactOptions.style.display = 'grid';
+                // Update ARIA attributes
+                const showFormBtn = document.querySelector('.show-form-btn');
+                if (showFormBtn) showFormBtn.setAttribute('aria-expanded', 'false');
+                // Smooth scroll back to options
+                contactOptions.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'nearest' 
+                });
+            } else {
+                // Desktop behavior
+                contactFormAndTrust.style.display = 'none';
+                contactOptions.style.display = 'grid';
+                const showFormBtn = document.querySelector('.show-form-btn');
+                if (showFormBtn) showFormBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+}
+
+// Initialize the contact form - UPDATED FUNCTION
+function initContactForm() {
+    const contactForm = document.getElementById('lead-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitButton = this.querySelector('button[type="submit"]');
+            const btnText = submitButton.querySelector('.btn-text');
+            const btnLoading = submitButton.querySelector('.btn-loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-block';
+            submitButton.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Hide form and show success message
+                contactForm.style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+                
+                // Reset button state (for when form is shown again)
+                btnText.style.display = 'inline-block';
+                btnLoading.style.display = 'none';
+                submitButton.disabled = false;
+                
+                // Scroll to success message on mobile
+                if (window.innerWidth <= 768) {
+                    document.getElementById('form-success').scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest' 
+                    });
+                }
+            }, 1500);
+        });
+    }
+}
+
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
@@ -290,68 +381,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Contact form handling
-    const contactForm = document.getElementById('lead-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitButton = this.querySelector('button[type="submit"]');
-            const btnText = submitButton.querySelector('.btn-text');
-            const btnLoading = submitButton.querySelector('.btn-loading');
-            
-            // Show loading state
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'inline-block';
-            submitButton.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                // Hide form and show success message
-                contactForm.style.display = 'none';
-                document.getElementById('form-success').style.display = 'block';
-                
-                // Reset button state (for when form is shown again)
-                btnText.style.display = 'inline-block';
-                btnLoading.style.display = 'none';
-                submitButton.disabled = false;
-            }, 1500);
-        });
-    }
-    
-    // Contact options toggle functionality
-    const showFormBtn = document.querySelector('.show-form-btn');
-    const backToOptionsBtn = document.querySelector('.back-to-options');
-    const contactOptions = document.querySelector('.contact-options');
-    const contactFormContainer = document.querySelector('.contact-form-and-trust');
-    
-    if (showFormBtn && contactOptions && contactFormContainer) {
-        showFormBtn.addEventListener('click', function() {
-            contactOptions.style.display = 'none';
-            contactFormContainer.style.display = 'block';
-            this.setAttribute('aria-expanded', 'true');
-        });
-    }
-    
-    if (backToOptionsBtn && contactOptions && contactFormContainer) {
-        backToOptionsBtn.addEventListener('click', function() {
-            contactFormContainer.style.display = 'none';
-            contactOptions.style.display = 'grid';
-            showFormBtn.setAttribute('aria-expanded', 'false');
-        });
-    }
-    
-    // Reset form function
-    window.resetForm = function() {
-        const contactForm = document.getElementById('lead-form');
-        const formSuccess = document.getElementById('form-success');
-        
-        if (contactForm && formSuccess) {
-            contactForm.reset();
-            contactForm.style.display = 'block';
-            formSuccess.style.display = 'none';
-        }
-    };
+    // Initialize contact section and form - NEW: Replace old contact options code
+    initContactSection();
+    initContactForm();
     
     // Performance monitoring
     if ('performance' in window) {
@@ -366,6 +398,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Reset form function - UPDATED for mobile scrolling
+window.resetForm = function() {
+    const contactForm = document.getElementById('lead-form');
+    const formSuccess = document.getElementById('form-success');
+    
+    if (contactForm && formSuccess) {
+        contactForm.reset();
+        contactForm.style.display = 'block';
+        formSuccess.style.display = 'none';
+        
+        // Scroll back to form on mobile
+        if (window.innerWidth <= 768) {
+            contactForm.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'nearest' 
+            });
+        }
+    }
+};
 
 // Error handling for failed resources
 window.addEventListener('error', function(e) {

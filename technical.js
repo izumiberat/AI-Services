@@ -1,21 +1,30 @@
 // Language management and mobile menu functionality for technical page
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
+    // Initialize all functionality
+    initMobileMenu();
+    initSmoothScrolling();
+    initModals();
+    initLanguage();
+});
+
+// ===== MOBILE MENU FUNCTIONALITY =====
+function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            hamburger.setAttribute('aria-expanded', !isExpanded);
-        });
-    }
+    if (!hamburger || !navMenu) return;
+
+    // Mobile menu toggle
+    hamburger.addEventListener('click', function() {
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', !isExpanded);
+    });
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (navMenu?.classList.contains('active') && 
+        if (navMenu.classList.contains('active') && 
             !e.target.closest('.nav-menu') && 
             !e.target.closest('.hamburger') &&
             !e.target.closest('.language-selector')) {
@@ -25,16 +34,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Close mobile menu on escape key
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
             closeMobileMenu();
-            hamburger?.focus();
+            hamburger.focus();
         }
     });
     
     function closeMobileMenu() {
-        hamburger?.classList.remove('active');
-        navMenu?.classList.remove('active');
-        hamburger?.setAttribute('aria-expanded', 'false');
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.activeElement?.blur();
     }
     
@@ -44,8 +53,10 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMobileMenu();
         });
     });
+}
 
-    // Smooth scrolling for anchor links
+// ===== SMOOTH SCROLLING =====
+function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -61,11 +72,64 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Initialize modals
-    initModals();
+}
 
-    // Language management
+// ===== MODAL FUNCTIONALITY =====
+function initModals() {
+    // Add event listeners to modal buttons
+    document.querySelectorAll('.tech-details-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal');
+            openTechModal(modalId);
+        });
+    });
+
+    // Add event listeners to close buttons
+    document.querySelectorAll('[data-close-modal]').forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = this.closest('.modal-overlay');
+            closeTechModal(modal.id);
+        });
+    });
+
+    // Close modal when clicking outside content
+    document.querySelectorAll('.modal-overlay').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeTechModal(modal.id);
+            }
+        });
+    });
+    
+    // Close modals with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const openModal = document.querySelector('.modal-overlay.active');
+            if (openModal) {
+                closeTechModal(openModal.id);
+            }
+        }
+    });
+}
+
+function openTechModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeTechModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// ===== LANGUAGE MANAGEMENT =====
+function initLanguage() {
     const languageSelector = document.getElementById('language-selector');
     let currentLanguage = 'en';
     let translations = {};
@@ -145,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Initialize language
-    async function initLanguage() {
+    async function initializeLanguage() {
         const browserLang = navigator.language || navigator.userLanguage;
         const userLang = browserLang.startsWith('fr') ? 'fr' : 'en';
         
@@ -165,117 +229,18 @@ document.addEventListener('DOMContentLoaded', function() {
             updateContent(loadedTranslations);
             
             // Close mobile menu after language change on mobile
+            const navMenu = document.querySelector('.nav-menu');
             if (window.innerWidth <= 768 && navMenu?.classList.contains('active')) {
                 closeMobileMenu();
             }
         });
     }
 
-    // Initialize the page
-    initLanguage();
+    // Initialize the language
+    initializeLanguage();
 
     // Preload other language for better performance
     const browserLang = navigator.language || navigator.userLanguage;
     const otherLang = browserLang.startsWith('fr') ? 'en' : 'fr';
     loadTranslations(otherLang);
-});
-
-// ===== MODAL FUNCTIONALITY (Global scope - can be called from HTML) =====
-
-// Modal functionality for Service 1
-function openTechModal1() {
-    const modal = document.getElementById('techModal1');
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
 }
-
-function closeTechModal1() {
-    const modal = document.getElementById('techModal1');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-// Modal functionality for Service 2
-function openTechModal2() {
-    const modal = document.getElementById('techModal2');
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeTechModal2() {
-    const modal = document.getElementById('techModal2');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-// Modal functionality for Service 3
-function openTechModal3() {
-    const modal = document.getElementById('techModal3');
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeTechModal3() {
-    const modal = document.getElementById('techModal3');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-// Initialize modal events - called from DOMContentLoaded
-function initModals() {
-    const modals = ['techModal1', 'techModal2', 'techModal3'];
-    
-    modals.forEach(modalId => {
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            // Close modal when clicking outside content
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    if (modalId === 'techModal1') closeTechModal1();
-                    if (modalId === 'techModal2') closeTechModal2();
-                    if (modalId === 'techModal3') closeTechModal3();
-                }
-            });
-        }
-    });
-    
-    // Close modals with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            const modal1 = document.getElementById('techModal1');
-            const modal2 = document.getElementById('techModal2');
-            const modal3 = document.getElementById('techModal3');
-            
-            if (modal1?.classList.contains('active')) {
-                closeTechModal1();
-            }
-            if (modal2?.classList.contains('active')) {
-                closeTechModal2();
-            }
-            if (modal3?.classList.contains('active')) {
-                closeTechModal3();
-            }
-        }
-    });
-}
-
-// Make modal functions globally available
-window.openTechModal1 = openTechModal1;
-window.closeTechModal1 = closeTechModal1;
-window.openTechModal2 = openTechModal2;
-window.closeTechModal2 = closeTechModal2;
-window.openTechModal3 = openTechModal3;
-window.closeTechModal3 = closeTechModal3;
-window.initModals = initModals;

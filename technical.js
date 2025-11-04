@@ -185,32 +185,57 @@ document.addEventListener('DOMContentLoaded', function() {
 // Modal functionality for Service 1
 function openTechModal1() {
     const modal = document.getElementById('techModal1');
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function closeTechModal1() {
     const modal = document.getElementById('techModal1');
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
 // Modal functionality for Service 2
 function openTechModal2() {
     const modal = document.getElementById('techModal2');
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function closeTechModal2() {
     const modal = document.getElementById('techModal2');
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Modal functionality for Service 3
+function openTechModal3() {
+    const modal = document.getElementById('techModal3');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeTechModal3() {
+    const modal = document.getElementById('techModal3');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
 // Initialize modal events - called from DOMContentLoaded
 function initModals() {
-    const modals = ['techModal1', 'techModal2'];
+    const modals = ['techModal1', 'techModal2', 'techModal3'];
     
     modals.forEach(modalId => {
         const modal = document.getElementById(modalId);
@@ -220,6 +245,7 @@ function initModals() {
                 if (e.target === modal) {
                     if (modalId === 'techModal1') closeTechModal1();
                     if (modalId === 'techModal2') closeTechModal2();
+                    if (modalId === 'techModal3') closeTechModal3();
                 }
             });
         }
@@ -228,12 +254,28 @@ function initModals() {
     // Close modals with Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-            if (document.getElementById('techModal1').classList.contains('active')) {
+            const modal1 = document.getElementById('techModal1');
+            const modal2 = document.getElementById('techModal2');
+            const modal3 = document.getElementById('techModal3');
+            
+            if (modal1?.classList.contains('active')) {
                 closeTechModal1();
             }
-            if (document.getElementById('techModal2').classList.contains('active')) {
+            if (modal2?.classList.contains('active')) {
                 closeTechModal2();
+            }
+            if (modal3?.classList.contains('active')) {
+                closeTechModal3();
             }
         }
     });
 }
+
+// Make modal functions globally available
+window.openTechModal1 = openTechModal1;
+window.closeTechModal1 = closeTechModal1;
+window.openTechModal2 = openTechModal2;
+window.closeTechModal2 = closeTechModal2;
+window.openTechModal3 = openTechModal3;
+window.closeTechModal3 = closeTechModal3;
+window.initModals = initModals;

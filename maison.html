@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Maison à vendre - 5 Rue du Puits, Artigat</title>
+    <title>Maison à vendre - Artigat | 295 000 €</title>
     <style>
         * {
             margin: 0;
@@ -20,40 +20,52 @@
         }
 
         .container {
-            max-width: 650px;
+            max-width: 680px;
             margin: 0 auto;
             background: white;
-            border-radius: 28px;
+            border-radius: 32px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         .content {
-            padding: 1.6rem;
+            padding: 1.8rem;
         }
 
         h1 {
             font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
             color: #2d6a4f;
         }
 
-        .price {
-            font-size: 1.7rem;
-            font-weight: 800;
+        .price-location {
+            font-size: 1.4rem;
+            font-weight: 600;
             color: #1e5a3a;
-            margin: 0.5rem 0 0.25rem;
+            margin: 0.5rem 0 0.2rem;
         }
 
-        .price small {
-            font-size: 0.9rem;
+        .price-location span {
             font-weight: normal;
+            font-size: 1rem;
             color: #4a5b5e;
         }
 
+        .agency-link {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0.8rem 0 1rem;
+            font-size: 0.9rem;
+            color: #2d6a4f;
+        }
+
         hr {
-            margin: 1.2rem 0;
+            margin: 1.5rem 0;
             border: none;
             border-top: 2px solid #e9ecef;
         }
@@ -61,114 +73,29 @@
         h2 {
             font-size: 1.4rem;
             font-weight: 600;
-            margin: 1.2rem 0 0.8rem;
+            margin: 1.5rem 0 0.8rem;
             color: #2d6a4f;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 1rem 0 0.5rem;
-            color: #2d6a4f;
-        }
-
-        .badge {
-            background: #e9f5e9;
-            padding: 0.2rem 0.6rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            display: inline-block;
-            margin-right: 0.5rem;
-        }
-
-        ul, .list-bullet {
+        .list-icon {
             list-style: none;
             padding-left: 0;
         }
 
-        li {
-            margin-bottom: 0.6rem;
-            padding-left: 1.6rem;
+        .list-icon li {
+            margin-bottom: 0.7rem;
+            padding-left: 1.8rem;
             position: relative;
         }
 
-        li::before {
+        .list-icon li::before {
             content: "🌿";
             position: absolute;
             left: 0;
             top: 0;
-        }
-
-        .emoji-list li::before {
-            content: "✔️";
-        }
-
-        .grid-2 {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .card {
-            background: #fef9e6;
-            padding: 0.8rem;
-            border-radius: 20px;
-            flex: 1;
-            min-width: 140px;
-        }
-
-        .card strong {
-            display: block;
-            font-size: 1rem;
-        }
-
-        .market-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fef9e6;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .market-table td, .market-table th {
-            padding: 0.6rem;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .market-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .link {
-            color: #1e6f5c;
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid #cfe3db;
-        }
-
-        .video-link {
-            display: inline-block;
-            background: #e9ecef;
-            padding: 0.4rem 0.8rem;
-            border-radius: 40px;
-            margin: 0.3rem 0.3rem 0 0;
-            font-size: 0.85rem;
-            text-decoration: none;
-            color: #2d6a4f;
-        }
-
-        footer {
-            background: #f8f9fa;
-            padding: 1rem;
-            text-align: center;
-            font-size: 0.75rem;
-            color: #6c757d;
-            border-top: 1px solid #e9ecef;
         }
 
         .energy-stats {
@@ -191,6 +118,55 @@
             font-weight: 800;
         }
 
+        .market-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fef9e6;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .market-table td, .market-table th {
+            padding: 0.6rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .market-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .video-link {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 0.4rem 0.8rem;
+            border-radius: 40px;
+            margin: 0.3rem 0.3rem 0 0;
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: #2d6a4f;
+        }
+
+        .maps-link {
+            display: inline-block;
+            background: #1e6f5c;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #5a6e6b;
+            border-top: 1px solid #e9ecef;
+        }
+
         .note {
             font-size: 0.8rem;
             color: #5a6e6b;
@@ -204,108 +180,86 @@
 <body>
 <div class="container">
     <div class="content">
-        <h1>🏡 Maison à vendre</h1>
-        <div class="price">295 000 €</div>
-        <p>🔗 <strong>Annonce officielle de l’agence :</strong> <a href="https://www.occitanieproperties.com/fr/bien/" target="_blank" class="link">Voir l’annonce complète</a></p>
-<hr>  
-        <!-- Intro campagne -->
-        <p style="margin: 1rem 0 0.5rem; font-size: 1.1rem;"><strong>Une famille avec de jeunes enfants serait-elle tentée par la campagne ?</strong></p>
+        <h1>🌿 Quitter le béton pour le paradis ? Notre maison à Artigat vous attend.</h1>
+        <div class="price-location">
+            295 000 € <span>| 📍 09130 Artigat (À 1h de Toulouse / Le luxe de l'espace pour le prix d'un studio parisien)</span>
+        </div>
+        <a href="#" class="agency-link" target="_blank">🔗 Voir l'annonce officielle de l'agence</a>
 
-        <ul>
-            <li>Rivière à <strong>5 min à pied</strong></li>
-            <li>Lac à <strong>10 min</strong> avec skatepark, basket/foot, mur d'escalade, tennis, volley, pelote basque</li>
-            <li>Belles randonnées au départ de la maison</li>
-            <li>Vos enfants découvrent les saisons : cueillette de fraises, framboises, cerises, figues, pommes dans le jardin – et tout près : figues, coings, quetsches, noix, champignons</li>
-            <li>Grand potager – possibilité d’avoir <strong>2–3 kg de tomates par semaine</strong> (courgettes, melons, pastèques, concombres, blettes, patates, salades…)</li>
-            <li>Ramasser les œufs, observer poissons, libellules, grenouilles, hérissons, oiseaux… et le soir, admirer les étoiles</li>
-            <li>Trampoline + balançoire dans le jardin</li>
-            <li>Station de ski à <strong>1h30</strong>, nombreux producteurs locaux à proximité</li>
+        <hr>
+
+        <h2>✨ Le pitch : La "vraie vie" pour vos enfants (et pour vous)</h2>
+        <p>Vous rêvez de troquer la pollution et le bruit contre un jardin qui nourrit la famille ? On met en vente notre cocon. C’est l’endroit idéal pour une famille qui veut voir ses enfants grandir pieds nus dans l'herbe.</p>
+        <ul class="list-icon">
+            <li><strong>Le jardin est un self-service :</strong> Fraises, framboises, cerises, figues, pommes... et un potager qui nous a produit jusqu'à <strong>3kg de tomates par semaine</strong>.</li>
+            <li><strong>Aventure au bout du chemin :</strong> La rivière à 5 min, un lac ultra-équipé à 10 min (skatepark, tennis, escalade), et des randos qui partent littéralement du portail.</li>
+            <li><strong>Vie sauvage & Étoiles :</strong> Ramasser les œufs le matin, observer les hérissons le soir, et redécouvrir la Voie Lactée sans aucune pollution lumineuse.</li>
+            <li><strong>Le bonus hiver :</strong> Les stations de ski sont à seulement <strong>1h30</strong>.</li>
         </ul>
 
-        <p style="font-style: italic; margin-top: 0.5rem;">✨ Bref, la belle vie au cœur de la nature !</p>
+        <h2>📦 Pourquoi on bouge ?</h2>
+        <p>Nos garçons grandissent et réclament l'effervescence urbaine. On part tenter l'aventure à Pau ! C'est une page qui se tourne, et on aimerait vraiment que ce soit des amis (ou des amis d'amis) qui profitent de ce lieu magique.</p>
 
-        <!-- Pourquoi on part -->
-        <h2>📦 Pourquoi on part ?</h2>
-        <p>Nos garçons réclament plus d’indépendance et rêvent de vie urbaine… Nous allons tenter l’aventure à <strong>Pau</strong> (toujours près des montagnes, plus proche de l’océan).</p>
-
-        <!-- Infos pratiques + solaire -->
-        <h2>⚡ Infos pratiques</h2>
-        <ul>
-            <li>École primaire (classe unique) à <strong>5 min</strong> (covoiturage possible)</li>
-            <li>Collège à <strong>15 min</strong> – bus de ramassage à <strong>50 m</strong> de la maison</li>
-            <li>Chauffe-eau solaire (2 panneaux) + <strong>10 panneaux solaires de 500W</strong> – stockage virtuel du surplus</li>
+        <h2>🔋 Une maison "Future-Proof" (Écolo & Économe)</h2>
+        <p>Ici, on ne subit pas l'inflation de l'énergie. La maison est pensée pour l'autonomie et le confort :</p>
+        <ul class="list-icon">
+            <li><strong>Énergie Solaire :</strong> 10 panneaux photovoltaïques (500W) + chauffe-eau solaire.</li>
+            <li><strong>Chaleur Douce :</strong> Deux poêles à bois haute performance (Label Flamme Verte).</li>
+            <li><strong>Isolation Top :</strong> Murs en pierre isolés par l'extérieur ou l'intérieur, combles isolés, double vitrage partout.</li>
+            <li><strong>Performance :</strong> Classée <strong>D</strong> en consommation, mais un excellent <strong>B</strong> en émissions CO₂.</li>
         </ul>
 
-        <!-- === NOUVEAU : ÉLÉMENTS DU DPE (diagnostic énergétique) === -->
-        <h2>🔋 Performance énergétique</h2>
         <div class="energy-stats">
             <div class="energy-card">
                 <div class="letter">D</div>
-                <div>Consommation<br>205 kWh/m²·an</div>
+                <div>205 kWh/m²·an</div>
+                <small>Consommation</small>
             </div>
             <div class="energy-card">
                 <div class="letter">B</div>
-                <div>Émissions CO₂<br>6 kg/m²·an</div>
+                <div>6 kg CO₂/m²·an</div>
+                <small>Émissions</small>
             </div>
         </div>
-        <ul>
-            <li><strong>Chauffage principal :</strong> deux poêles à bois (bûches) – label flamme verte</li>
-            <li><strong>Eau chaude solaire :</strong> ballon 300L + panneaux thermiques</li>
-            <li><strong>Photovoltaïque :</strong> 16 m² de panneaux</li>
-            <li><strong>Isolation :</strong> combles isolés - à aménager éventuellement - (15 cm ITE) & murs en pierre isolés par l’extérieur ou l'intérieur en fonction des facades</li>
-            <li><strong>Double vitrage PVC</strong> sur la quasi-totalité des fenêtres (excepté le garage)</li>
-        </ul>
-       
-        <!-- Marchés locaux -->
-        <h2>🥖 Marchés locaux (un incontournable)</h2>
+
+        <h2>🥐 La vie locale</h2>
+        <p>Le week-end ici, c'est un festival de saveurs. On vit au rythme des marchés :</p>
         <table class="market-table">
-            <tr><td><strong>Mardi</strong></td><td>Massabrac</td><td>17h–20h (ambiance repas)</td></tr>
-            <tr><td><strong>Mercredi</strong></td><td>Mas d’Azil</td><td>8h30–12h30 (un des meilleurs)</td></tr>
-            <tr><td><strong>Vendredi</strong></td><td>Pailhès</td><td>soirée (petit marché charmant)</td></tr>
-            <tr><td><strong>Samedi</strong></td><td>Artigat</td><td>10h–12h (café à côté de l’épicerie)</td></tr>
-            <tr><td><strong>Dimanche</strong></td><td>Montbrun-Bocage</td><td>matin (plus animé)</td></tr>
+            <tr><td><strong>Mercredi</strong></td><td>Le Mas d’Azil (un des plus beaux de la région)</td></tr>
+            <tr><td><strong>Dimanche</strong></td><td>Montbrun-Bocage pour l'ambiance bohème et animée</td></tr>
+            <tr><td><strong>Direct producteurs</strong></td><td>Pain, miel, fromage, lait, viande, fruits, légumes et même fleurs à deux pas</td></tr>
         </table>
-        <p style="font-size: 0.85rem; margin-top: 0.5rem;">
-            🔗 <a class="link" href="https://g.co/kgs/uSkd4sR" target="_blank">Massabrac</a> · 
-            <a class="link" href="https://www.ariegepyrenees.com/en/agenda/marche-du-mas-dazil/" target="_blank">Mas d’Azil</a> · 
-            <a class="link" href="https://g.co/kgs/9yVk8kw" target="_blank">Pailhès</a> · 
-            <a class="link" href="https://g.co/kgs/EtK2gRa" target="_blank">Artigat</a> · 
-            <a class="link" href="https://www.hautegaronnetourisme.com/organisme/marche-montbrun-bocage/" target="_blank">Montbrun-Bocage</a>
-        </p>
 
-        <!-- Choses à voir et à faire -->
-        <h2>🏞️ Choses à voir et à faire</h2>
-        <ul>
-            <li><strong>Grotte du Mas d’Azil</strong> – incontournable, souffleur de verre avant l’entrée → <a class="link" href="https://www.sites-touristiques-ariege.fr/grotte-du-mas-dazil-2/" target="_blank">Infos visites</a></li>
-            <li><strong>Lac de Saint Ybars</strong> – promenade + café « L’Authentique » → <a class="link" href="https://en.tourisme-arize-leze.com/offers/restaurant-lauthentique-saint-ybars-en-4154793/" target="_blank">Carte</a></li>
-            <li><strong>Lac de Mondeley</strong> – plus grand, idéal pique‑nique</li>
-            <li><strong>Carla‑Bayle</strong> – village perché d’artistes, galeries, librairies, vue magnifique, <strong>lac avec aire de jeux (toute l’année)</strong></li>
+        <h2>🏫 Côté pratique (Parce qu'il faut bien s'organiser)</h2>
+        <ul class="list-icon">
+            <li><strong>Écoles :</strong> Primaire à 5 min (classe unique, le luxe !), Collège à 15 min avec ramassage scolaire à 50m de la porte.</li>
+            <li><strong>Télétravail :</strong> Parfaitement faisable au calme absolu.</li>
+            <li><strong>Courses :</strong> Carrefour City à 5 min pour les urgences, Lézat à 16 min.</li>
         </ul>
 
-        <!-- Courses -->
-        <h2>🛒 Courses & grandes surfaces</h2>
-        <ul>
-            <li>Carrefour Lézat (16 min) ou Carrefour City au Fossat (5 min)</li>
-            <li>Nombreux producteurs locaux : lait, fromage, pain, miel, steak haché, légumes, fruits</li>
-        </ul>
-
-        <!-- Balades -->
-        <h2>🥾 Balades à pied</h2>
-        <ul>
-            <li><strong>Courte (5 min)</strong> – coucher de soleil, portail à ouvrir/fermer pour les moutons</li>
-            <li><strong>Boucle de 6,6 km</strong> → <a class="link" href="https://maps.app.goo.gl/Egd72mc5jXwywcb96?g_st=ic" target="_blank">Itinéraire</a></li>
-            <li><strong>Grande boucle de 10 km</strong> → <a class="link" href="https://maps.app.goo.gl/5srf6gCDvQLa2sMN8?g_st=ic" target="_blank">Itinéraire</a></li>
-        </ul>
-
-        <!-- Vidéos -->
-        <h2>🎥 Vidéos (tournage maison)</h2>
+        <h2>📽️ Visite guidée (Sortez le pop-corn)</h2>
+        <p>Pas besoin de vous déplacer tout de suite, on a filmé pour vous :</p>
         <div>
-            <a class="video-link" href="https://photos.app.goo.gl/SavZfhar8bL2TYPG6" target="_blank">▶️ Extérieur (1 min)</a>
-            <a class="video-link" href="https://photos.app.goo.gl/iZ5cdQvcNvkNSa6c9" target="_blank">▶️ Intérieur + jardin (5 min)</a>
+            <a class="video-link" href="https://photos.app.goo.gl/SavZfhar8bL2TYPG6" target="_blank">▶️ L'extérieur et le cadre (1 min)</a>
+            <a class="video-link" href="https://photos.app.goo.gl/iZ5cdQvcNvkNSa6c9" target="_blank">▶️ L'intérieur et le jardin (5 min)</a>
+        </div>
+
+        <h2>📍 C'est où exactement ?</h2>
+        <p><strong>5 Rue du Puits, 09130 Artigat</strong></p>
+        <ul class="list-icon">
+            <li><strong>Depuis Toulouse :</strong> 1h de route (parfait pour garder un pied à la ville).</li>
+            <li><strong>Depuis Paris :</strong> Un vol Orly-Blagnac ou un train, et vous êtes déconnectés du monde.</li>
+        </ul>
+        <a href="https://maps.app.goo.gl/qh6Hq62b2maBdLHw5" class="maps-link" target="_blank">📍 Voir sur Google Maps</a>
+
+        <p style="margin-top: 1.5rem; font-size: 1.05rem;"><strong>Intéressés ou envie d'en savoir plus ? MP-moi directement ! 😊</strong></p>
+        <div class="note">
+            🌱 N'hésitez pas à partager à vos amis en manque de vert !
         </div>
     </div>
-    <footer>📍 5 Rue du Puits, 09130 Artigat – <a href="https://maps.app.goo.gl/qh6Hq62b2maBdLHw5" target="_blank" style="color:#1e6f5c;">Voir sur Google Maps</a></footer>
+    <footer>
+        Maison vendue via une agence immobilière – contactez-nous pour plus d’infos ou une visite.
+    </footer>
 </div>
 </body>
 </html>
-```

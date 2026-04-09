@@ -1,3 +1,7 @@
+Voici la page HTML complète, avec une nouvelle section « 📸 Plus de photos et vidéos » qui inclut le lien vers l’album Google Photos que vous m’avez communiqué.
+Les deux vidéos existantes sont conservées (extérieur 1 min, intérieur + jardin 5 min). L’album permet de voir davantage de pièces et des vues complémentaires.
+
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -136,7 +140,7 @@
             border-bottom: none;
         }
 
-        .video-link {
+        .video-link, .album-link {
             display: inline-block;
             background: #e9ecef;
             padding: 0.4rem 0.8rem;
@@ -145,6 +149,11 @@
             font-size: 0.85rem;
             text-decoration: none;
             color: #2d6a4f;
+        }
+
+        .album-link {
+            background: #2d6a4f;
+            color: white;
         }
 
         .maps-link {
@@ -224,9 +233,9 @@
         <h2>🥐 La vie locale et ses marchés</h2>
         <p>Le week-end, on profite des marchés de producteurs :</p>
         <table class="market-table">
-            <tr><td><strong>Mercredi</strong></td><td>Le Mas d’Azil (un des plus beaux de la région)</td></tr>
-            <tr><td><strong>Dimanche</strong></td><td>Montbrun-Bocage pour l’ambiance animée</td></tr>
-            <tr><td><strong>Direct producteurs</strong></td><td>Pain, miel, fromage, lait, viande, fruits, légumes à deux pas</td></tr>
+            <tr><td><strong>Mercredi</strong></td> <td>Le Mas d’Azil (un des plus beaux de la région)</td> </tr>
+            <tr> <td><strong>Dimanche</strong></td> <td>Montbrun-Bocage pour l’ambiance animée</td> </tr>
+            <tr> <td><strong>Direct producteurs</strong></td> <td>Pain, miel, fromage, lait, viande, fruits, légumes à deux pas</td> </tr>
         </table>
 
         <h2>🏫 Côté pratique</h2>
@@ -236,11 +245,15 @@
             <li><strong>Courses :</strong> Carrefour City à 5 min pour les urgences, Carrefour Lézat à 16 min.</li>
         </ul>
 
-        <h2>📽️ Visite guidée en vidéo</h2>
-        <p>Deux vidéos maison pour découvrir les lieux :</p>
+        <h2>📽️ Photos et vidéos</h2>
+        <p>Deux vidéons maison pour commencer la visite :</p>
         <div>
-            <a class="video-link" href="https://photos.app.goo.gl/SavZfhar8bL2TYPG6" target="_blank">▶️ L'extérieur et le cadre (1 min)</a>
-            <a class="video-link" href="https://photos.app.goo.gl/iZ5cdQvcNvkNSa6c9" target="_blank">▶️ L'intérieur et le jardin (5 min)</a>
+            <a class="video-link" href="https://photos.app.goo.gl/SavZfhar8bL2TYPG6" target="_blank">▶️ Extérieur (1 min)</a>
+            <a class="video-link" href="https://photos.app.goo.gl/iZ5cdQvcNvkNSa6c9" target="_blank">▶️ Intérieur + jardin (5 min)</a>
+        </div>
+        <p style="margin-top: 0.8rem;">📸 <strong>Plus de photos et vidéos de toutes les pièces, de l’extérieur et du jardin :</strong></p>
+        <div>
+            <a class="album-link" href="https://photos.app.goo.gl/zLrvsrpZYDr519jw9" target="_blank">📁 Voir l’album complet (Google Photos)</a>
         </div>
 
         <h2>📍 Où se situe la maison ?</h2>
@@ -262,3 +275,4 @@
 </div>
 </body>
 </html>
+```

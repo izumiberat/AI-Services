@@ -98,26 +98,6 @@
             top: 0;
         }
 
-        .energy-stats {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin: 1rem 0;
-        }
-
-        .energy-card {
-            background: #e6f4ea;
-            border-radius: 24px;
-            padding: 0.8rem 1rem;
-            text-align: center;
-            flex: 1;
-        }
-
-        .energy-card .letter {
-            font-size: 2rem;
-            font-weight: 800;
-        }
-
         .market-table {
             width: 100%;
             border-collapse: collapse;
@@ -180,6 +160,23 @@
             border-radius: 16px;
             margin-top: 0.5rem;
         }
+
+        .improvement-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .improvement-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .improvement-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2d6a4f;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -191,54 +188,42 @@
         </div>
         <a href="https://www.occitanieproperties.com/fr/bien/86904929/maison-a-vendre-artigat" class="agency-link" target="_blank">🔗 Voir l'annonce officielle de l'agence</a>
 
+        <h2>🏠 La maison</h2>
+        <ul class="list-icon">
+            <li><strong>4 chambres</strong> + un bureau / salle de gym (transformable en chambre)</li>
+            <li><strong>Deux salles de bains</strong> et <strong>3 toilettes</strong></li>
+            <li>Surface habitable : 165 m²</li>
+            <li>Terrain clos de 1 161 m²</li>
+            <li>Hangar non attenant d’environ 30 m²</li>
+        </ul>
+
         <hr>
 
-        <h2>✨ Pourquoi cette maison est unique</h2>
+        <h2>❤️ Ce qu’on aime</h2>
         <ul class="list-icon">
-            <li><strong>Le jardin est un self-service :</strong> Fraises, framboises, cerises, figues, pommes... et un potager qui peut produire jusqu'à <strong>3 kg de tomates par jour</strong> (selon la saison).</li>
-            <li><strong>Aventure au bout du chemin :</strong> Rivière à 5 min à pied, lac à 10 min (skatepark, tennis, escalade), randonnées au départ de la maison.</li>
-            <li><strong>Nature et étoiles :</strong> Ramasser les œufs, observer hérissons, libellules, poissons... et le soir, admirer la Voie Lactée sans pollution lumineuse.</li>
-            <li><strong>Le bonus hiver :</strong> Station de ski à seulement <strong>1h30</strong>.</li>
+            <li><strong>Rivière à 5 min à pied</strong> – baignade, pêche, promenade</li>
+            <li><strong>Lac à 10 min en voiture</strong> – skatepark, tennis, escalade, volley, pelote basque</li>
+            <li><strong>Randonnées au départ de la maison</strong> – forêts, collines, panoramas</li>
+            <li><strong>Nature et étoiles</strong> – ramasser les œufs, observer hérissons, libellules, et le soir admirer la Voie Lactée</li>
+            <li><strong>Station de ski à 1h10</strong> – idéal pour les week-ends hiver</li>
+            <li><strong>Dans un hameau sympathique</strong> – mais pas de vis‑à‑vis avec les voisins</li>
         </ul>
 
-        <h2>📦 Pourquoi on bouge ?</h2>
-        <p>Nos garçons grandissent et réclament plus d’indépendance, ils rêvent d’une vie urbaine. Nous partons tenter l’aventure à Pau – toujours près des montagnes, plus proche de l’océan. Une belle page se tourne, et nous aimerions que des amis (ou des amis d’amis) profitent de ce lieu.</p>
-
-        <h2>🔋 Une maison sobre et confortable</h2>
-        <p>Ici, on allie autonomie énergétique et confort :</p>
-        <ul class="list-icon">
-            <li><strong>Énergie solaire :</strong> 10 panneaux photovoltaïques (500W) + chauffe-eau solaire.</li>
-            <li><strong>Chaleur douce :</strong> Deux poêles à bois haute performance (label Flamme Verte).</li>
-            <li><strong>Isolation performante :</strong> Murs en pierre isolés par l’extérieur ou l’intérieur, combles isolés, double vitrage partout (sauf garage).</li>
-            <li><strong>Performance énergétique :</strong> Classe <strong>D</strong> en consommation (205 kWh/m²·an) et <strong>B</strong> en émissions CO₂ (6 kg/m²·an).</li>
+        <h2>🛠️ Améliorations récentes</h2>
+        <p>En 5 ans, nous avons réalisé des travaux pour rendre la maison confortable et économe en énergie. <strong>Notre facture d’électricité est d’environ 700 € / an (voiture électrique incluse).</strong></p>
+        <ul class="improvement-list">
+            <li>Remplacement des menuiseries (double vitrage PVC) – toutes sauf le garage</li>
+            <li>Installation d’un chauffe‑eau solaire</li>
+            <li>Isolation intérieure et extérieure des murs</li>
+            <li>Installation d’une nouvelle fosse septique aux normes</li>
+            <li>Installation de 10 panneaux solaires photovoltaïques (500W chacun)</li>
         </ul>
 
-        <div class="energy-stats">
-            <div class="energy-card">
-                <div class="letter">D</div>
-                <div>205 kWh/m²·an</div>
-                <small>Consommation</small>
-            </div>
-            <div class="energy-card">
-                <div class="letter">B</div>
-                <div>6 kg CO₂/m²·an</div>
-                <small>Émissions</small>
-            </div>
-        </div>
-
-        <h2>🥐 La vie locale et ses marchés</h2>
-        <p>Le week-end, on profite des marchés de producteurs :</p>
-        <table class="market-table">
-            <tr><td><strong>Mercredi</strong></td> <td>Le Mas d’Azil (un des plus beaux de la région)</td> </tr>
-            <tr> <td><strong>Dimanche</strong></td> <td>Montbrun-Bocage pour l’ambiance animée</td> </tr>
-            <tr> <td><strong>Direct producteurs</strong></td> <td>Pain, miel, fromage, lait, viande, fruits, légumes à deux pas</td> </tr>
-        </table>
-
-        <h2>🏫 Côté pratique</h2>
+        <h2>🛒 Côté pratique</h2>
         <ul class="list-icon">
-            <li><strong>Écoles :</strong> Primaire à 5 min (classe unique), collège à 15 min avec bus de ramassage à 50 m de la maison.</li>
-            <li><strong>Télétravail :</strong> Tout à fait possible au calme absolu.</li>
-            <li><strong>Courses :</strong> Carrefour City à 5 min pour les urgences, Carrefour Lézat à 16 min.</li>
+            <li><strong>Écoles :</strong> primaire à 5 min (classe unique), collège à 15 min avec ramassage scolaire à 50 m de la maison</li>
+            <li><strong>Courses :</strong> Carrefour City à 5 min, Carrefour Lézat à 16 min</li>
+            <li><strong>Marchés & producteurs locaux :</strong> le mercredi au Mas d’Azil (incontournable), le dimanche à Montbrun-Bocage (ambiance animée), et des producteurs à proximité pour lait, fromage, pain, miel, viande, fruits, légumes</li>
         </ul>
 
         <h2>📽️ Photos et vidéos</h2>

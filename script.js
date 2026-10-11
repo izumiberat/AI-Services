@@ -1,438 +1,268 @@
-// Internationalization (i18n) setup
-const i18n = {
-    en: {
-        // English translations
-    },
-    fr: {
-        // French translations  
-    }
-};
+/* IzuTech: language switch (French first, English available) and contact form. */
+(function () {
+  "use strict";
 
-// Track if this is the initial page load
-let isInitialLoad = true;
+  var EN = {
+    "skip": "Skip to content",
+    "navLabel": "Main navigation",
+    "langAria": "Passer en français",
+    "nav.offers": "Services",
+    "nav.workshop": "Workshop",
+    "nav.method": "How it works",
+    "nav.about": "About",
+    "nav.faq": "Questions",
+    "nav.cta": "Book 30 min",
 
-// Fetch translations from i18n.json
-fetch('i18n.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(translations => {
-        i18n.en = translations.en;
-        i18n.fr = translations.fr;
-        
-        // Initialize with proper language detection
-        const currentLang = initializeLanguage();
-        
-        // Initialize the page with the correct language
-        updateContent(currentLang, true); // true = initial load
-        
-        // Set up language selector
-        const languageSelector = document.getElementById('language-selector');
-        if (languageSelector) {
-            languageSelector.value = currentLang;
-            languageSelector.addEventListener('change', (e) => {
-                const newLang = e.target.value;
-                localStorage.setItem('selectedLanguage', newLang);
-                updateContent(newLang, false); // false = user-initiated change
-                
-                // Update URL without changing path - using search params
-                updateURLForLanguage(newLang);
-            });
-        }
-        
-        // Mark initial load as complete
-        isInitialLoad = false;
-    })
-    .catch(error => {
-        console.error('Error loading translations:', error);
-        // Fallback to English
-        updateContent('en', true);
-        isInitialLoad = false;
+    "hero.kicker": "Izumi Bérat, engineer based in Pau, France. AI automation for small and mid-sized businesses.",
+    "hero.title": "Less data entry, more time for your clients.",
+    "hero.lead": "I help small businesses hand repetitive work to AI: invoices to re-type, answers to dig out of documents, support replies. Fixed price, first prototype in two weeks. And if it isn't worth it for you, I'll tell you.",
+    "hero.cta": "Book a 30-minute call",
+    "hero.secondary": "See services and prices",
+    "hero.note": "Free call, no commitment, by video or in Pau.",
+
+    "sectors.title": "Where AI actually helps",
+    "sectors.lead": "No big “transformation” plan. We start from one specific task that costs you time every week. A few examples:",
+    "sectors.s1.t": "Accounting firms",
+    "sectors.s1.d": "Invoices and statements received as PDFs are read and entered into your accounting software. You check instead of typing.",
+    "sectors.s2.t": "Insurance brokers",
+    "sectors.s2.d": "An assistant finds the right clause in policies and terms, with a reference to the source document.",
+    "sectors.s3.t": "Logistics and transport",
+    "sectors.s3.d": "Delivery notes are read and matched to orders without re-typing. Mismatches are flagged for you.",
+    "sectors.s4.t": "Software companies",
+    "sectors.s4.d": "Every support ticket arrives with a draft reply in your tone. Your team reviews and sends.",
+    "sectors.s5.t": "Healthcare administration",
+    "sectors.s5.d": "Incoming letters and requests are sorted and summarised before they reach the right desk.",
+
+    "offers.title": "Services",
+    "offers.lead": "Each service has a clear scope. The listed price is a starting point. After the audit, you get a fixed quote.",
+    "offers.from": "from",
+    "offers.exampleLabel": "Example:",
+    "offers.o1.t": "Automated data processing",
+    "offers.o1.d": "Your invoices, purchase orders or forms arrive by email or as PDFs. The tool reads the information, puts it into your software or spreadsheet, and flags anything that needs checking. You keep the final say.",
+    "offers.o1.e": "supplier invoices entered straight into your accounting software.",
+    "offers.o2.t": "Internal assistant for your documents",
+    "offers.o2.d": "Your procedures, contracts and notes are scattered. The assistant answers your team’s questions from your own documents, and shows where each answer comes from.",
+    "offers.o2.e": "a new hire finds out how to handle a case without interrupting colleagues.",
+    "offers.o3.t": "Customer support co-pilot",
+    "offers.o3.d": "The tool drafts a reply inside your support tool (Zendesk, Intercom, Freshdesk…), in your brand’s voice. Your team reviews, edits if needed, and sends.",
+    "offers.o3.e": "common billing questions have a reply ready to review.",
+    "offers.foot": "Included with every service: a prototype on your real data, documentation, team training and 30 days of support.",
+
+    "workshop.tag": "New",
+    "workshop.title": "Workshop: build your own agent with Claude",
+    "workshop.p1": "Would you rather learn to do it yourself? In half a day, we build an agent together that handles a real task from your week: sorting emails, preparing meeting notes, keeping a tracking sheet up to date.",
+    "workshop.p2": "You leave with an agent that works, and a simple method to build more. No technical background needed.",
+    "workshop.f1.k": "Length",
+    "workshop.f1.v": "Half a day, plus a 1-hour follow-up two weeks later",
+    "workshop.f2.k": "For",
+    "workshop.f2.v": "Business owners and teams, up to 6 people",
+    "workshop.f3.k": "Where",
+    "workshop.f3.v": "At your office in Pau, or by video",
+    "workshop.f4.k": "Price",
+    "workshop.cta": "Talk about it on a call",
+
+    "method.title": "How we work",
+    "method.s1.t": "A 30-minute call",
+    "method.s1.d": "Free. You tell me what takes up your time. I tell you honestly whether AI can help.",
+    "method.s2.t": "The audit",
+    "method.s2.d": "We look at one specific task together: how long it takes, what can be automated, what should stay human. You get a fixed quote.",
+    "method.s3.t": "A prototype in 1 to 2 weeks",
+    "method.s3.d": "It runs on your real data. You try it, and you decide whether to go further.",
+    "method.s4.t": "Rollout in 4 to 8 weeks",
+    "method.s4.d": "Connection to your tools, documentation and team training.",
+    "method.s5.t": "30 days of support",
+    "method.s5.d": "I adjust whatever needs adjusting. After that, ongoing maintenance is available if you want it.",
+
+    "doubts.title": "What I often hear",
+    "doubts.q1": "“We tried ChatGPT. It stayed a gadget.”",
+    "doubts.a1": "That’s expected without access to your documents and tools. I connect AI to your real work, for one specific task.",
+    "doubts.q2": "“I’m not technical.”",
+    "doubts.a2": "You don’t need to be. You know your business. I handle the technical side and explain everything in plain words.",
+    "doubts.q3": "“Our data is sensitive.”",
+    "doubts.a3": "We choose together where it is processed. GDPR is built in from the start, and you always know where your data goes.",
+    "doubts.q4": "“What if the AI gets it wrong?”",
+    "doubts.a4": "It happens. That’s why a person always checks before anything goes to a client or into the accounts.",
+
+    "about.title": "Who is behind IzuTech",
+    "about.role": "Founder of IzuTech, Pau",
+    "about.photoAlt": "Portrait of Izumi Bérat",
+    "about.p1": "I’m Izumi Bérat, an engineer by training. I started at the European Space Agency, on the BepiColombo mission to Mercury, working with European and Japanese teams.",
+    "about.p2": "I then spent several years in New York in IT and product: banking infrastructure migration, then Director for Web Initiatives at Columbia University, where I led the move of a fundraising platform to AWS and Salesforce. More recently, I led a small technical support team for clients in Europe, the US and Japan.",
+    "about.p3": "In between, I took several years to travel with my family across Asia and Europe. Today I live in Pau with my wife and our three boys. I work in French, English and Japanese.",
+    "about.p4": "What drives me: removing friction, so teams can spend their time on what matters.",
+    "about.seniors": "I also help seniors in Pau with technology, at home: <a href=\"https://seniors.izutech.fr/\">seniors.izutech.fr</a> (in French)",
+
+    "faq.title": "Questions",
+    "faq.q1": "What does it cost in the end?",
+    "faq.a1": "Listed prices are starting points for a defined scope. After the audit, you get a fixed quote. It doesn’t change along the way without your agreement.",
+    "faq.q2": "Which tools can you work with?",
+    "faq.a2": "The ones you already use: accounting software, CRM, Google Workspace or Microsoft 365, your support tool. If a tool is hard to connect, I’ll tell you during the audit.",
+    "faq.q3": "What happens after delivery?",
+    "faq.a3": "30 days of support are included. You get the documentation, and your team is trained. After that, maintenance is available if you want it.",
+    "faq.q4": "Do you only work in Pau?",
+    "faq.a4": "I’m based in Pau and happy to travel within Nouvelle-Aquitaine. For the rest of France and abroad, remote works very well.",
+    "faq.q5": "Do I need a subscription to an AI tool?",
+    "faq.a5": "Often yes, at a modest monthly cost. I include it in the quote so you know the full cost before you decide.",
+
+    "contact.title": "Is one task eating hours of your week?",
+    "contact.lead": "Describe it in a few lines. I’ll reply in writing within two working days with a concrete idea. It’s free and there’s no commitment.",
+    "contact.or": "Would you rather talk it through?",
+    "contact.call": "Book a 30-minute call",
+    "contact.mail": "By email:",
+
+    "form.name": "Your name",
+    "form.email": "Your email",
+    "form.company": "Company",
+    "form.optional": "(optional)",
+    "form.task": "The task that takes you the most time",
+    "form.taskPh": "For example: every Monday we re-type about forty delivery notes by hand.",
+    "form.submit": "Send my request",
+    "form.sending": "Sending…",
+    "form.ok": "Thank you. Your request is on its way. I’ll reply within two working days.",
+    "form.err": "Sending didn’t work. Please write to me directly at contact@izutech.fr.",
+    "form.missing": "Please fill in your name, a valid email and the task.",
+
+    "footer.where": "AI automation for small businesses. Pau, Pyrénées-Atlantiques, France.",
+    "footer.seniors": "Tech help for seniors (in French)",
+    "footer.web": "Websites for small businesses",
+    "footer.events": "Event dashboards",
+    "footer.legal": "Legal notice and privacy (in French)",
+
+    "meta.title": "IzuTech · AI automation for small businesses, Pau",
+    "meta.description": "I help small businesses automate repetitive work with AI: invoice entry, document search, support replies. Fixed prices, prototype in 2 weeks. Based in Pau, France."
+  };
+
+  var FR_EXTRA = {
+    "langAria": "Switch to English",
+    "navLabel": "Navigation principale",
+    "form.sending": "Envoi en cours…",
+    "form.ok": "Merci. Votre demande est bien partie. Je vous réponds sous deux jours ouvrés.",
+    "form.err": "L'envoi n'a pas fonctionné. Écrivez-moi directement à contact@izutech.fr.",
+    "form.missing": "Merci d'indiquer votre nom, un email valide et la tâche."
+  };
+
+  var STORE_KEY = "izutech-lang";
+  var FR = {};
+  var current = "fr";
+
+  function store(get, value) {
+    try {
+      if (get) return window.localStorage.getItem(STORE_KEY);
+      window.localStorage.setItem(STORE_KEY, value);
+    } catch (e) { return null; }
+    return null;
+  }
+
+  // French is the page's own text; capture it once so we can switch back.
+  function captureFrench() {
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n");
+      if (!(k in FR)) FR[k] = el.innerHTML;
     });
-
-// Utility function to get nested object properties
-function getNestedValue(obj, path) {
-    return path.split('.').reduce((current, key) => {
-        return current && current[key] !== undefined ? current[key] : null;
-    }, obj);
-}
-
-// Initialize language based on URL parameter or stored preference
-function initializeLanguage() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    const storedLang = localStorage.getItem('selectedLanguage');
-    const browserLang = navigator.language.split('-')[0]; // Get primary language
-    
-    // Priority: URL param > stored preference > browser language > default (en)
-    let lang = 'en';
-    if (urlLang && (urlLang === 'en' || urlLang === 'fr')) {
-        lang = urlLang;
-    } else if (storedLang) {
-        lang = storedLang;
-    } else if (browserLang === 'fr') {
-        lang = 'fr';
-    }
-    
-    return lang;
-}
-
-// Update content based on selected language
-function updateContent(lang, isInitialLoad = false) {
-    const translations = i18n[lang];
-    if (!translations) return;
-
-    // Update all elements with data-i18n attribute
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        const value = getNestedValue(translations, key);
-        
-        if (value !== undefined && value !== null) {
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                element.setAttribute('placeholder', value);
-                // Keep current value if user has started typing
-                if (!element.value) {
-                    element.value = value;
-                }
-            } else if (element.tagName === 'IMG' && element.hasAttribute('alt')) {
-                element.setAttribute('alt', value);
-            } else {
-                // For all other elements, update the text content
-                element.textContent = value;
-                // If the element has an aria-label, update it too
-                if (element.hasAttribute('aria-label')) {
-                    element.setAttribute('aria-label', value);
-                }
-            }
-        }
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      FR[el.getAttribute("data-i18n-placeholder")] = el.getAttribute("placeholder");
     });
-
-    // Update language attribute
-    document.documentElement.setAttribute('lang', lang);
-
-    // Update meta tags for SEO
-    updateMetaTags(lang);
-
-    // Update canonical and hreflang
-    updateCanonicalAndHreflang(lang);
-
-    // Update social meta tags
-    updateSocialMetaTags(lang);
-
-    // NEW: Only collapse mobile menu when language is actively changed by user, not on initial load
-    if (!isInitialLoad) {
-        closeMobileMenu();
-    }
-}
-
-// New function to close mobile menu (same behavior as when nav items are clicked)
-function closeMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    const hamburger = document.querySelector('.hamburger');
-    
-    if (navMenu && hamburger) {
-        // Close the mobile menu
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        
-        console.log('Mobile menu closed after language change');
-    }
-}
-
-// Update meta tags for SEO
-function updateMetaTags(lang) {
-    const translations = i18n[lang];
-    if (!translations) return;
-
-    // Update page title
-    const title = getNestedValue(translations, 'meta.title');
-    if (title) {
-        document.title = title;
-    }
-
-    // Update meta description
-    const description = getNestedValue(translations, 'meta.description');
-    if (description) {
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', description);
-        }
-        
-        // Update Open Graph description
-        const ogDescription = document.querySelector('meta[property="og:description"]');
-        if (ogDescription) {
-            ogDescription.setAttribute('content', description);
-        }
-        
-        // Update Twitter description
-        const twitterDescription = document.querySelector('meta[name="twitter:description"]');
-        if (twitterDescription) {
-            twitterDescription.setAttribute('content', description);
-        }
-    }
-}
-
-// Update canonical URL and hreflang tags
-function updateCanonicalAndHreflang(lang) {
-    const baseURL = 'https://izutech.fr';
-    
-    // Update canonical URL - always point to main domain
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-        canonicalLink = document.createElement('link');
-        canonicalLink.rel = 'canonical';
-        document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.href = baseURL;
-    
-    // Update hreflang tags with proper URLs
-    updateHreflangTags(lang, baseURL);
-}
-
-// Update hreflang tags for multilingual SEO - SIMPLIFIED
-function updateHreflangTags(currentLang, baseURL) {
-    // Remove existing hreflang tags
-    const existingHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
-    existingHreflangs.forEach(link => link.remove());
-    
-    // Add new hreflang tags
-    const languages = [
-        { code: 'en', url: baseURL },
-        { code: 'fr', url: `${baseURL}?lang=fr` }
-    ];
-    
-    languages.forEach(lang => {
-        const link = document.createElement('link');
-        link.rel = 'alternate';
-        link.hreflang = lang.code;
-        link.href = lang.url;
-        document.head.appendChild(link);
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      FR[el.getAttribute("data-i18n-alt")] = el.getAttribute("alt");
     });
-    
-    // Add x-default hreflang
-    const xDefaultLink = document.createElement('link');
-    xDefaultLink.rel = 'alternate';
-    xDefaultLink.hreflang = 'x-default';
-    xDefaultLink.href = baseURL;
-    document.head.appendChild(xDefaultLink);
-}
+    FR["meta.title"] = document.title;
+    var md = document.querySelector('meta[name="description"]');
+    if (md) FR["meta.description"] = md.getAttribute("content");
+    Object.keys(FR_EXTRA).forEach(function (k) { FR[k] = FR_EXTRA[k]; });
+  }
 
-// Update URL for language changes
-function updateURLForLanguage(lang) {
-    // Use URL search parameters instead of path changes
-    const url = new URL(window.location);
-    
-    if (lang === 'en') {
-        // Remove language parameter for English (default)
-        url.searchParams.delete('lang');
-    } else {
-        // Set language parameter for other languages
-        url.searchParams.set('lang', lang);
-    }
-    
-    // Update URL without page reload
-    window.history.replaceState(null, '', url.toString());
-}
+  function t(key) {
+    var dict = current === "en" ? EN : FR;
+    return dict[key] != null ? dict[key] : (FR[key] || "");
+  }
 
-// Update Open Graph and social media URLs
-function updateSocialMetaTags(lang) {
-    const baseURL = 'https://izutech.fr';
-    const ogUrl = lang === 'en' ? baseURL : `${baseURL}?lang=${lang}`;
-    
-    // Update Open Graph URL
-    const ogUrlMeta = document.querySelector('meta[property="og:url"]');
-    if (ogUrlMeta) {
-        ogUrlMeta.content = ogUrl;
-    }
-    
-    // Update og:locale based on language
-    const ogLocale = document.querySelector('meta[property="og:locale"]');
-    if (ogLocale) {
-        ogLocale.content = lang === 'en' ? 'en_US' : 'fr_FR';
-    }
-}
-
-// Mobile contact section interactions - NEW FUNCTION
-function initContactSection() {
-    const showFormBtn = document.querySelector('.show-form-btn');
-    const backToOptions = document.querySelector('.back-to-options');
-    const contactFormAndTrust = document.querySelector('.contact-form-and-trust');
-    const contactOptions = document.querySelector('.contact-options');
-    
-    if (showFormBtn && contactFormAndTrust && contactOptions) {
-        showFormBtn.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
-                contactOptions.style.display = 'none';
-                contactFormAndTrust.style.display = 'block';
-                // Update ARIA attributes
-                showFormBtn.setAttribute('aria-expanded', 'true');
-                // Smooth scroll to form
-                contactFormAndTrust.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'nearest' 
-                });
-            } else {
-                // Desktop behavior - just toggle display
-                contactOptions.style.display = 'none';
-                contactFormAndTrust.style.display = 'block';
-                showFormBtn.setAttribute('aria-expanded', 'true');
-            }
-        });
-    }
-    
-    if (backToOptions && contactFormAndTrust && contactOptions) {
-        backToOptions.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
-                contactFormAndTrust.style.display = 'none';
-                contactOptions.style.display = 'grid';
-                // Update ARIA attributes
-                const showFormBtn = document.querySelector('.show-form-btn');
-                if (showFormBtn) showFormBtn.setAttribute('aria-expanded', 'false');
-                // Smooth scroll back to options
-                contactOptions.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'nearest' 
-                });
-            } else {
-                // Desktop behavior
-                contactFormAndTrust.style.display = 'none';
-                contactOptions.style.display = 'grid';
-                const showFormBtn = document.querySelector('.show-form-btn');
-                if (showFormBtn) showFormBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
-    }
-}
-
-// Initialize the contact form - UPDATED FUNCTION
-function initContactForm() {
-    const contactForm = document.getElementById('lead-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitButton = this.querySelector('button[type="submit"]');
-            const btnText = submitButton.querySelector('.btn-text');
-            const btnLoading = submitButton.querySelector('.btn-loading');
-            
-            // Show loading state
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'inline-block';
-            submitButton.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                // Hide form and show success message
-                contactForm.style.display = 'none';
-                document.getElementById('form-success').style.display = 'block';
-                
-                // Reset button state (for when form is shown again)
-                btnText.style.display = 'inline-block';
-                btnLoading.style.display = 'none';
-                submitButton.disabled = false;
-                
-                // Scroll to success message on mobile
-                if (window.innerWidth <= 768) {
-                    document.getElementById('form-success').scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'nearest' 
-                    });
-                }
-            }, 1500);
-        });
-    }
-}
-
-// Mobile menu functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            navMenu.classList.toggle('active');
-            
-            // Update hamburger animation
-            this.classList.toggle('active');
-        });
-    }
-    
-    // Smooth scrolling for navigation links - UPDATED to close mobile menu
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            
-            // Close mobile menu when nav link is clicked
-            closeMobileMenu();
-            
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+  function apply(lang) {
+    current = lang === "en" ? "en" : "fr";
+    var dict = current === "en" ? EN : FR;
+    document.documentElement.lang = current;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var v = dict[el.getAttribute("data-i18n")];
+      if (v != null) el.innerHTML = v;
     });
-    
-    // Initialize contact section and form - NEW: Replace old contact options code
-    initContactSection();
-    initContactForm();
-    
-    // Performance monitoring
-    if ('performance' in window) {
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                const perfEntries = performance.getEntriesByType('navigation');
-                if (perfEntries.length > 0) {
-                    const navEntry = perfEntries[0];
-                    console.log('Page load time:', navEntry.loadEventEnd - navEntry.fetchStart, 'ms');
-                }
-            }, 0);
-        });
-    }
-});
-
-// Reset form function - UPDATED for mobile scrolling
-window.resetForm = function() {
-    const contactForm = document.getElementById('lead-form');
-    const formSuccess = document.getElementById('form-success');
-    
-    if (contactForm && formSuccess) {
-        contactForm.reset();
-        contactForm.style.display = 'block';
-        formSuccess.style.display = 'none';
-        
-        // Scroll back to form on mobile
-        if (window.innerWidth <= 768) {
-            contactForm.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'nearest' 
-            });
-        }
-    }
-};
-
-// Error handling for failed resources
-window.addEventListener('error', function(e) {
-    console.error('Error loading resource:', e.target.src || e.target.href);
-}, true);
-
-// Service Worker registration for PWA capabilities (optional)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('SW registered: ', registration);
-            })
-            .catch(function(registrationError) {
-                console.log('SW registration failed: ', registrationError);
-            });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      var v = dict[el.getAttribute("data-i18n-placeholder")];
+      if (v != null) el.setAttribute("placeholder", v);
     });
-}
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      var v = dict[el.getAttribute("data-i18n-alt")];
+      if (v != null) el.setAttribute("alt", v);
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+      var v = dict[el.getAttribute("data-i18n-aria")];
+      if (v != null) el.setAttribute("aria-label", v);
+    });
+    if (dict["meta.title"]) document.title = dict["meta.title"];
+    var md = document.querySelector('meta[name="description"]');
+    if (md && dict["meta.description"]) md.setAttribute("content", dict["meta.description"]);
+    var btn = document.getElementById("lang-toggle");
+    if (btn) btn.textContent = current === "en" ? "FR" : "EN";
+  }
+
+  // French unless the visitor asked for English, or their device is set to a language other than French.
+  function initialLanguage() {
+    var param = null;
+    try { param = new URLSearchParams(window.location.search).get("lang"); } catch (e) {}
+    if (param === "en" || param === "fr") return param;
+    var saved = store(true);
+    if (saved === "en" || saved === "fr") return saved;
+    var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "fr"];
+    var primary = String(langs[0] || "fr").toLowerCase();
+    return primary.indexOf("fr") === 0 ? "fr" : "en";
+  }
+
+  function setupForm() {
+    var form = document.getElementById("lead-form");
+    if (!form) return;
+    var status = document.getElementById("form-status");
+    var submit = document.getElementById("f-submit");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      status.className = "form-status";
+      var name = form.elements.name, email = form.elements.email, task = form.elements.message;
+      var bad = false;
+      [name, email, task].forEach(function (f) {
+        var invalid = !f.value.trim() || (f.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim()));
+        f.setAttribute("aria-invalid", invalid ? "true" : "false");
+        if (invalid) bad = true;
+      });
+      if (bad) { status.textContent = t("form.missing"); status.classList.add("err"); return; }
+
+      submit.disabled = true;
+      var label = submit.textContent;
+      submit.textContent = t("form.sending");
+      fetch(form.action, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } })
+        .then(function (r) {
+          if (!r.ok) throw new Error("status " + r.status);
+          form.reset();
+          status.textContent = t("form.ok");
+          status.classList.add("ok");
+        })
+        .catch(function () {
+          status.textContent = t("form.err");
+          status.classList.add("err");
+        })
+        .finally(function () { submit.disabled = false; submit.textContent = label; });
+    });
+  }
+
+  function init() {
+    captureFrench();
+    apply(initialLanguage());
+    var btn = document.getElementById("lang-toggle");
+    if (btn) btn.addEventListener("click", function () {
+      var next = current === "en" ? "fr" : "en";
+      apply(next);
+      store(false, next);
+    });
+    setupForm();
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();

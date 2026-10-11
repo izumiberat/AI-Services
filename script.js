@@ -124,7 +124,6 @@
     "footer.seniors": "Tech help for seniors (in French)",
     "footer.web": "Websites for small businesses",
     "footer.events": "Event dashboards",
-    "footer.tech": "Technical details",
 
     "meta.title": "IzuTech · AI automation for small businesses, Pau",
     "meta.description": "I help small businesses automate repetitive work with AI: invoice entry, document search, support replies. Fixed prices, prototype in 2 weeks. Based in Pau, France."

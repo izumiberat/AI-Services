@@ -13,5 +13,5 @@ Offers (starting prices, fixed quote after the audit):
 Method: free 30-min call → audit → prototype in 1–2 weeks → rollout in 4–8 weeks → 30 days of support.
 Booking: calendly.com/izutech-fr/30min · Contact form: Formspree · Email: contact@izutech.fr
 
-Files: index.html, styles.css, script.js, photo/. technical.html (+ technical.css, technical.js, i18n.json) is the older English technical page, kept as is.
+Files: index.html, styles.css, script.js, photo/. technical.html only redirects old links to the home page.
 Voice: warm, direct, no jargon, no unproven numbers.

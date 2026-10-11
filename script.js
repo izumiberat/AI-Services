@@ -89,6 +89,7 @@
     "about.p1": "I’m Izumi Bérat, an engineer by training. I started at the European Space Agency, on the BepiColombo mission to Mercury, working with European and Japanese teams.",
     "about.p2": "I then spent several years in New York in IT and product: banking infrastructure migration, then Director for Web Initiatives at Columbia University, where I led the move of a fundraising platform to AWS and Salesforce. More recently, I led a small technical support team for clients in Europe, the US and Japan.",
     "about.p3": "In between, I took several years to travel with my family across Asia and Europe. Today I live in Pau with my wife and our three boys. I work in French, English and Japanese.",
+    "about.p5": "In 2024, back in a technical support role, I spent so many hours at the screen that my body had seized up: I struggled to put my socks on. I started yoga, meditation and running, every day. It changed everything, including how I see technology: it should help us focus on what really matters.",
     "about.p4": "What drives me: removing friction, so teams can spend their time on what matters.",
     "about.seniors": "I also help seniors in Pau with technology, at home: <a href=\"https://seniors.izutech.fr/\">seniors.izutech.fr</a> (in French)",
 

@@ -197,7 +197,14 @@ p { margin: 0; }
 @media (max-width: 700px) { .doubts { grid-template-columns: 1fr; } }
 
 /* About */
-.about-text { margin-top: 1.5rem; display: grid; gap: 1rem; max-width: 40em; }
+.about { display: grid; grid-template-columns: minmax(0, 16rem) minmax(0, 1fr); gap: clamp(1.75rem, 5vw, 4rem); align-items: start; }
+.portrait { margin: 0; display: grid; gap: 0.75rem; max-width: 16rem; }
+.portrait img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 4px solid var(--surface); box-shadow: 0 0 0 2px var(--brand); }
+.portrait figcaption { display: grid; gap: 0.1rem; text-align: center; color: var(--muted); font-size: 0.95rem; }
+.portrait figcaption strong { font-family: var(--font-display); font-size: 1.2rem; color: var(--ink); }
+.about-text { display: grid; gap: 1rem; max-width: 40em; }
+.about-text h2 { margin-bottom: 0.25rem; }
+@media (max-width: 700px) { .about { grid-template-columns: 1fr; } .portrait { max-width: 12rem; } }
 .about-aside { padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); }
 
 /* FAQ */
@@ -237,3 +244,16 @@ p { margin: 0; }
 .footer-brand { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; }
 .footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
 .footer-base { padding-block: 1.5rem; color: var(--muted); font-size: 0.9rem; }
+
+/* Legal page */
+.legal .wrap { max-width: 46rem; display: grid; gap: 1rem; }
+.legal h1 { font-size: var(--step-3); max-width: none; }
+.legal h2 { font-size: var(--step-2); margin-top: 1.5rem; }
+.legal h3 { font-size: 1.1rem; margin-top: 0.5rem; }
+.legal-updated { color: var(--muted); }
+.legal-list { margin: 0; display: grid; border-top: 1px solid var(--line); }
+.legal-list > div { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 0.25rem 1.5rem; padding-block: 0.7rem; border-bottom: 1px solid var(--line); }
+.legal-list dt { font-weight: 700; }
+.legal-list dd { margin: 0; }
+.legal-list .todo { color: var(--error); font-weight: 700; }
+@media (max-width: 560px) { .legal-list > div { grid-template-columns: 1fr; } }

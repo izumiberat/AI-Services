@@ -31,6 +31,7 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "IzuTech",
+  "founder": {"@type": "Person", "name": "Izumi Bérat"},
   "url": "https://izutech.fr/",
   "logo": "https://izutech.fr/photo/IzuTech-logo.png",
   "email": "contact@izutech.fr",
@@ -73,7 +74,7 @@
 
   <section class="hero" id="top">
     <div class="wrap">
-      <p class="hero-kicker" data-i18n="hero.kicker">Ingénieur, basé à Pau. Automatisation IA pour les PME.</p>
+      <p class="hero-kicker" data-i18n="hero.kicker">Izumi Bérat, ingénieur basé à Pau. Automatisation IA pour les PME.</p>
       <h1 data-i18n="hero.title">Moins de saisie, plus de temps pour vos clients.</h1>
       <p class="hero-lead" data-i18n="hero.lead">J'aide les PME à confier à l'IA les tâches répétitives : factures à ressaisir, informations à chercher dans les documents, réponses au support. Prix fixe, premier prototype en deux semaines. Et si ça n'en vaut pas la peine chez vous, je vous le dis.</p>
       <div class="hero-actions">
@@ -187,9 +188,16 @@
 
   <section class="section section-tint" id="apropos" aria-labelledby="apropos-title">
     <div class="wrap about">
-      <h2 id="apropos-title" data-i18n="about.title">Qui est derrière IzuTech</h2>
+      <figure class="portrait">
+        <picture>
+          <source srcset="photo/izumi-berat.webp" type="image/webp">
+          <img src="photo/izumi-berat.jpg" alt="Portrait d'Izumi Bérat" data-i18n-alt="about.photoAlt" width="480" height="480" loading="lazy">
+        </picture>
+        <figcaption><strong>Izumi Bérat</strong><span data-i18n="about.role">Fondateur d'IzuTech, Pau</span></figcaption>
+      </figure>
       <div class="about-text">
-        <p data-i18n="about.p1">Je suis ingénieur de formation. J'ai commencé à l'Agence spatiale européenne, sur la mission BepiColombo vers Mercure, avec des équipes européennes et japonaises.</p>
+        <h2 id="apropos-title" data-i18n="about.title">Qui est derrière IzuTech</h2>
+        <p data-i18n="about.p1">Je m'appelle Izumi Bérat, ingénieur de formation. J'ai commencé à l'Agence spatiale européenne, sur la mission BepiColombo vers Mercure, avec des équipes européennes et japonaises.</p>
         <p data-i18n="about.p2">J'ai ensuite travaillé plusieurs années à New York dans l'informatique et le produit : migration d'infrastructures bancaires, puis directeur des projets web à l'Université Columbia, où j'ai piloté le passage d'une plateforme de collecte de fonds vers AWS et Salesforce. Plus récemment, j'ai dirigé une petite équipe de support technique pour des clients en Europe, aux États-Unis et au Japon.</p>
         <p data-i18n="about.p3">Entre les deux, j'ai pris plusieurs années pour voyager en famille en Asie et en Europe. Aujourd'hui, je vis à Pau avec ma femme et nos trois garçons. Je travaille en français, en anglais et en japonais.</p>
         <p data-i18n="about.p4">Ce qui me motive : enlever les frictions, pour que les équipes passent leur temps sur ce qui compte.</p>
@@ -260,7 +268,7 @@
     </ul>
   </div>
   <div class="wrap footer-base">
-    <p>© 2026 IzuTech</p>
+    <p>© 2026 IzuTech · <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
   </div>
 </footer>
 

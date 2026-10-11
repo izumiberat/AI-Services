@@ -13,7 +13,7 @@
     "nav.faq": "Questions",
     "nav.cta": "Book 30 min",
 
-    "hero.kicker": "Engineer based in Pau, France. AI automation for small and mid-sized businesses.",
+    "hero.kicker": "Izumi Bérat, engineer based in Pau, France. AI automation for small and mid-sized businesses.",
     "hero.title": "Less data entry, more time for your clients.",
     "hero.lead": "I help small businesses hand repetitive work to AI: invoices to re-type, answers to dig out of documents, support replies. Fixed price, first prototype in two weeks. And if it isn't worth it for you, I'll tell you.",
     "hero.cta": "Book a 30-minute call",
@@ -84,7 +84,9 @@
     "doubts.a4": "It happens. That’s why a person always checks before anything goes to a client or into the accounts.",
 
     "about.title": "Who is behind IzuTech",
-    "about.p1": "I’m an engineer by training. I started at the European Space Agency, on the BepiColombo mission to Mercury, working with European and Japanese teams.",
+    "about.role": "Founder of IzuTech, Pau",
+    "about.photoAlt": "Portrait of Izumi Bérat",
+    "about.p1": "I’m Izumi Bérat, an engineer by training. I started at the European Space Agency, on the BepiColombo mission to Mercury, working with European and Japanese teams.",
     "about.p2": "I then spent several years in New York in IT and product: banking infrastructure migration, then Director for Web Initiatives at Columbia University, where I led the move of a fundraising platform to AWS and Salesforce. More recently, I led a small technical support team for clients in Europe, the US and Japan.",
     "about.p3": "In between, I took several years to travel with my family across Asia and Europe. Today I live in Pau with my wife and our three boys. I work in French, English and Japanese.",
     "about.p4": "What drives me: removing friction, so teams can spend their time on what matters.",
@@ -124,6 +126,7 @@
     "footer.seniors": "Tech help for seniors (in French)",
     "footer.web": "Websites for small businesses",
     "footer.events": "Event dashboards",
+    "footer.legal": "Legal notice and privacy (in French)",
 
     "meta.title": "IzuTech · AI automation for small businesses, Pau",
     "meta.description": "I help small businesses automate repetitive work with AI: invoice entry, document search, support replies. Fixed prices, prototype in 2 weeks. Based in Pau, France."
@@ -159,6 +162,9 @@
     document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
       FR[el.getAttribute("data-i18n-placeholder")] = el.getAttribute("placeholder");
     });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      FR[el.getAttribute("data-i18n-alt")] = el.getAttribute("alt");
+    });
     FR["meta.title"] = document.title;
     var md = document.querySelector('meta[name="description"]');
     if (md) FR["meta.description"] = md.getAttribute("content");
@@ -181,6 +187,10 @@
     document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
       var v = dict[el.getAttribute("data-i18n-placeholder")];
       if (v != null) el.setAttribute("placeholder", v);
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      var v = dict[el.getAttribute("data-i18n-alt")];
+      if (v != null) el.setAttribute("alt", v);
     });
     document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
       var v = dict[el.getAttribute("data-i18n-aria")];

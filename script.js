@@ -11,12 +11,12 @@
     "nav.method": "How it works",
     "nav.about": "About",
     "nav.faq": "Questions",
-    "nav.cta": "Book 30 min",
+    "nav.cta": "Contact me",
 
     "hero.kicker": "Izumi Bérat, engineer based in Pau, France. AI automation for small and mid-sized businesses.",
     "hero.title": "Less data entry, more time for your clients.",
     "hero.lead": "I help small businesses hand repetitive work to AI: invoices to re-type, answers to dig out of documents, support replies. Fixed price, first prototype in two weeks. And if it isn't worth it for you, I'll tell you.",
-    "hero.cta": "Book a 30-minute call",
+    "hero.cta": "Request a free call",
     "hero.secondary": "See services and prices",
     "hero.note": "Free call, no commitment, by video or in Pau.",
 
@@ -59,7 +59,7 @@
     "workshop.f3.k": "Where",
     "workshop.f3.v": "At your office in Pau, or by video",
     "workshop.f4.k": "Price",
-    "workshop.cta": "Talk about it on a call",
+    "workshop.cta": "Ask about the workshop",
 
     "method.title": "How we work",
     "method.s1.t": "A 30-minute call",
@@ -107,8 +107,7 @@
 
     "contact.title": "Is one task eating hours of your week?",
     "contact.lead": "Describe it in a few lines. I’ll reply in writing within two working days with a concrete idea. It’s free and there’s no commitment.",
-    "contact.or": "Would you rather talk it through?",
-    "contact.call": "Book a 30-minute call",
+    "contact.or": "Would you rather talk it through? Say so in your message and I’ll suggest a time for a call.",
     "contact.mail": "By email:",
 
     "form.name": "Your name",

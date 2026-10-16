@@ -11,7 +11,7 @@ Offers (starting prices, fixed quote after the audit):
 - Workshop "build your own agent with Claude": from €450 (half day, up to 6 people, 1-hour follow-up)
 
 Method: free 30-min call → audit → prototype in 1–2 weeks → rollout in 4–8 weeks → 30 days of support.
-Booking: via the contact form (Calendly removed) · Contact form: Formspree · Email: contact@izutech.fr
+Booking: Google Calendar booking page https://calendar.app.google/Y9YtHrf6hDHfdrVC7 · Contact form: Formspree · Email: contact@izutech.fr
 
 Files: index.html, styles.css, script.js, photo/. technical.html only redirects old links to the home page.
 Voice: warm, direct, no jargon, no unproven numbers.

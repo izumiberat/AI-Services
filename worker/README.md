@@ -20,7 +20,7 @@ Rien n'est enregistré : ni les conversations, ni les documents. Les journaux ne
 
 Il faut Node.js 20 ou plus récent sur votre ordinateur.
 
-1. **Clé Mistral.** Sur console.mistral.ai, créez une clé API. Dans les réglages de facturation, fixez une **limite de dépense mensuelle** (par exemple 10 €). Si la démo est très utilisée, elle s'arrêtera à cette limite au lieu de coûter plus.
+1. **Clé Mistral.** Sur console.mistral.ai, choisissez l'offre payante (à l'usage), pas l'offre gratuite : la gratuite impose que Mistral utilise les données pour entraîner ses modèles, ce qui contredit la page de confidentialité. Puis créez une clé API. Dans les réglages de facturation, fixez une **limite de dépense mensuelle** (par exemple 10 €). Si la démo est très utilisée, elle s'arrêtera à cette limite au lieu de coûter plus.
 
 2. **Compte Cloudflare.** Créez un compte gratuit sur cloudflare.com si vous n'en avez pas.
 

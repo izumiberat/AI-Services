@@ -10,7 +10,7 @@ export const SECTIONS = [
     id: "k1",
     title: "IzuTech en bref",
     url: SITE,
-    text: `IzuTech, c'est Izumi Bérat, ingénieur basé à Pau. Il aide les PME à confier à l'IA les tâches répétitives : factures à ressaisir, informations à chercher dans les documents, réponses au support. Prix fixe, premier prototype en deux semaines. Et si ça n'en vaut pas la peine pour l'entreprise, il le dit. Pas de grand plan de « transformation » : on part d'une tâche précise qui coûte du temps chaque semaine.`
+    text: `IzuTech, c'est Izumi Bérat, ingénieur basé à Pau. Il aide les PME à confier à l'IA les tâches répétitives : factures à ressaisir, informations à chercher dans les documents, réponses au support. Moins de saisie, plus de temps pour ce qui compte : ce temps appartient à l'entreprise et à ses équipes, pour leur métier, leurs proches, ou simplement pour souffler. Prix fixe, premier prototype en deux semaines. Et si ça n'en vaut pas la peine pour l'entreprise, il le dit. Pas de grand plan de « transformation » : on part d'une tâche précise qui coûte du temps chaque semaine.`
   },
   {
     id: "k2",
@@ -83,7 +83,7 @@ Zone : basé à Pau, déplacements volontiers en Nouvelle-Aquitaine ; pour le re
     id: "k11",
     title: "Qui est derrière IzuTech",
     url: SITE + "#apropos",
-    text: `Izumi Bérat, ingénieur de formation. Il a commencé à l'Agence spatiale européenne, sur la mission BepiColombo vers Mercure, avec des équipes européennes et japonaises. Puis plusieurs années à New York dans l'informatique et le produit : migration d'infrastructures bancaires, puis directeur des projets web à l'Université Columbia, où il a piloté le passage d'une plateforme de collecte de fonds vers AWS et Salesforce. Plus récemment, il a dirigé une petite équipe de support technique pour des clients en Europe, aux États-Unis et au Japon. Il a aussi pris plusieurs années pour voyager en famille en Asie et en Europe. Il vit à Pau avec sa femme et leurs trois garçons, et travaille en français, en anglais et en japonais. Ce qui le motive : enlever les frictions, pour que les équipes passent leur temps sur ce qui compte.`
+    text: `Izumi Bérat, ingénieur de formation. Il a commencé à l'Agence spatiale européenne, sur la mission BepiColombo vers Mercure, avec des équipes européennes et japonaises. Puis plusieurs années à New York dans l'informatique et le produit : migration d'infrastructures bancaires, puis directeur des projets web à l'Université Columbia, où il a piloté le passage d'une plateforme de collecte de fonds vers AWS et Salesforce. Plus récemment, il a dirigé une petite équipe de support technique pour des clients en Europe, aux États-Unis et au Japon. Il a aussi pris plusieurs années pour voyager en famille en Asie et en Europe. Il vit à Pau avec sa femme et leurs trois garçons, et travaille en français, en anglais et en japonais. En 2024, après trop d'heures devant l'écran, il a commencé chaque jour le yoga, la méditation et la course à pied ; depuis, il voit la technologie comme un moyen de se concentrer sur l'essentiel. Ce qui le motive : confier à la machine les tâches répétitives, pour que chacun retrouve du temps pour ce qu'il aime faire, pour ses proches et pour prendre soin de lui.`
   },
   {
     id: "k12",

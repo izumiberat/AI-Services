@@ -14,8 +14,8 @@
     "nav.cta": "Book 30 min",
 
     "hero.kicker": "Izumi Bérat, engineer based in Pau, France. AI automation for small and mid-sized businesses.",
-    "hero.title": "Less data entry, more time for your clients.",
-    "hero.lead": "I help small businesses hand repetitive work to AI: invoices to re-type, answers to dig out of documents, support replies. Fixed price, first prototype in two weeks. And if it isn't worth it for you, I'll tell you.",
+    "hero.title": "Less data entry. More time for what matters.",
+    "hero.lead": "I help small businesses hand repetitive work to AI: invoices to re-type, answers to dig out of documents, support replies. That time is yours: for your work, your loved ones, or simply to breathe. Fixed price, first prototype in two weeks. And if it isn't worth it for you, I'll tell you.",
     "hero.cta": "Book a 30-minute call",
     "hero.secondary": "See services and prices",
     "hero.note": "Free call, no commitment, by video or in Pau.",
@@ -90,7 +90,7 @@
     "about.p2": "I then spent several years in New York in IT and product: banking infrastructure migration, then Director for Web Initiatives at Columbia University, where I led the move of a fundraising platform to AWS and Salesforce. More recently, I led a small technical support team for clients in Europe, the US and Japan.",
     "about.p3": "In between, I took several years to travel with my family across Asia and Europe. Today I live in Pau with my wife and our three boys. I work in French, English and Japanese.",
     "about.p5": "In 2024, back in a technical support role, I spent so many hours at the screen that my body had seized up: I struggled to put my socks on. I started yoga, meditation and running, every day. It changed everything, including how I see technology: it should help us focus on what really matters.",
-    "about.p4": "What drives me: removing friction, so teams can spend their time on what matters.",
+    "about.p4": "What drives me: handing repetitive tasks to the machine, so people get time back for what they love doing, for their loved ones, and to take care of themselves.",
     "about.seniors": "I also help seniors in Pau with technology, at home: <a href=\"https://seniors.izutech.fr/\">seniors.izutech.fr</a> (in French)",
 
     "faq.title": "Questions",

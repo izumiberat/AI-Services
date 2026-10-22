@@ -2,6 +2,10 @@
 name = "izutech-demo"
 main = "src/index.js"
 compatibility_date = "2026-09-01"
+# Served at https://izutech-demo.izutech-pau.workers.dev (the address in demo.html's data-api).
+workers_dev = true
+# No per-version preview addresses: one public address is enough for the demo.
+preview_urls = false
 
 [vars]
 # Only these pages may call the API (comma-separated, exact origins).

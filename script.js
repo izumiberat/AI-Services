@@ -11,6 +11,7 @@
     "nav.method": "How it works",
     "nav.about": "About",
     "nav.faq": "Questions",
+    "nav.demo": "Demos",
     "nav.cta": "Book 30 min",
 
     "hero.kicker": "Izumi Bérat, engineer based in Pau, France. AI automation for small and mid-sized businesses.",
@@ -47,6 +48,7 @@
     "offers.o3.d": "The tool drafts a reply inside your support tool (Zendesk, Intercom, Freshdesk…), in your brand’s voice. Your team reviews, edits if needed, and sends.",
     "offers.o3.e": "common billing questions have a reply ready to review.",
     "offers.foot": "Included with every service: a prototype on your real data, documentation, team training and 30 days of support.",
+    "offers.demo": "<a href=\"demo.html\">Try the demos: an assistant that cites its sources, an invoice read automatically, and a time-saved calculator →</a>",
 
     "workshop.tag": "New",
     "workshop.title": "Workshop: build your own agent with Claude",
@@ -129,6 +131,64 @@
     "footer.events": "Event dashboards",
     "footer.legal": "Legal notice and privacy (in French)",
 
+    "meta.demo.title": "Demos · IzuTech, AI automation for small businesses",
+    "meta.demo.description": "Try before we talk: an assistant that answers from documents, an invoice read automatically, and a calculator for the time you could save.",
+
+    "demo.back": "← Back to home",
+    "demo.title": "Try it before we talk.",
+    "demo.lead": "Three small tools to show what AI can actually do in a small business. They're demos: in your company, they would be connected to your own documents and tools.",
+    "demo.jump1": "An assistant that cites its sources",
+    "demo.jump2": "An invoice, read for you",
+    "demo.jump3": "The time you could save",
+    "demo.off": "This demo will be online soon.",
+
+    "demo.a.tag": "“Assistant for your documents” service",
+    "demo.a.title": "Ask a question about IzuTech",
+    "demo.a.p1": "This assistant answers only from the content of this site, and shows where each answer comes from. When it doesn't know, it says so instead of making something up.",
+    "demo.a.p2": "In your company, it would do the same with your procedures, contracts or internal notes.",
+    "demo.a.note": "It's an AI, not a person, and it can be wrong. Your messages are processed by Mistral AI, a French company. IzuTech doesn't keep them. Please don't include personal information.",
+    "demo.a.hello": "Hello. I answer questions about IzuTech's services, prices, method and workshop. What would you like to know?",
+    "demo.a.q1": "How much does an assistant for our documents cost?",
+    "demo.a.q2": "How does a project work?",
+    "demo.a.q3": "Do you work with our accounting software?",
+    "demo.a.label": "Your question",
+    "demo.a.ph": "Your question…",
+    "demo.a.send": "Send",
+
+    "demo.d.tag": "“Automated data processing” service",
+    "demo.d.title": "An invoice read in seconds",
+    "demo.d.p1": "The tool reads the invoice, sorts the information, then redoes the maths. Anything that doesn't add up is flagged: you check instead of re-typing everything.",
+    "demo.d.p2": "Try it with the sample invoice. It contains a mistake: see whether the tool finds it.",
+    "demo.d.note": "You can also send your own file (PDF, JPG or PNG, 4 MB max). Please use a sample, not a confidential document. It is processed by Mistral AI, and IzuTech doesn't keep it.",
+    "demo.d.cap": "Sample invoice (in French)",
+    "demo.d.try": "Read the sample invoice",
+    "demo.d.upload": "Send my file",
+
+    "demo.c.title": "How much time could you save?",
+    "demo.c.p1": "A simple calculation with your own numbers. The suggested values are only examples: replace them with yours.",
+    "demo.c.p2": "How much of a task AI can take on varies a lot from one company to the next. That's exactly what the audit measures. Here, pick a cautious guess.",
+    "demo.c.task": "The task",
+    "demo.c.t1": "Entering supplier invoices",
+    "demo.c.t2": "Matching delivery notes",
+    "demo.c.t3": "Finding information in documents",
+    "demo.c.t4": "Answering customer requests",
+    "demo.c.volume": "Number per month",
+    "demo.c.minutes": "Minutes for each",
+    "demo.c.rate": "Cost of one hour of work (€, all-in)",
+    "demo.c.tool": "AI tool subscription (€ per month)",
+    "demo.c.share": "Share handled by AI",
+    "demo.c.foot": "An indicative estimate. Time for human checks still needs to be planned, and the real quote depends on the audit.",
+
+    "demo.v.title": "On video, before and after",
+    "demo.v.lead": "One minute per service: the task done by hand, then the same task with the tool.",
+    "demo.v.v1": "Invoice entry",
+    "demo.v.v2": "The assistant for your documents",
+    "demo.v.v3": "The support co-pilot",
+
+    "demo.cta.title": "And for your company?",
+    "demo.cta.lead": "Let's talk for 30 minutes, free. You tell me about the task that takes up your time, and I tell you honestly whether AI can help.",
+    "demo.cta.write": "Or describe it in writing",
+
     "meta.title": "IzuTech · AI automation for small businesses, Pau",
     "meta.description": "I help small businesses automate repetitive work with AI: invoice entry, document search, support replies. Fixed prices, prototype in 2 weeks. Based in Pau, France."
   };
@@ -143,6 +203,10 @@
   };
 
   var STORE_KEY = "izutech-lang";
+  // Pages other than the home page set <body data-page="..."> so their title and description get their own keys.
+  var PAGE = (document.body && document.body.getAttribute("data-page")) || "";
+  var META_TITLE = PAGE ? "meta." + PAGE + ".title" : "meta.title";
+  var META_DESC = PAGE ? "meta." + PAGE + ".description" : "meta.description";
   var FR = {};
   var current = "fr";
 
@@ -166,9 +230,9 @@
     document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
       FR[el.getAttribute("data-i18n-alt")] = el.getAttribute("alt");
     });
-    FR["meta.title"] = document.title;
+    FR[META_TITLE] = document.title;
     var md = document.querySelector('meta[name="description"]');
-    if (md) FR["meta.description"] = md.getAttribute("content");
+    if (md) FR[META_DESC] = md.getAttribute("content");
     Object.keys(FR_EXTRA).forEach(function (k) { FR[k] = FR_EXTRA[k]; });
   }
 
@@ -197,9 +261,9 @@
       var v = dict[el.getAttribute("data-i18n-aria")];
       if (v != null) el.setAttribute("aria-label", v);
     });
-    if (dict["meta.title"]) document.title = dict["meta.title"];
+    if (dict[META_TITLE]) document.title = dict[META_TITLE];
     var md = document.querySelector('meta[name="description"]');
-    if (md && dict["meta.description"]) md.setAttribute("content", dict["meta.description"]);
+    if (md && dict[META_DESC]) md.setAttribute("content", dict[META_DESC]);
     var btn = document.getElementById("lang-toggle");
     if (btn) btn.textContent = current === "en" ? "FR" : "EN";
   }

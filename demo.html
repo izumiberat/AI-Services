@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Démos · IzuTech, automatisation IA pour PME</title>
+<meta name="description" content="Essayez avant d'en parler : un assistant qui répond à partir de documents, une lecture automatique de facture et un calcul du temps que vous pourriez gagner.">
+<meta name="author" content="IzuTech">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://izutech.fr/demo.html">
+<link rel="alternate" hreflang="fr" href="https://izutech.fr/demo.html">
+<link rel="alternate" hreflang="en" href="https://izutech.fr/demo.html?lang=en">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IzuTech">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://izutech.fr/demo.html">
+<meta property="og:title" content="IzuTech · Essayez avant d'en parler">
+<meta property="og:description" content="Un assistant sur documents, une lecture de facture et un calcul du temps gagné. Trois démos concrètes.">
+<meta property="og:image" content="https://izutech.fr/photo/IzuTech-logo.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="photo/IzuTech-logo.ico">
+<link rel="apple-touch-icon" href="photo/IzuTech-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<!-- data-api: the address of the Cloudflare Worker (see worker/README.md). Empty = the AI demos show "bientôt en ligne". -->
+<body data-page="demo" data-api="https://izutech-demo.izutech-pau.workers.dev">
+<a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="./" aria-label="IzuTech, accueil">
+      <img src="photo/IzuTech-logo.png" alt="" width="40" height="40">
+      <span>IzuTech</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale" data-i18n-aria="navLabel">
+      <a href="./#services" data-i18n="nav.offers">Offres</a>
+      <a href="./#atelier" data-i18n="nav.workshop">Atelier</a>
+      <a href="./#process" data-i18n="nav.method">Méthode</a>
+      <a href="demo.html" aria-current="page" data-i18n="nav.demo">Démos</a>
+      <a href="./#faq" data-i18n="nav.faq">Questions</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="lang" id="lang-toggle" aria-label="Switch to English" data-i18n-aria="langAria">EN</button>
+      <a class="btn btn-small" href="https://calendar.app.google/Y9YtHrf6hDHfdrVC7" target="_blank" rel="noopener" data-i18n="nav.cta">Réserver 30 min</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero demo-hero">
+    <div class="wrap">
+      <p class="hero-kicker"><a href="./" data-i18n="demo.back">← Retour à l'accueil</a></p>
+      <h1 data-i18n="demo.title">Essayez avant d'en parler.</h1>
+      <p class="hero-lead" data-i18n="demo.lead">Trois petits outils pour voir concrètement ce que l'IA peut faire dans une PME. Ce sont des démonstrations : chez vous, ils seraient branchés sur vos propres documents et vos outils.</p>
+      <ul class="demo-jump">
+        <li><a href="#assistant" data-i18n="demo.jump1">Un assistant qui cite ses sources</a></li>
+        <li><a href="#document" data-i18n="demo.jump2">La lecture d'une facture</a></li>
+        <li><a href="#calcul" data-i18n="demo.jump3">Le temps que vous pourriez gagner</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 1. Assistant -->
+  <section class="section section-tint" id="assistant" aria-labelledby="assistant-title">
+    <div class="wrap demo-grid">
+      <div class="demo-intro">
+        <p class="tag" data-i18n="demo.a.tag">Offre « assistant sur vos documents »</p>
+        <h2 id="assistant-title" data-i18n="demo.a.title">Posez une question sur IzuTech</h2>
+        <p data-i18n="demo.a.p1">Cet assistant répond uniquement à partir du contenu de ce site, et il indique d'où vient chaque réponse. Quand il ne sait pas, il le dit au lieu d'inventer.</p>
+        <p data-i18n="demo.a.p2">Chez vous, ce serait la même chose avec vos procédures, vos contrats ou vos notes internes.</p>
+        <p class="demo-note" data-i18n="demo.a.note">C'est une IA, pas une personne, et elle peut se tromper. Vos messages sont traités par Mistral AI, entreprise française. IzuTech ne les enregistre pas. N'y écrivez pas d'informations personnelles.</p>
+      </div>
+
+      <div class="panel chat" id="chat">
+        <div class="chat-log" id="chat-log" role="log" aria-live="polite" aria-relevant="additions">
+          <div class="msg msg-bot"><p data-i18n="demo.a.hello">Bonjour. Je réponds à vos questions sur les offres, les prix, la méthode ou l'atelier d'IzuTech. Que voulez-vous savoir ?</p></div>
+        </div>
+        <div class="chips" id="chat-chips">
+          <button type="button" class="chip" data-i18n="demo.a.q1">Combien coûte un assistant sur nos documents ?</button>
+          <button type="button" class="chip" data-i18n="demo.a.q2">Comment se passe un projet ?</button>
+          <button type="button" class="chip" data-i18n="demo.a.q3">Vous travaillez avec notre logiciel comptable ?</button>
+        </div>
+        <form class="chat-form" id="chat-form">
+          <label for="chat-input" class="visually-hidden" data-i18n="demo.a.label">Votre question</label>
+          <input id="chat-input" type="text" maxlength="1000" autocomplete="off" data-i18n-placeholder="demo.a.ph" placeholder="Votre question…">
+          <button type="submit" class="btn" id="chat-send" data-i18n="demo.a.send">Envoyer</button>
+        </form>
+        <p class="panel-off" hidden data-i18n="demo.off">Cette démonstration sera bientôt en ligne.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Document -->
+  <section class="section" id="document" aria-labelledby="document-title">
+    <div class="wrap demo-grid">
+      <div class="demo-intro">
+        <p class="tag" data-i18n="demo.d.tag">Offre « traitement automatique de données »</p>
+        <h2 id="document-title" data-i18n="demo.d.title">Une facture lue en quelques secondes</h2>
+        <p data-i18n="demo.d.p1">L'outil lit la facture, range les informations, puis refait les calculs. Ce qui ne colle pas vous est signalé : vous vérifiez au lieu de tout ressaisir.</p>
+        <p data-i18n="demo.d.p2">Essayez avec la facture d'exemple ci-contre. Elle contient une erreur : voyez si l'outil la trouve.</p>
+        <p class="demo-note" data-i18n="demo.d.note">Vous pouvez aussi envoyer votre propre fichier (PDF, JPG ou PNG, 4 Mo maximum). Utilisez un document d'exemple, pas un document confidentiel. Il est traité par Mistral AI, et IzuTech ne le conserve pas.</p>
+      </div>
+
+      <div class="panel doc" id="doc">
+        <figure class="invoice" aria-labelledby="invoice-cap">
+          <pre id="sample-invoice">FOURNITURES DU GAVE (entreprise fictive)
+Pau
+
+FACTURE N° FG-2026-0412
+Date : 02/10/2026        Échéance : 01/11/2026
+Client : Cabinet Exemple, Pau
+
+Désignation              Qté   PU HT    Montant HT
+Ramettes papier A4        10    4,50       45,00
+Toner laser noir           2   61,25      122,50
+Classeurs à levier        12    2,80       33,60
+
+                          Total HT        201,10
+                          TVA 20 %         40,22
+                          Total TTC       214,32</pre>
+          <figcaption id="invoice-cap" data-i18n="demo.d.cap">Facture d'exemple</figcaption>
+        </figure>
+        <div class="doc-actions">
+          <button type="button" class="btn" id="doc-sample" data-i18n="demo.d.try">Lire la facture d'exemple</button>
+          <label class="btn btn-ghost file-btn">
+            <span data-i18n="demo.d.upload">Envoyer mon fichier</span>
+            <input type="file" id="doc-file" accept="application/pdf,image/png,image/jpeg,image/webp">
+          </label>
+        </div>
+        <p class="doc-status" id="doc-status" role="status" aria-live="polite"></p>
+        <div class="doc-result" id="doc-result" hidden></div>
+        <p class="panel-off" hidden data-i18n="demo.off">Cette démonstration sera bientôt en ligne.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Calculator -->
+  <section class="section section-tint" id="calcul" aria-labelledby="calcul-title">
+    <div class="wrap demo-grid">
+      <div class="demo-intro">
+        <h2 id="calcul-title" data-i18n="demo.c.title">Combien de temps pourriez-vous gagner ?</h2>
+        <p data-i18n="demo.c.p1">Un calcul simple, avec vos chiffres. Les valeurs proposées ne sont que des exemples : remplacez-les par les vôtres.</p>
+        <p data-i18n="demo.c.p2">La part de la tâche que l'IA peut prendre en charge varie beaucoup d'une entreprise à l'autre. C'est justement ce que l'audit mesure. Ici, prenez une hypothèse prudente.</p>
+      </div>
+
+      <form class="panel calc" id="calc" novalidate>
+        <div class="field">
+          <label for="c-task" data-i18n="demo.c.task">La tâche</label>
+          <select id="c-task">
+            <option value="invoices" data-i18n="demo.c.t1">Saisir des factures fournisseurs</option>
+            <option value="delivery" data-i18n="demo.c.t2">Rapprocher des bons de livraison</option>
+            <option value="search" data-i18n="demo.c.t3">Chercher une information dans les documents</option>
+            <option value="support" data-i18n="demo.c.t4">Répondre aux demandes clients</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <div class="field">
+            <label for="c-volume" data-i18n="demo.c.volume">Nombre par mois</label>
+            <input id="c-volume" type="number" inputmode="numeric" min="0" step="1" value="200">
+          </div>
+          <div class="field">
+            <label for="c-minutes" data-i18n="demo.c.minutes">Minutes pour chacun</label>
+            <input id="c-minutes" type="number" inputmode="decimal" min="0" step="0.5" value="4">
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="field">
+            <label for="c-rate" data-i18n="demo.c.rate">Coût d'une heure de travail (€, charges comprises)</label>
+            <input id="c-rate" type="number" inputmode="decimal" min="0" step="1" value="30">
+          </div>
+          <div class="field">
+            <label for="c-tool" data-i18n="demo.c.tool">Abonnement à l'outil d'IA (€ par mois)</label>
+            <input id="c-tool" type="number" inputmode="decimal" min="0" step="5" value="30">
+          </div>
+        </div>
+        <div class="field">
+          <label for="c-share"><span data-i18n="demo.c.share">Part prise en charge par l'IA</span> : <output id="c-share-out" for="c-share">50 %</output></label>
+          <input id="c-share" type="range" min="20" max="80" step="5" value="50">
+        </div>
+
+        <div class="calc-out" id="calc-out" aria-live="polite"></div>
+        <p class="demo-note" data-i18n="demo.c.foot">Estimation indicative. Le temps de vérification humaine reste à prévoir, et le devis réel dépend de l'audit.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- 4. Videos: remove "hidden" once the videos exist, and replace each placeholder with the video embed. -->
+  <section class="section" id="videos" aria-labelledby="videos-title" hidden>
+    <div class="wrap">
+      <h2 id="videos-title" data-i18n="demo.v.title">En vidéo, avant et après</h2>
+      <p class="section-lead" data-i18n="demo.v.lead">Une minute par offre : la tâche faite à la main, puis la même tâche avec l'outil.</p>
+      <div class="videos">
+        <figure class="video"><div class="video-frame"><!-- vidéo 1 --></div><figcaption data-i18n="demo.v.v1">La saisie de factures</figcaption></figure>
+        <figure class="video"><div class="video-frame"><!-- vidéo 2 --></div><figcaption data-i18n="demo.v.v2">L'assistant sur vos documents</figcaption></figure>
+        <figure class="video"><div class="video-frame"><!-- vidéo 3 --></div><figcaption data-i18n="demo.v.v3">Le copilote pour le support</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" aria-labelledby="demo-cta-title">
+    <div class="wrap demo-cta">
+      <h2 id="demo-cta-title" data-i18n="demo.cta.title">Et chez vous, ça donnerait quoi ?</h2>
+      <p data-i18n="demo.cta.lead">On en parle 30 minutes, gratuitement. Vous me racontez la tâche qui vous prend du temps, je vous dis honnêtement si l'IA peut aider.</p>
+      <p class="hero-actions">
+        <a class="btn" href="https://calendar.app.google/Y9YtHrf6hDHfdrVC7" target="_blank" rel="noopener" data-i18n="hero.cta">Réserver un appel de 30 min</a>
+        <a class="link-quiet" href="./#contact" data-i18n="demo.cta.write">Ou décrivez-la par écrit</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">IzuTech</p>
+      <p data-i18n="footer.where">Automatisation IA pour les PME. Pau, Pyrénées-Atlantiques.</p>
+      <p><a href="mailto:contact@izutech.fr">contact@izutech.fr</a></p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="https://seniors.izutech.fr/" data-i18n="footer.seniors">Aide numérique pour les seniors</a></li>
+      <li><a href="https://web.izutech.fr/" data-i18n="footer.web">Sites web pour PME</a></li>
+      <li><a href="https://events.izutech.fr/" data-i18n="footer.events">Tableaux de bord pour événements</a></li>
+    </ul>
+  </div>
+  <div class="wrap footer-base">
+    <p>© 2026 IzuTech · <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+<script src="demo.js" defer></script>
+</body>
+</html>

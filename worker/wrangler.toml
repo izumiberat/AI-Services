@@ -1,0 +1,40 @@
+# IzuTech demo API — Cloudflare Worker. Setup steps: see README.md in this folder.
+name = "izutech-demo"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+# Served at https://izutech-demo.izutech-pau.workers.dev (the address in demo.html's data-api).
+workers_dev = true
+# No per-version preview addresses: one public address is enough for the demo.
+preview_urls = false
+
+[vars]
+# Only these pages may call the API (comma-separated, exact origins).
+ALLOWED_ORIGINS = "https://izutech.fr,https://www.izutech.fr"
+CHAT_MODEL = "mistral-small-latest"
+OCR_MODEL = "mistral-ocr-latest"
+DAILY_CAP = "300"
+
+# Per visitor: 8 requests per minute.
+[[ratelimits]]
+name = "PER_VISITOR"
+namespace_id = "4101"
+
+  [ratelimits.simple]
+  limit = 8
+  period = 60
+
+# Whole site: 60 requests per minute.
+[[ratelimits]]
+name = "GLOBAL"
+namespace_id = "4102"
+
+  [ratelimits.simple]
+  limit = 60
+  period = 60
+
+# Optional daily ceiling (DAILY_CAP requests per day). To turn it on:
+#   npx wrangler kv namespace create USAGE
+# then paste the id it prints below and remove the # signs.
+# [[kv_namespaces]]
+# binding = "USAGE"
+# id = "PASTE_ID_HERE"

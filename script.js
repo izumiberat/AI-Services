@@ -16,7 +16,7 @@
 
     "hero.kicker": "Izumi Bérat, engineer based in Pau, France. AI automation for small and mid-sized businesses.",
     "hero.title": "Less data entry. More time for what matters.",
-    "hero.lead": "I help small businesses hand repetitive work to AI: invoices to re-type, answers to dig out of documents, support replies. That time is yours: for your work, your loved ones, or simply to breathe. Fixed price, first prototype in two weeks. And if it isn't worth it for you, I'll tell you.",
+    "hero.lead": "I help small businesses hand repetitive work to AI: documents to re-type, answers to dig out of documents, support replies. That time is yours: for your work, your loved ones, or simply to breathe. Fixed price, first prototype in two weeks. And if it isn't worth it for you, I'll tell you.",
     "hero.cta": "Book a 30-minute call",
     "hero.secondary": "See services and prices",
     "hero.note": "Free call, no commitment, by video or in Pau.",
@@ -24,7 +24,9 @@
     "sectors.title": "Where AI actually helps",
     "sectors.lead": "No big “transformation” plan. We start from one specific task that costs you time every week. A few examples:",
     "sectors.s1.t": "Accounting firms",
-    "sectors.s1.d": "Invoices and statements received as PDFs are read and entered into your accounting software. You check instead of typing.",
+    "sectors.s1.d": "Your accounting software already reads invoices. What's left is missing paperwork: reminders go out on their own and the list per client is ready before closing.",
+    "sectors.s6.t": "Tradespeople and construction",
+    "sectors.s6.d": "Quote requests sent by email or as photos, job sheets, site reports: the information is read and filed in the right place, alongside your quoting and invoicing software.",
     "sectors.s2.t": "Insurance brokers",
     "sectors.s2.d": "An assistant finds the right clause in policies and terms, with a reference to the source document.",
     "sectors.s3.t": "Logistics and transport",
@@ -39,8 +41,8 @@
     "offers.from": "from",
     "offers.exampleLabel": "Example:",
     "offers.o1.t": "Automated data processing",
-    "offers.o1.d": "Your invoices, purchase orders or forms arrive by email or as PDFs. The tool reads the information, puts it into your software or spreadsheet, and flags anything that needs checking. You keep the final say.",
-    "offers.o1.e": "supplier invoices entered straight into your accounting software.",
+    "offers.o1.d": "Your delivery notes, purchase orders, job sheets or forms arrive by email or as PDFs. The tool reads the information, puts it into your software or spreadsheet, and flags anything that needs checking. You keep the final say.",
+    "offers.o1.e": "delivery notes matched to orders, with mismatches flagged. For invoices, your accounting software already does it: I help you set it up well.",
     "offers.o2.t": "Internal assistant for your documents",
     "offers.o2.d": "Your procedures, contracts and notes are scattered. The assistant answers your team’s questions from your own documents, and shows where each answer comes from.",
     "offers.o2.e": "a new hire finds out how to handle a case without interrupting colleagues.",
@@ -48,7 +50,7 @@
     "offers.o3.d": "The tool drafts a reply inside your support tool (Zendesk, Intercom, Freshdesk…), in your brand’s voice. Your team reviews, edits if needed, and sends.",
     "offers.o3.e": "common billing questions have a reply ready to review.",
     "offers.foot": "Included with every service: a prototype on your real data, documentation, team training and 30 days of support.",
-    "offers.demo": "<a href=\"demo.html\">Try the demos: an assistant that cites its sources, an invoice read automatically, and a time-saved calculator →</a>",
+    "offers.demo": "<a href=\"demo.html\">Try the demos: an assistant that cites its sources, a document read automatically, and a time-saved calculator →</a>",
 
     "workshop.tag": "New",
     "workshop.title": "Workshop: build your own agent with Claude",
@@ -106,6 +108,8 @@
     "faq.a4": "I’m based in Pau and happy to travel within Nouvelle-Aquitaine. For the rest of France and abroad, remote works very well.",
     "faq.q5": "Do I need a subscription to an AI tool?",
     "faq.a5": "Often yes, at a modest monthly cost. I include it in the quote so you know the full cost before you decide.",
+    "faq.q6": "I already have accounting software. Isn't this overlap?",
+    "faq.a6": "No. Accounting software already reads invoices very well and handles bank reconciliation: I don't redo that. I can help you choose and set up yours, including for e-invoicing, then automate what it doesn't cover: non-accounting documents, reminders, links between your tools.",
 
     "contact.title": "Is one task eating hours of your week?",
     "contact.lead": "Describe it in a few lines. I’ll reply in writing within two working days with a concrete idea. It’s free and there’s no commitment.",
@@ -132,13 +136,13 @@
     "footer.legal": "Legal notice and privacy (in French)",
 
     "meta.demo.title": "Demos · IzuTech, AI automation for small businesses",
-    "meta.demo.description": "Try before we talk: an assistant that answers from documents, an invoice read automatically, and a calculator for the time you could save.",
+    "meta.demo.description": "Try before we talk: an assistant that answers from documents, a document read automatically, and a calculator for the time you could save.",
 
     "demo.back": "← Back to home",
     "demo.title": "Try it before we talk.",
     "demo.lead": "Three small tools to show what AI can actually do in a small business. They're demos: in your company, they would be connected to your own documents and tools.",
     "demo.jump1": "An assistant that cites its sources",
-    "demo.jump2": "An invoice, read for you",
+    "demo.jump2": "A document, read for you",
     "demo.jump3": "The time you could save",
     "demo.off": "This demo will be online soon.",
 
@@ -156,8 +160,8 @@
     "demo.a.send": "Send",
 
     "demo.d.tag": "“Automated data processing” service",
-    "demo.d.title": "An invoice read in seconds",
-    "demo.d.p1": "The tool reads the invoice, sorts the information, then redoes the maths. Anything that doesn't add up is flagged: you check instead of re-typing everything.",
+    "demo.d.title": "A document read in seconds",
+    "demo.d.p1": "The tool reads the document (invoice, delivery note, quote…), sorts the information, then redoes the maths. Anything that doesn't add up is flagged: you check instead of re-typing everything.",
     "demo.d.p2": "Try it with the sample invoice. It contains a mistake: see whether the tool finds it.",
     "demo.d.note": "You can also send your own file (PDF, JPG or PNG, 4 MB max). Please use a sample, not a confidential document. It is processed by Mistral AI, and IzuTech doesn't keep it.",
     "demo.d.cap": "Sample invoice (in French)",
@@ -190,7 +194,7 @@
     "demo.cta.write": "Or describe it in writing",
 
     "meta.title": "IzuTech · AI automation for small businesses, Pau",
-    "meta.description": "I help small businesses automate repetitive work with AI: invoice entry, document search, support replies. Fixed prices, prototype in 2 weeks. Based in Pau, France."
+    "meta.description": "I help small businesses automate repetitive work with AI: document reading, information search, support replies. Fixed prices, prototype in 2 weeks. Based in Pau, France."
   };
 
   var FR_EXTRA = {

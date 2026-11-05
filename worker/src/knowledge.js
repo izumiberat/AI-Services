@@ -10,13 +10,14 @@ export const SECTIONS = [
     id: "k1",
     title: "IzuTech en bref",
     url: SITE,
-    text: `IzuTech, c'est Izumi Bérat, ingénieur basé à Pau. Il aide les PME à confier à l'IA les tâches répétitives : factures à ressaisir, informations à chercher dans les documents, réponses au support. Moins de saisie, plus de temps pour ce qui compte : ce temps appartient à l'entreprise et à ses équipes, pour leur métier, leurs proches, ou simplement pour souffler. Prix fixe, premier prototype en deux semaines. Et si ça n'en vaut pas la peine pour l'entreprise, il le dit. Pas de grand plan de « transformation » : on part d'une tâche précise qui coûte du temps chaque semaine.`
+    text: `IzuTech, c'est Izumi Bérat, ingénieur basé à Pau. Il aide les PME à confier à l'IA les tâches répétitives : documents à ressaisir, informations à chercher dans les documents, réponses au support. Moins de saisie, plus de temps pour ce qui compte : ce temps appartient à l'entreprise et à ses équipes, pour leur métier, leurs proches, ou simplement pour souffler. Prix fixe, premier prototype en deux semaines. Et si ça n'en vaut pas la peine pour l'entreprise, il le dit. Pas de grand plan de « transformation » : on part d'une tâche précise qui coûte du temps chaque semaine.`
   },
   {
     id: "k2",
     title: "Exemples par secteur",
     url: SITE + "#secteurs",
-    text: `Cabinets comptables : les factures et relevés reçus en PDF sont lus et saisis dans le logiciel comptable ; on valide au lieu de taper.
+    text: `Cabinets comptables : le logiciel comptable lit déjà les factures ; IzuTech s'occupe des pièces manquantes : les relances partent toutes seules et la liste par client est prête avant la clôture.
+Artisans et BTP : demandes de devis reçues par mail ou en photo, bons d'intervention, PV de chantier : les informations sont lues et rangées au bon endroit, à côté du logiciel de devis et de facturation.
 Courtiers en assurance : un assistant retrouve la bonne clause dans les contrats et conditions générales, avec la référence du document.
 Logistique et transport : les bons de livraison sont lus et rapprochés des commandes, sans ressaisie ; les écarts sont signalés.
 Éditeurs de logiciels : chaque ticket de support arrive avec un brouillon de réponse dans le ton de l'entreprise ; l'équipe relit et envoie.
@@ -26,7 +27,7 @@ Administratif santé : les courriers et demandes entrants sont triés et résum�
     id: "k3",
     title: "Offre : traitement automatique de données (à partir de 900 €)",
     url: SITE + "#services",
-    text: `Les factures, bons de commande ou formulaires arrivent par email ou en PDF. L'outil lit les informations, les range dans le logiciel ou le tableur de l'entreprise, et signale ce qui mérite une vérification. L'entreprise garde la validation finale. Exemple : les factures fournisseurs saisies directement dans le logiciel comptable. Prix : à partir de 900 €.`
+    text: `Les bons de livraison, bons de commande, bons d'intervention ou formulaires arrivent par email ou en PDF. L'outil lit les informations, les range dans le logiciel ou le tableur de l'entreprise, et signale ce qui mérite une vérification. L'entreprise garde la validation finale. Exemple : les bons de livraison rapprochés des commandes, les écarts signalés. Pour les factures, le logiciel comptable le fait déjà : Izumi aide à bien le régler. Prix : à partir de 900 €.`
   },
   {
     id: "k4",
@@ -75,7 +76,7 @@ Administratif santé : les courriers et demandes entrants sont triés et résum�
     id: "k10",
     title: "Outils, suivi et zone d'intervention",
     url: SITE + "#faq",
-    text: `Outils : IzuTech travaille avec ceux que l'entreprise a déjà : logiciel comptable, CRM, Google Workspace ou Microsoft 365, outil de support. Si un outil se connecte mal, Izumi le dit dès l'audit. Le site ne liste pas de logiciel comptable ou de CRM précis : pour un outil donné, il faut en parler lors de l'appel.
+    text: `Outils : IzuTech travaille avec ceux que l'entreprise a déjà : logiciel comptable, CRM, Google Workspace ou Microsoft 365, outil de support. Si un outil se connecte mal, Izumi le dit dès l'audit. Logiciel comptable déjà en place : ça ne fait pas doublon. Les logiciels comptables lisent déjà très bien les factures et font le rapprochement bancaire, IzuTech ne refait pas ce travail. Izumi peut aider à bien choisir et paramétrer le logiciel, y compris pour la facture électronique, puis automatiser ce qu'il ne couvre pas : documents hors comptabilité, relances, liens entre les outils. Le site ne liste pas de logiciel comptable ou de CRM précis : pour un outil donné, il faut en parler lors de l'appel.
 Après la livraison : 30 jours de suivi inclus, documentation, équipe formée ; ensuite une maintenance est possible.
 Zone : basé à Pau, déplacements volontiers en Nouvelle-Aquitaine ; pour le reste de la France, travail à distance.`
   },
@@ -97,7 +98,7 @@ Formulaire sur le site : on décrit en quelques lignes la tâche qui fait perdre
     id: "k13",
     title: "À propos de cette démonstration",
     url: SITE + "demo.html",
-    text: `Cet assistant est une IA, pas une personne. C'est une démonstration de l'offre « assistant interne sur vos documents » : il répond uniquement à partir du contenu du site izutech.fr et indique ses sources. Chez un client, il serait branché sur les documents de l'entreprise. Il fonctionne avec un modèle de Mistral AI, entreprise française. IzuTech n'enregistre pas les conversations. Mistral AI peut conserver les échanges jusqu'à 30 jours pour lutter contre les abus. Il peut se tromper : pour un vrai projet, le mieux est d'en parler lors d'un appel. La page propose aussi une démonstration de lecture de facture et un calcul du temps gagné.`
+    text: `Cet assistant est une IA, pas une personne. C'est une démonstration de l'offre « assistant interne sur vos documents » : il répond uniquement à partir du contenu du site izutech.fr et indique ses sources. Chez un client, il serait branché sur les documents de l'entreprise. Il fonctionne avec un modèle de Mistral AI, entreprise française. IzuTech n'enregistre pas les conversations. Mistral AI peut conserver les échanges jusqu'à 30 jours pour lutter contre les abus. Il peut se tromper : pour un vrai projet, le mieux est d'en parler lors d'un appel. La page propose aussi une démonstration de lecture de document (facture, bon de livraison, devis) et un calcul du temps gagné.`
   },
   {
     id: "k14",

@@ -104,7 +104,7 @@ Formulaire sur le site : on décrit en quelques lignes la tâche qui fait perdre
     id: "k14",
     title: "Les autres activités d'IzuTech",
     url: SITE,
-    text: `IzuTech propose aussi : une aide numérique à domicile pour les seniors à Pau (https://seniors.izutech.fr/), la création de sites web pour PME et associations (https://web.izutech.fr/), et des tableaux de bord pour événements (https://events.izutech.fr/).`
+    text: `IzuTech propose aussi : une aide numérique à domicile pour les seniors à Pau (https://seniors.izutech.fr/), de l'interprétariat japonais – français – anglais pour les entreprises (https://interpretation.izutech.fr/), la création de sites web pour PME et associations (https://web.izutech.fr/), et des tableaux de bord pour événements (https://events.izutech.fr/).`
   }
 ];
 

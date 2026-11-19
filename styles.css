@@ -341,3 +341,8 @@ p { margin: 0; }
 
 /* Home page: pointer to the demos */
 .offers-demo { margin-top: 1rem; font-weight: 700; }
+
+/* LinkedIn link */
+.li-link { display: inline-flex; align-items: center; gap: 0.4rem; }
+.li-link svg { flex: none; }
+.portrait figcaption .li-link { justify-content: center; }

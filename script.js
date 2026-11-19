@@ -131,6 +131,7 @@
 
     "footer.where": "AI automation for small businesses. Pau, Pyrénées-Atlantiques, France.",
     "footer.seniors": "Tech help for seniors (in French)",
+    "footer.interp": "Japanese – French interpreter",
     "footer.web": "Websites for small businesses",
     "footer.events": "Event dashboards",
     "footer.legal": "Legal notice and privacy (in French)",

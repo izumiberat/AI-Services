@@ -134,6 +134,7 @@
     "footer.interp": "Japanese – French interpreter",
     "footer.web": "Websites for small businesses",
     "footer.events": "Event dashboards",
+    "footer.play": "Screen-free play ideas for kids",
     "footer.legal": "Legal notice and privacy (in French)",
 
     "meta.demo.title": "Demos · IzuTech, AI automation for small businesses",
